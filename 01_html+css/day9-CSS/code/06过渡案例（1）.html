@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box1{
+			border:solid 1px red;
+			
+		}
+		.box1>img{
+			transition: transform 1s;
+			/*建议:要进行过渡的属性的初始值也写出来*/
+			transform:rotate(0deg) scale(1,1);
+		}
+		.box1:hover>img{
+			transform:rotate(360deg) scale(1.5,1.5);
+		}
+	</style>
+</head>
+<body>
+	盒子前面的文字
+	<div class="box1">
+		<img src="images/girl10.jpg" alt="">
+	</div>
+	盒子后面的文字，他们都不会受影响！盒子后面的文字，他们都不会受影响！
+</body>
+</html>

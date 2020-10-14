@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			/*border:solid 1px red;*/
+			margin-left:20px;
+			height: 35px;
+		}
+		.box>div{
+			/*border:solid 1px  blue;*/
+			height: 35px;
+			line-height: 35px;
+			float:left;
+		}
+		.box>div>a{
+			display: block;
+			padding-right:30px;
+			text-decoration: none;
+			/*这是负责导航效果的右侧*/
+			background: url(images/bg_r1_c2.png) right center no-repeat;
+		}
+		.box>div>a:hover{
+			background-image:url(images/blue_r1_c2.png);
+		}
+		.box>div>a>span{
+			padding-left:8px;
+			display: block;
+			/*这是负责导航效果的左侧侧*/
+			background: url(images/bg_r1_c1.png) no-repeat;
+		}
+		.box>div>a>span:hover{
+			background-image:url(images/blue_r1_c1.png);
+		}
+
+	</style>
+</head>
+<body>
+	<!-- 滑动门演示 -->
+	<div class="box">
+		<div class="menu"><a href=""><span>首页</span></a></div>
+		<div class="menu"><a href=""><span>关于我们</span></a></div>
+		<div class="menu"><a href=""><span>电影排行榜</span></a></div>
+		<div class="menu"><a href=""><span>厉害了word哥</span></a></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box1{
+			width: 560px;
+			height: 150px;
+			border:1px red solid;
+			/*设定本盒子作为弹性盒子*/
+			display: flex;
+			/*弹性盒子运行换行(如果一行放不下)*/
+			flex-direction: row-reverse;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-around;
+			/*align-content: space-around;*/
+			align-items: center;
+		}
+		.box1>div{
+			border:solid 1px gray;
+			margin: 3px 5px;
+			height: 30px;
+
+		}
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<div>新闻公告1</div>
+		<div>产品列表2</div>
+		<div>典型客户3</div>
+		<div>应用场景4</div>
+		<div>关于我们5</div>
+		<div>客户反馈6</div>
+		<div>新闻公告7</div>
+		<div>产品列表8</div>
+		<div>典型客户9</div>
+		<div>应用场景10</div>
+		<div>关于我们11</div>
+		<div>客户反馈12</div>
+		<div>新闻公告13</div>
+		<div>产品列表14</div>
+		<div>典型客户15</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			/*设置当前盒子模型为边框盒子（内减模式）*/
+			box-sizing: border-box;
+			width: 300px;
+			height: 280px;
+			border:1px solid gray;
+			border-top:none;
+		}
+		.box>.top{
+			height: 40px;
+		}
+		.box>.top>.left,.box>.top>.right{
+			box-sizing: border-box;/*内减模式*/
+			float: left;
+			width: 149px;
+			height: 40px;
+			line-height: 36px;
+		}
+		.box>.top>.left{
+			text-align: center;
+			font-size:18px;
+			font-weight: bold;
+			color:red;
+			border-top:2px solid red;
+		}
+		.box>.top>.right{
+			border-top:solid 1px gray;
+			border-left:solid 1px gray;
+			border-bottom:solid 1px gray;
+			text-align: right;
+			padding-right:10px;
+			background: #cccccc;
+		}
+		.box>ul{
+			/*background: yellow;*/
+			list-style-type:none;
+			margin:0;
+			padding: 0;
+			padding-left:10px;
+			padding-right:10px;
+		}
+		.box>ul>li{
+			height: 28px;
+			line-height: 28px;
+			text-indent: 22px;
+			background: url(images/list-item-arrow1.png) 0 5px no-repeat;
+			overflow:hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="top">
+			<div class="left">公开课</div>
+			<div class="right">更多...</div>
+		</div>
+		<ul>
+			<li>文字文字文字文字文字</li>
+			<li>文字2文字文字文2字文字文2字文字字文字文字2文字</li>
+			<li>文字文字文字文字</li>
+			<li>文字文字</li>
+			<li>文字文字文字文字文字</li>
+			<li>文字文字文字文字文字</li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+</body>
+</html>

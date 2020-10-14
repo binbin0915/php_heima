@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		/*实现可变宽度圣杯布局：总宽：窗口的90%，最小800px；
+		并且：左右各200px*/
+
+		/*关键核心：
+			1，中间盒子不要浮动
+			2，左右盒子各自左右浮动，并先于中间盒子出现
+			3，中间盒子左右的margin跟左右盒子宽度匹配（略多一点间隙)
+			4, 通常也需要设置总宽度的最小宽度。
+		*/
+		*{
+			margin:0;
+			padding: 0;
+			border:none;
+			font-size: 13px;
+			line-height: 1.5em;
+		}
+		.clear::after{
+			content: "";
+			display: block;
+			clear:both;
+		}
+		div{
+			border:solid 1px red;
+		}
+		.body{
+			width: 90%;
+			min-width:800px;
+			margin: 0 auto;
+			padding:1px;
+		}
+		.top,.foot{
+			font-size:20px;
+			text-align: center;
+			font-weight: bold;
+			border:solid 1px red;
+
+		}
+		.main{
+			margin:8px 0px;
+			padding:2px;
+		}
+		.main>.left{
+			float:left;
+			width: 200px;
+		}
+		.main>.center{
+			/*float:left;*/
+			margin-left:10px;
+			/*width: 530px;*/
+			margin-left:210px;
+			margin-right:210px;
+			background: gray;
+		}
+		.main>.right{
+			float: right;
+			width: 200px;
+		}
+	</style>
+</head>
+<body>
+	<div class="body">
+		<div class="top">头部区域</div>
+		<div class="main clear">
+			<div class="left">左</div>
+			<div class="right">右</div>
+			<div class="center">中华人民共和国中华人民共和国中华人民共和国中华人民共和国中华人民共和国中华人民共和国人民共和国中华人民共和国人民共和国中华人民共和国人民共和国中华人民共和国
+			</div>
+		</div>
+		<div class="foot">底部区间</div>
+	</div>
+</body>
+</html>

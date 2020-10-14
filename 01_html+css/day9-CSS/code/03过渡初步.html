@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box1{
+			width: 100px;
+			padding: 10px;
+			border:solid 1px red;
+			overflow: hidden;
+		}
+		.box1>img{
+			width: 100px;
+			transform: scale(1);
+			/*设定过渡特性：transform，并且持续3s（3秒)*/
+			transition: transform 0.5s;
+			/*设置过渡特性：width，并且持续1s*/
+			/*transition: width 1s;*/
+		}
+		.box1>img:hover{
+			/*width: 120px;*/
+			transform: scale(1.4);
+			/*transform: translate(10px,0);*/
+		}
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<img src="images/girl10.jpg" alt="">
+	</div>
+	<p>
+		文字
+	</p>
+</body>
+</html>

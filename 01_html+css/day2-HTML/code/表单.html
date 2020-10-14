@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="a.php">
+		<table>
+		<tr>
+			<td>账号：</td>
+			<td><input type="text"></td>
+		</tr>
+		<tr>
+			<td>密码：</td>
+			<td><input type="password"></td>
+		</tr>
+		<tr>
+			<td><input type="reset"></td>
+			<td><input type="submit"></td>
+		</tr>
+		</table>
+	</form>
+	
+
+
+	<form action="a.php" method="get" name="form1">
+		<!-- 文本框 -->
+		<fieldset>
+			<legend>注册信息</legend>
+				账号：<input type="text" name="zh" value="" maxlength="6" size="60"  readonly disabled><br />
+				邮箱：<input type="text" name="yx">
+				<br />
+				<!-- 密码框 -->
+				密码：<input type="password" name="mima" maxlength="3">
+		</fieldset>
+		
+		<fieldset>
+			<legend>个人爱好</legend>
+			<!-- 隐藏文本框，隐藏域 -->
+			<input type="hidden" name="abcd" value="这个人长得好丑不能让他看到"><br />
+
+			<!-- 单选按钮 -->
+			性别：<input type="radio" name="sex" value="a" checked>男
+				  <input type="radio" name="sex" value="b">女<br />
+			<!-- 多选项 -->
+			爱好：<input type="checkbox" name="ah" value="lanqiu">篮球
+				  <input type="checkbox" name="ah" value="zuqiu">足球
+				  <input type="checkbox" name="ah" value="yumaoqiu">羽毛球
+				  <input type="checkbox" name="ah" value="乒乓球">乒乓球
+				  <input type="checkbox" name="ah" value="排球" checked>排球<br />
+			文件域：<input type="file" name="zp"><br />
+		</fieldset>
+		<fieldset>
+			<legend>按钮大全</legend>
+			<!-- 提交按钮 -->
+			<input type="submit" value="点点点提交"><br />
+			<!-- 图片按钮 -->
+			<input type="image" src="images/reg.jpg"><br />
+			<!-- 重置按钮 -->
+			<input type="reset" value="点击重置"><br />
+			<!-- 普通按钮 -->
+			<input type="button" value="按钮，没事做点着玩">
+		</fieldset>
+		<select name="shengfen">
+			<option>北京</option>
+			<option>上海</option>
+			<option>广东</option>
+			<option>天津</option>
+			<option>河北</option>
+			<option>河北</option>
+		</select>
+		<select>
+			<optgroup label="北京">
+			<option>海淀</option>
+			<option>顺义</option>
+			<option>朝阳</option>
+			<option>昌平</option>
+			<option>大兴</option>
+			<option>好多</option>
+			<optgroup label="河北">
+			<option>张家口</option>
+			<option>保定</option>
+			<option>唐山</option>
+			<option>昌平</option>
+			<option>大兴</option>
+			<option>好多</option>
+			<optgroup label="河南">
+			<option>洛阳</option>
+			<option>政治</option>
+			<option>唐山</option>
+			<option>昌平</option>
+			<option>大兴</option>
+			<option>好多</option>
+		</optgroup>
+		</select>
+		<textarea cols="60" rows="10" name="textarea"></textarea>
+		<button>文字美容看了电视剧离开</button>
+		<label for="d1">账号：</label><input type="text" id="d1">
+	</form>
+</body>
+</html>

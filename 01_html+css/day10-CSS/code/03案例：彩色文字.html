@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		/*原理：
+1，设置文字的颜色为透明色(transparent)
+2，设置盒子背景为渐变色（linear-gradient）
+3，将背景裁切到“文字字符范围”*/
+		.colorText{
+			font-size: 30px;
+			color:transparent;
+
+			/*-webkit-text-fill-color:transparent;*/
+			/*-moz-text-fill-color:transparent;*/
+			/*text-fill-color:transparent;*/
+
+			background: linear-gradient(90deg, red, blue, green, orange,yellow,red) 0 0 / 100px 100px;
+			/*将背景裁切*/
+			-webkit-background-clip:text;
+			-moz-background-clip:text;
+			background-clip: text;
+		}
+	</style>
+</head>
+<body>
+	<div class="colorText">
+		彩色文字！colorful text
+	</div>
+</body>
+</html>

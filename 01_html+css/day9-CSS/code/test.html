@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.wutai{
+			/*perspective: 800px;*/
+			width: 210px;
+			margin:100px auto;
+		}
+		.rongqi{
+			width: 202px;
+			height: 202px;
+			border:solid 1px red;
+			position: relative;
+			transform-style: preserve-3d;
+			transform:rotateX(-30deg) rotateY(45deg);
+			transform:rotate3d(-1,1,-1,35deg);
+			transition:transform 3s;
+		}
+		.rongqi:hover{
+			transform:rotate3d(-1,1,-1,395deg);
+		}
+		.rongqi>div{
+			width: 200px;
+			height: 200px;
+			border:solid 1px blue;
+			position: absolute;
+			font-size: 80px;
+			text-align: center;
+			line-height: 200px;
+		}
+		.rongqi>div:nth-child(2){
+			transform: translateZ(-200px);
+		}
+		.rongqi>div:nth-child(3){
+			transform-origin:right top;
+			transform: rotateY(-90deg);
+		}
+		.rongqi>div:nth-child(4){
+			transform-origin:left top;
+			transform: rotateY(90deg);
+		}
+		.rongqi>div:nth-child(5){
+			transform-origin:left top;
+			transform: rotateX(-90deg);
+		}
+		.rongqi>div:nth-child(6){
+			transform-origin:left bottom;
+			transform: rotateX(90deg);
+		}
+
+	</style>
+</head>
+<body>
+	<div class="wutai">
+		<div class="rongqi">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+		</div>
+	</div>
+</body>
+</html>

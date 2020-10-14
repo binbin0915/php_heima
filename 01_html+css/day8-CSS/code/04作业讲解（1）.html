@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 752px;
+			height: 200px;
+			border: 1px solid red;
+		}
+		.box1,.box2,.box3{
+			float: left;
+			background: yellow;
+			margin-left:2px;
+			overflow: hidden;
+			position: relative;
+		}
+		.box1{
+			width: 500px;
+			height: 200px;
+			margin-left:0px;
+		}
+		.box1>img{
+			width: 500px;
+			/*height: 200px;*/
+		}
+		.box2,.box3{
+			width: 250px;
+			height: 99px;
+		}
+		.box3{
+			margin-top:2px;
+		}
+		.box1>p,.box2>p,.box3>p{
+			margin:0;
+			position: absolute;
+			bottom:20px;
+			color:white;
+			text-indent: 2em;
+		}
+		.box2>p,.box3>p{
+			bottom: 10px;
+		}
+		.box1>span{
+			position: absolute;
+			color:white;
+			top:50%;
+			font-size:30px;
+			font-weight: bold;
+			margin-top:-15px;
+		}
+		.box1>span.right{
+			right: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="box1">
+			<img src="images/1.jpg" alt="">
+			<p>文字1111</p>
+			<span class="left">&lt;</span>
+			<span class="right">&gt;</span>
+		</div>
+		<div class="box2">
+			<img src="images/2.jpg" alt="">
+			<p>文字2222</p>
+		</div>
+		<div class="box3">
+			<img src="images/3.jpg" alt="">
+			<p>文字333</p>
+		</div>
+	</div>
+</body>
+</html>

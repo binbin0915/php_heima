@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.wutai{
+			width: 500px;
+			height: 300px;
+			margin:50px auto;
+			border:solid 1px blue;
+			/*设置观察距离*/
+			perspective: 800px;
+			/*设置观察点*/
+			perspective-origin: 0 0;
+		}
+		.box1,.box2,.box3,.box4{
+			display: inline-block;
+			border:solid 1px red;
+			background:yellow;
+			width: 200px;
+			height: 150px;
+			/*设置变换方式*/
+			transform-style:preserve-3d;
+			/*绕x轴旋转*/
+			transform:rotateX(30deg);
+		}
+		.box2{
+			transform:rotateY(30deg);
+		}
+		.box3{
+			transform:rotateZ(30deg);
+		}
+		.box4{
+			transform:rotate3D(2,2,2,30deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="wutai">
+		<div class="box1">盒子1</div>
+		<div class="box2">盒子2</div>
+		<div class="box3">盒子3</div>
+		<div class="box4">盒子4</div>
+	</div>
+</body>
+</html>

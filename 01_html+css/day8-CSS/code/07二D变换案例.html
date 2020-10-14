@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	#img1{
+		margin:30px;
+		border:solid 1px red;
+		display: inline-block;
+		padding:5px;
+	}
+	#img1 img{
+		/*设置变换原点*/
+		transform-origin: 0 0;
+		transform-origin: left top;
+		/*实行3项变换*/
+		transform: rotate(15deg) translateX(20px) scale(0.7,1);
+		/*还是3项变换，但换了顺序，结果就会不同*/
+		/*transform: scale(0.7,1) rotate(15deg) translateX(20px) ;*/
+	}
+	</style>
+</head>
+<body>
+	<div id="img1">
+		<img  src="images/pic3.png" alt="">
+	</div>
+</body>
+</html>

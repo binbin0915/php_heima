@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		@keyframes xuanzhuan{
+			0%{
+				transform: rotate(0deg);
+			}
+			100%{
+				transform: rotate(360deg);
+			}
+		}
+		.fengche{
+			width: 200px;
+			animation-name: xuanzhuan;
+			animation-duration: 1s;
+			animation-timing-function: linear;
+			/*设定动画播放次数:无限次*/
+			animation-iteration-count: infinite;
+			/*设定播放方向：反向，就是从动画的100%变化到0%*/
+			animation-direction: reverse;
+			/*animation-direction: alternate-reverse;*/
+		}
+		.fengche:hover{
+			/*鼠标放上去，动画停止*/
+			animation-play-state: paused;
+		}
+	</style>
+</head>
+<body>
+	<img class="fengche" src="images/dfc.gif" alt="">
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.clear::after{
+			display: block;
+			content: "";
+			clear: both;
+		}
+		.box{
+			width: 250px;
+			height: 200px;
+			background: #F7F6F5;
+			padding:25px 20px 30px 30px;
+		}
+		.box>.top{
+			line-height: 40px;
+			font-size:18px;
+		}
+		.box>.top>.left{
+			width: 100px;
+			height: 40px;
+			float: left;
+			background: #1386EA;
+			color:white;
+			text-align: center;
+		}
+		.box>.top>.right{
+			font-size:12px;
+			text-align: right;
+		}
+		.box>.top>.right>a{
+			color:gray;
+			text-decoration: none;
+		}
+		.box>.top>.right>a>img{
+			vertical-align: middle;
+		}
+		.box>.arrow_down{
+			height: 9px;
+			background: url(images/arrow3.png) 20px 0 no-repeat;
+			margin-bottom:15px;
+		}
+		.box>.product{}
+		.box>.product>a{
+			float: left;
+			width: 100px;
+		}
+		.box>.product>div{
+			float: left;
+		}
+		.box>.product>div>h1{
+			margin:0;
+			font-size: 20px;
+		}
+		.box>.product>div>p{
+			margin:8px 0;
+		}
+		.box>.product>div>p>span{
+			color:red;
+		}
+		.box>.product>div>div{
+			font-size:12px;
+			margin-top:30px;
+			color:gray;
+		}
+		.box>.product>div>div>a{
+			color:gray;
+			text-decoration: none;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="top clear">
+			<div class="left">今日推荐</div>
+			<div class="right">
+				<a href="">更多
+					<img src="images/arrow2.png" alt=""></a> 
+			</div>
+		</div>
+		<div class="arrow_down"></div>
+		<div class="product clear">
+			<a href=""><img src="images/mobile1.png" alt=""></a>
+			<div>
+				<h1>金立M7</h1>
+				<p>价格：<span>&yen;2799-2799</span></p>
+				<p>系统：安卓</p>
+				<div>
+					<a href="">综述</a> |
+					<a href="">参数</a> |
+					<a href="">图片</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

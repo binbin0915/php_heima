@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		table{
+			/*设定单元格的边框线“合并”*/
+			border-collapse: separate;
+			border-collapse: collapse;
+			border-spacing: 2px;/*此时无效*/
+			caption-side: bottom;
+			/*FF中还可以使用left和right*/
+			/*caption-side: left;*/
+			caption-side: top;
+		}
+		table caption{
+			text-align: left;
+		}
+		table td{
+			border:solid 1px red;
+			width: 80px;
+			height: 20px;
+		}
+	</style>
+</head>
+<body>
+	<table border="1" cellspacing="5">
+		<caption>表格标题演示</caption>
+		<tr>
+			<td>单元格1</td>
+			<td>单元格2</td>
+			<td>单元格3</td>
+			<td>单元格4</td>
+		</tr>
+		<tr>
+			<td>单元格1</td>
+			<td>单元格2</td>
+			<td>单元格3</td>
+			<td>单元格4</td>
+		</tr>
+		<tr>
+			<td>单元格1</td>
+			<td>单元格2</td>
+			<td>单元格3</td>
+			<td>单元格4</td>
+		</tr>
+	</table>
+</body>
+</html>

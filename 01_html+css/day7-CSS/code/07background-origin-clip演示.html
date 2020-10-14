@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box1{
+
+			background-image: url(images/girl9.jpg);
+			border:dotted 10px gray;
+			width: 500px;
+			height: 300px;
+			margin: 15px;
+			padding: 15px;
+			/*设置背景范围的起点*/
+			background-origin: padding-box;
+			background-origin: border-box;
+			background-origin: content-box;
+			/*设置裁切区域*/
+			background-clip: content-box;
+			background-clip: padding-box;
+			background-clip: border-box;
+			/*设置背景图大小*/
+			/*background-size: 100px 80px;*/
+			/*background-size: 100px 80px;*/
+			background-size: cover;
+			background-size: contain;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1">内容</div>
+</body>
+</html>

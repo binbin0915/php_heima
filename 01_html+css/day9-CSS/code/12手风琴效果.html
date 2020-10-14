@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			border:solid 1px blue;
+			width: 600px;
+			height: 100px;
+			display: flex;
+		}
+		.box>div{
+			border:1px red solid;
+			margin: 2px;
+			width: 100px;
+			background: yellow;
+			font-size: 14px;
+			transition:
+				width 1s,
+				background 1s linear,
+				font-size 1s
+			;
+		}
+		.box>div:hover{
+			width: 200px;
+			background: orange;
+			font-size: 18px;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div>内容1</div>
+		<div>内容2</div>
+		<div>内容3</div>
+		<div>内容4</div>
+		<div>内容5</div>
+		<div>内容6</div>
+	</div>
+</body>
+</html>

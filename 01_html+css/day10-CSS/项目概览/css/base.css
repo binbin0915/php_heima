@@ -1,0 +1,59 @@
+/*
+* @Author: dhl
+* @Date:   2018-05-11 10:23:05
+* @Last Modified by:   dhl
+* @Last Modified time: 2018-05-14 12:12:57
+*/
+
+/* 作用： 将页面中标签的默认样式统一设置 */
+
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,dl,li,dt,dd,span {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-size: 12px;
+	color: #666560;
+	font-family: "微软雅黑,宋体";
+}
+
+a {
+	text-decoration: none;
+	color: #666560;
+}
+
+a:hover {
+	color: red;
+}
+
+
+i {
+	font-style: normal;
+}
+
+img,input {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+	outline-style: none;
+	vertical-align: middle;
+}
+
+/* 设置主体宽，并居中 */
+.w {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+
+/* 清除浮动 */
+.clearfix::after {
+	 content: "";
+	 display: block;
+	 clear: both;
+	 height: 0px;
+	 line-height: 0px;
+	 visibility: hidden;
+}
+.clearfix {
+	zoom: 1;
+}

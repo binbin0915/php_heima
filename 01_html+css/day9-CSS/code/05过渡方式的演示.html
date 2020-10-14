@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box1{
+			border:solid 1px red;
+			position: relative;
+			width: 600px;
+		}
+		.box1>div{
+			border:solid 1px blue;
+			margin: 5px 2px;
+			width:100px; 
+			position: relative;
+			left:0px;
+		}
+		.box1:hover>div{
+			left:500px;
+		}
+		.box1>div:nth-child(1){
+			transition:left 5s linear;
+		}
+		.box1>div:nth-child(2){
+			transition:left 5s ease;
+		}
+		.box1>div:nth-child(3){
+			transition:left 5s ease-in;
+		}
+		.box1>div:nth-child(4){
+			transition:left 5s ease-out;
+		}
+		.box1>div:nth-child(5){
+			transition:left 5s ease-in-out;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<div>linear</div>
+		<div>ease</div>
+		<div>ease-in</div>
+		<div>ease-out</div>
+		<div>ease-in-out</div>
+	</div>
+</body>
+</html>

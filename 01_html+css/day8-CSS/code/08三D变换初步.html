@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.wutai{
+			width: 500px;
+			height: 300px;
+			margin:50px auto;
+			border:solid 1px blue;
+			/*设置观察距离*/
+			perspective: 800px;
+			/*设置观察点*/
+			perspective-origin: 0 0;
+		}
+		.box1{
+			border:solid 1px red;
+			background:yellow;
+			width: 100px;
+			height: 60px;
+			/*设置变换方式*/
+			transform-style:preserve-3d;
+			/*设置变换：沿z轴移动100px*/
+			transform:translateZ(100px);
+		}
+	</style>
+</head>
+<body>
+	<div class="wutai">
+		<div class="box1">变换盒子</div>
+	</div>
+</body>
+</html>

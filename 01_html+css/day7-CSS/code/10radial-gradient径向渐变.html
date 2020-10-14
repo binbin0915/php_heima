@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+div{
+	width: 200px;
+	height: 100px;
+	margin:5px;
+}
+/*自动形状，自动半径，自动位置，三颜色（红绿蓝）渐变。*/
+.box1{
+	background-image: radial-gradient(red, green, blue);
+}
+/*圆形，自动半径，圆心位置为50px，70px，三颜色（红绿蓝）渐变。*/
+.box2{
+	background-image: radial-gradient(
+		circle at 50px 70px,red, green, blue);
+}
+/*圆形，到最远角，圆心位置在右上角，四颜色（红绿蓝黄）渐变。*/
+.box3{
+	background-image: radial-gradient(circle farthest-corner at right top,red, green, blue, yellow);}
+/*椭圆形，圆心位置在左侧中点，四颜色（红绿蓝黄）渐变到120px。*/
+.box4{
+	background-image: radial-gradient(
+		ellipse 120px 50px at left center,red, green, blue, yellow);}
+	</style>
+</head>
+<body>
+	<div class="box1"></div>
+	<div class="box2"></div>
+	<div class="box3"></div>
+	<div class="box4"></div>
+</body>
+</html>

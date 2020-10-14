@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		@keyframes xuanzhuan{
+			0%{
+				transform: rotateX(-20deg) rotateY(0deg);
+			}
+			100%{
+				transform: rotateX(-20deg) rotateY(360deg);
+			}
+		}
+		.wutai{
+			perspective: 800px;
+			border:solid 3px red;
+			width: 200px;
+			height: 300px;
+			margin:100px auto;
+		}
+		.rongqi{
+			width: 200px;
+			height: 300px;
+			border: solid 1px blue;
+			position: relative;
+			transform-style:preserve-3d;
+			transform: rotateX(-20deg);
+			animation: xuanzhuan 6s linear infinite;
+		}
+		.rongqi:hover{
+			animation-play-state: paused;
+		}
+		.rongqi>img{
+			width: 200px;
+			height: 300px;
+			position: absolute;
+			transform-style: preserve-3d;
+			opacity: 1;/*透明度*/
+		}
+		.rongqi>img:nth-child(1){
+			transform:rotateY(0deg) translateZ(300px);
+		}
+		.rongqi>img:nth-child(2){
+			transform:rotateY(40deg) translateZ(300px);
+		}
+		.rongqi>img:nth-child(3){
+			transform:rotateY(80deg) translateZ(300px);
+		}
+		.rongqi>img:nth-child(4){
+			transform:rotateY(120deg) translateZ(300px);
+		}
+		.rongqi>img:nth-child(5){
+			transform:rotateY(160deg) translateZ(300px);
+		}
+		.rongqi>img:nth-child(6){
+			transform:rotateY(200deg) translateZ(300px);
+		}
+		.rongqi>img:nth-child(7){
+			transform:rotateY(240deg) translateZ(300px);
+		}
+		.rongqi>img:nth-child(8){
+			transform:rotateY(280deg) translateZ(300px);
+		}
+		.rongqi>img:nth-child(9){
+			transform:rotateY(320deg) translateZ(300px);
+		}
+	</style>
+</head>
+<body>
+	<div class="wutai">
+		<div class="rongqi">
+			<img src="images/girl1.jpg" alt="">
+			<img src="images/girl2.jpg" alt="">
+			<img src="images/girl3.jpg" alt="">
+			<img src="images/girl4.jpg" alt="">
+			<img src="images/girl5.jpg" alt="">
+			<img src="images/girl6.jpg" alt="">
+			<img src="images/girl7.jpg" alt="">
+			<img src="images/girl8.jpg" alt="">
+			<img src="images/girl9.jpg" alt="">
+		</div>
+	</div>
+</body>
+</html>

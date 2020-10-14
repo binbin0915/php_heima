@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div:empty{
+			height:30px;
+			background: red;
+		}
+		input:checked{
+			width:100px;
+			height:100px;
+		}
+		input:enabled{
+			background:red;
+		}
+		input:disabled{
+			background: yellow;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<div>123</div>
+	<input type="checkbox">篮球
+	<input type="checkbox">足球
+	<input type="checkbox">乒乓球
+	<input type="checkbox">羽毛球
+	内容：<input type="text">
+	内容：<input type="text" disabled>
+</body>
+</html>

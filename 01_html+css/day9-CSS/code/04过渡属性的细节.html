@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		p{
+			font-size:12px;
+			/*transition:font-size 1s;*/
+			background: red;
+		/*	过渡属性就4个值可用：
+			要参与过渡的属性名  变换时长  变换方式 延迟的时间*/
+			transition: background 1s ease 2s;
+		}
+		p:hover{
+			/*font-size:20px;*/
+			background: yellow;
+		}
+		.box1{
+			width: 100px;
+			height: 50px;
+			border:solid 1px red;
+			background: red;
+			transition-property: width,height,background;
+			transition-duration: 4s,5s, 3s;
+			transition-timing-function: ease,linear,ease-in;
+			/*transition-delay: 0s;*/
+
+			/*另一个写法（复合属性写法）*/
+			transition: 
+				width 4s  ease, 
+				height 5s linear, 
+				background 3s ease-in;
+		}
+		.box1:hover{
+			width: 150px;
+			height: 80px;
+			background: blue;
+		}
+	</style>
+</head>
+<body>
+	<p>
+		文字
+	</p>
+	<div class="box1">
+	
+	</div>
+</body>
+</html>

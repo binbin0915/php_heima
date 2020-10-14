@@ -1,0 +1,878 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>品优购-正品低价-品质保证</title>
+	<meta name="description" content="品优购是一家专业的综合网上购物商城">
+	<meta name="keywords" content="网上购物 网上商城 电子商城 正品品牌 手机电脑 服饰家装">
+	<link rel="icon" href="favicon.ico">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/iconfont/iconfont.css">
+	<style>
+		/*顶部广告条*/
+		#top_ad{
+			height: 80px;
+			background: black;
+		}
+		#top_ad>.w{
+			position: relative;
+		}
+		#top_ad .w .close{
+			position: absolute;
+			right: 5px;
+			top:5px;
+			cursor: pointer;
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			text-align: center;
+			line-height: 15px;
+			background: #505050;
+		}
+
+		/*顶部导航区*/
+		nav.top_nav{
+			height: 30px;
+			background: #e5e5e3;
+			line-height: 30px;
+			overflow: hidden;
+		}
+		nav.top_nav a.reg{
+			color:red;
+		}
+		nav.top_nav ul{
+			float: right;
+		}
+		nav.top_nav ul>li{
+			float: left;
+			/*margin:0 8px;*/
+			color:#cccccc;
+		}
+		nav.top_nav ul>li>a{
+			margin:0 10px;
+		}
+		nav.top_nav ul>li>a>i.icon-xiangxiajiantou{
+			font-size:12px;
+			color: #666560;
+		}
+		/*顶部搜索导航区*/
+		.top_search_nav{
+			height: 150px;
+			border-bottom:2px solid #ca0000;
+		}
+		.top_search_nav .search{
+			padding-top:25px;
+			height: 80px;
+			position: relative;
+			overflow: hidden;
+		}
+		.top_search_nav .search>*{
+			float: left;
+		}
+		.top_search_nav .search>a{
+			padding-bottom:19px;
+		}
+		.top_search_nav .search>input.search_box{
+			margin-left:175px;
+			width: 440px;
+			padding-left:5px;
+			height: 32px;
+			border:1px solid red;
+		}
+		.top_search_nav .search>input.search_btn{
+			width: 60px;
+			height: 34px;
+			background: red;
+		}
+		.top_search_nav .search>input.search_btn{}
+		.top_search_nav .search>i{
+			line-height: 34px;
+			font-size: 18px;
+			color:white;
+			position: relative;
+			left:-35px;
+		}
+		.top_search_nav .search>.gouwuche{
+			width: 188px;
+			height: 32px;
+			border:1px solid #cccccc;
+			margin-left:50px;
+			position: relative;
+			text-align: center;
+			line-height: 32px;
+		}
+		.top_search_nav .search>.gouwuche>.icon-gouwuche{
+			color:red;
+		}
+		.top_search_nav .search>.gouwuche>span{
+			position: relative;
+			top:-14px;
+			display: inline-block;
+			background: red;
+			line-height: 15px;
+			padding:0px 4px;
+			height: 15px;
+			border-radius: 14px 14px 14px 0px;
+			color:white;
+		}
+		.top_search_nav .search>p.hot_search{
+			margin-left:175px;
+			width: 520px;
+		}
+		.top_search_nav .search>p.hot_search>a{
+			margin-right:10px;
+		}
+
+		.top_search_nav .nav{
+			height: 45px;
+		}
+		.top_search_nav .nav>h1{
+			float: left;
+			height: 45px;
+			background: #ca0000;
+			width: 210px;
+			color:white;
+			font-size: 18px;
+			font-weight: bold;
+			text-align: center;
+			line-height: 45px;
+		}
+		.top_search_nav .nav>ul{
+			display: flex;
+			margin-left:225px;
+		}
+		.top_search_nav .nav>ul>li{
+			height: 45px;
+			overflow: hidden;
+			line-height: 50px;
+			padding:0 15px;
+		}
+		.top_search_nav .nav>ul>li>a{
+			font-size: 18px;
+			font-weight: bold;
+		}
+		.top_search_nav>a.duilian_ad{
+			display: block;
+			height: 470px;
+			margin:0 auto;
+			margin-top:1px;
+			overflow: hidden;
+			text-align: center;
+			background: url(uploads/jd_bg.png) center top no-repeat;
+			position: relative;
+		}
+
+		/*主体区*/
+		.main{
+
+			/*background: url(uploads/jd_bg.png) center top no-repeat;*/
+		}
+		/*主体区上部（第一层）*/
+		.main_level1{
+			height: 467px;
+			position: relative;
+		}
+		.main_level1 .ad_left{
+			position: absolute;
+			right: 1202px;
+		}
+		.main_level1 .ad_right{
+			position: absolute;
+			left: 1202px;
+			width: 50px;
+			height: 455px;
+			background: url(uploads/ad_right.png) no-repeat;
+		}
+		.main_level1 .main_l1_left{
+			float: left;
+			box-sizing: border-box;
+			width: 210px;
+			height: 467px;
+			background: #e20000;
+			position: relative;
+			top:-2px;
+			padding:10px 0px;
+			line-height: 30px;
+		}
+
+		.main_level1 .main_l1_left>li{
+			padding:0px 10px;
+		}
+		.main_level1 .main_l1_left>li:hover{
+			background: #ebebeb;
+		}
+		.main_level1 .main_l1_left>li:hover>a{
+			color:red;
+		}
+		.main_level1 .main_l1_left a{
+			color:white;
+		}
+		.main_level1 .main_l1_left a:first-child{
+			float: right;
+		}
+		.main_level1 .main_l1_center{
+			float: left;
+			width: 721px;
+			margin-top:10px;
+			margin-left:8px;
+			position: relative;
+		}
+		.main_level1 .main_l1_center>p{
+			position: absolute;
+			bottom:5px;
+			text-align: center;
+			width: 100%;
+		}
+		.main_level1 .main_l1_center>p>span{
+			display: inline-block;
+			width: 10px;
+			height: 10px;
+			border: 2px solid #ccc;
+			border-radius: 10px;
+			margin:0 5px;
+			cursor:pointer;
+		}
+		.main_level1 .main_l1_center>i{
+			display: none;
+			position: absolute;
+			top:50%;
+			width: 18px;
+			height: 18px;
+			background: url(images/arrow2.png) no-repeat;
+		}
+		.main_level1 .main_l1_center>i:nth-child(1){
+			left:5px;
+			background-position: -10px -12px;
+		}
+		.main_level1 .main_l1_center>i:nth-child(2){
+			right:5px;
+			background-position: -62px -12px;
+		}
+		.main_level1 .main_l1_center:hover>i{
+			display: inline-block;
+			cursor:pointer;
+		}
+		/*主体第1层右侧*/
+		.main_level1 .main_l1_right{
+			float: right;
+			width: 250px;
+			height: 453px;
+			margin-top:10px;
+			border: 1px solid #ccc;
+			background: white;
+		}
+		.main_l1_right .main_right1{
+			padding:0px 10px;
+			line-height: 30px;
+		}
+		.main_l1_right .main_right1>a{
+			float: right;
+		}
+		.main_l1_right .main_right2{
+			border-top:1px dashed #cccccc;
+			border-bottom:1px solid #cccccc;
+			padding:8px 15px;
+			line-height: 22px;
+		}
+		.main_l1_right .main_right3{
+			display: flex;
+			flex-wrap: wrap;
+		}
+		.main_l1_right .main_right3>li{
+			width: 62px;
+			height: 70px;
+			border-right:1px solid #cccccc;
+			border-bottom:1px solid #cccccc;
+			text-align: center;
+		}
+		.main_l1_right .main_right3>li:nth-child(4n+4){
+			width: 61px;
+			border-right:none;
+		}
+		.main_l1_right .main_right3>li>span{
+			display: inline-block;
+			width: 32px;
+			height: 32px;
+			margin-top:5px;
+			background: url(images/icons.png) -12px -10px no-repeat;
+		}
+		.main_l1_right .main_right3>li:nth-child(1)>span{
+			background-position: -12px -10px;
+		}
+		.main_l1_right .main_right3>li:nth-child(2)>span{
+			background-position: -75px -10px;
+		}
+		.main_l1_right .main_right3>li:nth-child(3)>span{
+			background-position: -138px -10px;
+		}
+		.main_l1_right .main_right3>li:nth-child(4)>span{
+			background-position: -201px -10px;
+		}
+		.main_l1_right .main_right3>li:nth-child(5)>span{
+			background-position: -12px -83px;
+		}
+		.main_l1_right .main_right3>li>a{
+			display: block;
+			text-align: center;
+			margin-top:5px;
+		}
+		.main_l1_right>a{
+			padding-top:7px;
+			display: inline-block;
+		}
+		/*主体区（第2层）*/
+		.main_level2{
+			margin: 15px auto;
+		}
+		.main_level2>.main_l2_left{
+			float: left;
+			width: 200px;	
+			height: 163px;	
+			background: #604f4d;
+			text-align: center;
+		}
+		.main_level2>.main_l2_left>a{
+			display: block;
+			margin-top:25px;
+			margin-bottom:25px;
+		}
+		.main_level2>.main_l2_left>p>a{
+			font-size:18px;
+			font-weight: bold;
+			color:white;
+		}
+		.main_level2>ul{
+			float: left;
+		}
+		.main_level2>ul li{
+			float: left;
+			width: 250px;
+			background: #ebebeb;
+		}
+		.main_level2>ul li a{
+			display: block;
+			margin: 10px 0px;
+			border-right: 1px solid #ccc;
+		}
+		.main_level2>ul li:last-child a{
+			border-right: 1px solid #ebebeb;
+		}
+		/*主体区(第3层)*/
+		.main_level3{
+		}
+		.main_level3 .main_l3_header{
+			border-bottom:2px solid red;
+		}
+		.main_level3 .list_header{
+			float: left;
+			font-weight: bold;
+		}
+		.main_level3 .main_l3_header{
+			height: 35px;
+			line-height: 35px;
+			text-align: right;
+		}
+		.main_level3 .main_l3_header a{
+			margin:0 7px;
+		}
+		.main_level3 .main_l3_list{
+			display: flex;
+			overflow: hidden;
+		}
+		.main_level3 .main_l3_list li{
+			height: 360px;
+			width: 221px;
+			border-right:1px solid red;
+		}
+		.main_level3 .main_l3_list li:nth-child(1){
+			width: 187px;
+			border-right:none;
+		}
+		.main_level3 .main_l3_list li:nth-child(2){
+			width: 329px;
+			border-right:none;
+			margin-left: 18px;
+		}
+		.main_level3 .main_l3_list li:last-child{
+			border-right:0px solid #ccc;
+		}
+		.main_level3 .main_l3_list>li>a{
+			display:block;
+		}
+		.main_level3 .main_l3_list>li>a.red_btm{
+			border-bottom:1px solid red;
+		}
+		.main_level3 .main_l3_left{
+			padding: 27px 3px;
+			display: flex;
+			flex-wrap: wrap;
+		}
+		.main_level3 .main_l3_left a{
+			width: 77px;
+			margin-right: 10px;
+			border-bottom: 1px solid #ccc;
+			text-align: center;
+			line-height: 25px;
+		}
+		/*主体区*/
+		/*底部区*/
+		footer{
+			margin-top:10px;
+			background: #e0dedb;
+		}
+		footer .footer1{
+			padding:25px 0 15px;
+			display: flex;
+		}
+		footer .footer1 li{
+			padding-left:35px;
+			width: 205px;
+			line-height: 25px;
+		}
+		footer .footer1 li .icon{
+			float: left;
+			width: 54px;
+			height: 50px;
+			margin-right: 5px;
+			background: url(images/icons.png) no-repeat;
+		}
+		footer .footer1 li:nth-child(1) .icon{
+			background-position: -253px -3px;
+		}
+		footer .footer1 li:nth-child(2) .icon{
+			background-position: -253px -54px;
+		}
+		footer .footer1 li:nth-child(3) .icon{
+			background-position: -253px -106px;
+		}
+		footer .footer1 li:nth-child(4) .icon{
+			background-position: -253px -157px;
+		}
+		footer .footer1 li:nth-child(5) .icon{
+			background-position: -253px -208px;
+		}
+		footer .footer1 li h4{
+			font-size: 16px;
+		}
+		footer .footer1 li p{}
+		footer .footer2{
+			border-top:1px solid #cccccc;
+			border-bottom:1px solid #cccccc;
+			padding:15px 0 5px;
+			display: flex;
+		}
+		footer .footer2 li{
+			padding-left:35px;
+			width: 165px;
+			line-height: 20px;
+		}
+		footer .footer2 li>h4{
+			font-size: 16px;
+		}
+		footer .footer2 li>a{
+			display: block;
+		}
+		footer .footer3{
+			line-height: 25px;
+			text-align: center;
+			padding:10px 0 20px;
+		}
+	</style>
+</head>
+<body>
+	<div id="top_ad">
+		<div class="w">
+			<img src="uploads/top_header.jpg" alt="">
+			<a class="close" title="关闭此广告"><img src="uploads/矩形8.png" alt=""></a>
+		</div>
+	</div>
+	<nav class="top_nav">
+		<div class="w">
+			品优购欢迎您!
+			<a href="">请登录</a>
+			<a href="" class="reg">免费注册</a>
+			<ul>
+				<li><a href="">我的订单</a> | </li>
+				<li><a href="">我的订单<i class="iconfont icon-xiangxiajiantou"></a></i> | </li>
+				<li><a href="">我的订单</a> | </li>
+				<li><a href="">我的订单</a> | </li>
+				<li><a href="">我的订单</a> | </li>
+				<li><a href="">我的订单<i class="iconfont icon-xiangxiajiantou"></i></a> | </li>
+				<li><a href="">我的订单<i class="iconfont icon-xiangxiajiantou"></i></a> | </li>
+				<li><a href="">我的订单<i class="iconfont icon-xiangxiajiantou"></i></a></li>
+			</ul>	
+		</div>
+	</nav>
+	<div class="top_search_nav">
+		<div class="w">
+			<div class="search clearfix">
+				<a href="#" class="logo" alt="logo"><img src="images/logo.png" alt=""></a>
+				<input type="text" class="search_box" placeholder="黑鲨手机">
+				<input type="submit" class="search_btn" value="">
+				<i class="iconfont icon-sousuo"></i>
+				<div class="gouwuche">
+					<b class="iconfont icon-gouwuche"></b>
+					<a href="#">我的购物车&gt;</a>
+					<span>8</span>
+				</div>
+				<p class="hot_search">
+					<a href="#">优惠券首发</a>
+					<a href="#">优惠券首发</a>
+					<a href="#">优惠券首发</a>
+					<a href="#">优惠券首发</a>
+					<a href="#">优惠券首发</a>
+					<a href="#">优惠券首发</a>
+					<a href="#">优惠券首发</a>
+				</p>
+			</div>
+			<div class="nav clearfix">
+				<h1>全部商品分类</h1>
+				<ul>
+					<li><a href="">服装城</a></li>
+					<li><a href="">家用电器</a></li>
+					<li><a href="">手机数码</a></li>
+					<li><a href="">图书音像</a></li>
+					<li><a href="">生鲜超市</a></li>
+					<li><a href="">日用百货</a></li>
+					<li><a href="">服饰美妆</a></li>
+				</ul>
+			</div>
+		</div>
+		<a href="#" class="duilian_ad">
+			
+		</a>
+	</div>
+	<div class="main">
+		<div class="w">
+			<div class="main_level1 clearfix">
+				<!-- <a href="#" class="ad_left"><img src="uploads/ad_left.png" alt=""></a>
+				<a href="#" class="ad_right"><img src="uploads/ad_right.png" alt=""></a> -->
+				<ul class="main_l1_left">
+					<li>
+						<a href=""><img src="uploads/disabled-next.png" height="12"></a>
+						<a href="">家用电器</a>
+					</li>
+					<li>
+						<a href=""><img src="uploads/disabled-next.png" height="12"></a>
+						<a href="">家用电器</a>
+					</li>
+					<li>
+						<a href=""><img src="uploads/disabled-next.png" height="12"></a>
+						<a href="">家用电器</a>
+					</li>
+					<li>
+						<a href=""><img src="uploads/disabled-next.png" height="12"></a>
+						<a href="">家用电器</a>
+					</li>
+					<li>
+						<a href=""><img src="uploads/disabled-next.png" height="12"></a>
+						<a href="">家用电器</a>
+					</li>
+					<li>
+						<a href=""><img src="uploads/disabled-next.png" height="12"></a>
+						<a href="">家用电器</a>
+					</li>
+					<li>
+						<a href=""><img src="uploads/disabled-next.png" height="12"></a>
+						<a href="">家用电器</a>
+					</li>
+					<li>
+						<a href=""><img src="uploads/disabled-next.png" height="12"></a>
+						<a href="">家用电器</a>
+					</li>
+					<li>
+						<a href=""><img src="uploads/disabled-next.png" height="12"></a>
+						<a href="">家用电器</a>
+					</li>
+					<li>
+						<a href=""><img src="uploads/disabled-next.png" height="12"></a>
+						<a href="">家用电器</a>
+					</li>
+					<li>
+						<a href=""><img src="uploads/disabled-next.png" height="12"></a>
+						<a href="">家用电器</a>
+					</li>
+					<li>
+						<a href=""><img src="uploads/disabled-next.png" height="12"></a>
+						<a href="">家用电器</a>
+					</li>
+					<li>
+						<a href=""><img src="uploads/disabled-next.png" height="12"></a>
+						<a href="">家用电器</a>
+					</li>
+					<li>
+						<a href=""><img src="uploads/disabled-next.png" height="12"></a>
+						<a href="">家用电器</a>
+					</li>
+					<li>
+						<a href=""><img src="uploads/disabled-next.png" height="12"></a>
+						<a href="">家用电器</a>
+					</li>
+				</ul>
+				<div class="main_l1_center">
+					<i></i>
+					<i></i>
+					<a href=""><img src="./uploads/banner.jpg" alt=""></a>
+					<p><span></span><span></span><span></span><span></span><span></span><span></span></p>
+				</div>
+				<div class="main_l1_right">
+					<div class="main_right1 clearfix">
+						<a href="#">更多&gt;</a>
+						<b>品优快报</b>
+					</div>
+					<ul class="main_right2">
+						<li><a href="">[特惠]荣耀超级新品日</a></li>
+						<li><a href="">[特惠]荣耀超级新品日</a></li>
+						<li><a href="">[特惠]荣耀超级新品日</a></li>
+						<li><a href="">[特惠]荣耀超级新品日</a></li>
+						<li><a href="">[特惠]荣耀超级新品日</a></li>
+					</ul>
+					<ul class="main_right3">
+						<li>
+							<span></span>
+							<a href="#">话费</a>
+						</li>
+						<li>
+							<span></span>
+							<a href="#">话费</a>
+						</li>
+						<li>
+							<span></span>
+							<a href="#">话费</a>
+						</li>
+						<li>
+							<span></span>
+							<a href="#">话费</a>
+						</li>
+						<li>
+							<span></span>
+							<a href="#">话费</a>
+						</li>
+						<li>
+							<span></span>
+							<a href="#">话费</a>
+						</li>
+						<li>
+							<span></span>
+							<a href="#">话费</a>
+						</li>
+						<li>
+							<span></span>
+							<a href="#">话费</a>
+						</li>
+						<li>
+							<span></span>
+							<a href="#">话费</a>
+						</li>
+						<li>
+							<span></span>
+							<a href="#">话费</a>
+						</li>
+						<li>
+							<span></span>
+							<a href="#">话费</a>
+						</li>
+						<li>
+							<span></span>
+							<a href="#">话费</a>
+						</li>
+					</ul>
+					<a href="#"><img src="uploads/ad.jpg" alt=""></a>
+				</div>
+			</div>
+			<div class="main_level2 clearfix">
+				<div class="main_l2_left">
+					<a href="#"><img src="images/clock.png" alt=""></a>
+					<p><a href="#">今日推荐</a></p>
+				</div>
+				<ul>
+					<li><a href="#"><img src="uploads/re-img1.jpg" alt=""></a></li>
+					<li><a href="#"><img src="uploads/re-img1.jpg" alt=""></a></li>
+					<li><a href="#"><img src="uploads/re-img1.jpg" alt=""></a></li>
+					<li><a href="#"><img src="uploads/re-img1.jpg" alt=""></a></li>
+				</ul>
+			</div>
+			<div class="main_level3">
+				<div class="main_l3_header clearfix">
+					<span class="list_header">家用电器</span>
+					<a href="#">大家电</a> |
+					<a href="#">大家电</a> |
+					<a href="#">大家电</a> |
+					<a href="#">大家电</a> |
+					<a href="#">大家电</a> |
+					<a href="#">大家电</a> |
+					<a href="#">大家电</a>
+				</div>
+				<ul class="main_l3_list">
+					<li>
+						<div class="main_l3_left">
+							<a href="#">节能补贴</a>
+							<a href="#">节能补贴</a>
+							<a href="#">节能补贴</a>
+							<a href="#">节能补贴</a>
+							<a href="#">节能补贴</a>
+							<a href="#">节能补贴</a>
+						</div>
+						<a href="#"><img src="uploads/floor-1-1.png" alt=""></a>
+					</li>
+					<li><a href="#"><img src="uploads/floor-1-b01.png" alt=""></a></li>
+					<li>
+						<a href="#" class="red_btm"><img src="uploads/floor-1-2.png" alt=""></a>
+						<a href="#"><img src="uploads/floor-1-3.png" alt=""></a>
+					</li>
+					<li>
+						<a href="#"><img src="uploads/floor-1-4.png" alt=""></a>
+					</li>
+					<li>
+						<a href="#" class="red_btm"><img src="uploads/floor-1-5.png" alt=""></a>
+						<a href="#"><img src="uploads/floor-1-6.png" alt=""></a>
+					</li>
+				</ul>
+			</div>
+			<div class="main_level3">
+				<div class="main_l3_header clearfix">
+					<span class="list_header">家用电器</span>
+					<a href="#">大家电</a> |
+					<a href="#">大家电</a> |
+					<a href="#">大家电</a> |
+					<a href="#">大家电</a> |
+					<a href="#">大家电</a> |
+					<a href="#">大家电</a> |
+					<a href="#">大家电</a>
+				</div>
+				<ul class="main_l3_list">
+					<li>
+						<div class="main_l3_left">
+							<a href="#">节能补贴</a>
+							<a href="#">节能补贴</a>
+							<a href="#">节能补贴</a>
+							<a href="#">节能补贴</a>
+							<a href="#">节能补贴</a>
+							<a href="#">节能补贴</a>
+						</div>
+						<a href="#"><img src="uploads/floor-1-1.png" alt=""></a>
+					</li>
+					<li><a href="#"><img src="uploads/floor-1-b01.png" alt=""></a></li>
+					<li>
+						<a href="#" class="red_btm"><img src="uploads/floor-1-2.png" alt=""></a>
+						<a href="#"><img src="uploads/floor-1-3.png" alt=""></a>
+					</li>
+					<li>
+						<a href="#"><img src="uploads/floor-1-4.png" alt=""></a>
+					</li>
+					<li>
+						<a href="#" class="red_btm"><img src="uploads/floor-1-5.png" alt=""></a>
+						<a href="#"><img src="uploads/floor-1-6.png" alt=""></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="w">
+			<ul class="footer1">
+				<li>
+					<div class="icon"></div>
+					<h4>正品保障</h4>
+					<p>正品保障，提供发票</p>
+				</li>
+				<li>
+					<div class="icon"></div>
+					<h4>正品保障</h4>
+					<p>正品保障，提供发票</p>
+				</li>
+				<li>
+					<div class="icon"></div>
+					<h4>正品保障</h4>
+					<p>正品保障，提供发票</p>
+				</li>
+				<li>
+					<div class="icon"></div>
+					<h4>正品保障</h4>
+					<p>正品保障，提供发票</p>
+				</li>
+				<li>
+					<div class="icon"></div>
+					<h4>正品保障</h4>
+					<p>正品保障，提供发票</p>
+				</li>
+			</ul>
+			<ul class="footer2">
+				<li>
+					<h4>购物指南</h4>
+					<a href="#">购物流程</a>
+					<a href="#">购物流程</a>
+					<a href="#">购物流程</a>
+					<a href="#">购物流程</a>
+					<a href="#">购物流程</a>
+					<a href="#">购物流程</a>
+				</li>
+				<li>
+					<h4>购物指南</h4>
+					<a href="#">购物流程</a>
+					<a href="#">购物流程</a>
+					<a href="#">购物流程</a>
+					<a href="#">购物流程</a>
+					<a href="#">购物流程</a>
+					<a href="#">购物流程</a>
+				</li>
+				<li>
+					<h4>购物指南</h4>
+					<a href="#">购物流程</a>
+					<a href="#">购物流程</a>
+					<a href="#">购物流程</a>
+					<a href="#">购物流程</a>
+					<a href="#">购物流程</a>
+					<a href="#">购物流程</a>
+				</li>
+				<li>
+					<h4>购物指南</h4>
+					<a href="#">购物流程</a>
+					<a href="#">购物流程</a>
+					<a href="#">购物流程</a>
+					<a href="#">购物流程</a>
+					<a href="#">购物流程</a>
+					<a href="#">购物流程</a>
+				</li>
+				<li>
+					<h4>购物指南</h4>
+					<a href="#">购物流程</a>
+					<a href="#">购物流程</a>
+					<a href="#">购物流程</a>
+					<a href="#">购物流程</a>
+					<a href="#">购物流程</a>
+					<a href="#">购物流程</a>
+				</li>
+				<li>
+					<h4>优品购物指南</h4>
+					<a href="#"><img src="images/wx_cz.jpg" alt=""></a>
+					<a href="#">优品购物指南</a>
+				</li>
+			</ul>
+			<div class="footer3">
+				<a href="#">关于我们</a> |
+				<a href="#">关于我们</a> |
+				<a href="#">关于我们</a> |
+				<a href="#">关于我们</a> |
+				<a href="#">关于我们</a> |
+				<a href="#">关于我们</a> |
+				<a href="#">关于我们</a> |
+				<a href="#">关于我们</a> |
+				<a href="#">关于我们</a> |
+				<a href="#">关于我们</a> |
+				<a href="#">关于我们</a> |
+				<a href="#">关于我们</a> |
+				<a href="#">关于我们</a> |
+				<a href="#">关于我们</a>
+				<br>
+				<a href="#">关于我们</a> |
+				<a href="#">关于我们</a> |
+				<a href="#">关于我们</a> |
+				<a href="#">关于我们</a> |
+				<a href="#">关于我们</a> |
+				<a href="#">关于我们</a>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
