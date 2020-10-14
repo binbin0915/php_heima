@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>网页标题</title>
+	<meta name="keywords" content="关键字列表" />
+	<meta name="description" content="网页描述" />
+	<link rel="stylesheet" type="text/css" href="" />
+	<style type="text/css"></style>
+	<script type="text/javascript">
+		/*
+					第一列	第二列	第三列	第四列......
+			第一行：1X1=1
+			第二行：1X2=2	2X2=4
+			第三行；1X3=3	2X3=6	3X3=9
+			第四行：1X4=4	2X4=8	3X4=12	4X4=16
+			......
+			找规律：1,列和行数相同，2,列X行=列数*行数
+		*/
+		for(var i=1;i<=9;i++){//i行数【i=3】
+			for(var j=1;j<=i;j++){//j列数【j=4】
+				document.write(j+"X"+i+"="+i*j+" ");/*
+														1X1=1 <br />
+														1X2=2 2X2=4 <br />
+														1X3=3 2X3=6 3X3=9 <br />
+													*/
+				
+			}
+			document.write("<br />");
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>
