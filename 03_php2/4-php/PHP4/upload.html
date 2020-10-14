@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>文件上传原理</title>
+</head>
+<body>
+<form name="form1" method="post" enctype="multipart/form-data" action="upload.php">
+上传图片1：<input type="file" name="uploadFile[]"><br>
+上传图片2：<input type="file" name="uploadFile[]"><br>
+上传图片3：<input type="file" name="uploadFile[]"><br>
+<input type="submit" value="提交">
+<input type="hidden" name="token" value="upload">
+</form>
+</body>
+</html>

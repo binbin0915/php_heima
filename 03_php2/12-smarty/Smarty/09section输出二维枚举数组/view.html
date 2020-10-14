@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Smarty模板引擎</title>
+<style type="text/css">
+body{background-color: #99ff00;}
+</style>
+</head>
+<body>
+
+<h2>section循环二维枚举数组</h2>
+<table border="1">
+	<{section name='i' loop=$arrs}>
+	<tr>
+		<{section name='j' loop=$arrs[i]}>
+		<td><{$arrs[i][j]}></td>
+		<{/section}>
+	</tr>
+	<{/section}>
+</table>

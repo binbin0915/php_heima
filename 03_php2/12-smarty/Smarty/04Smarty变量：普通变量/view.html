@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Smarty模板引擎</title>
+<style type="text/css">
+body{background-color: #99ff00;}
+</style>
+</head>
+<body>
+姓名：<{$name}><br>
+年龄：<{$age}><br>
+婚否：<{$isMarried}><br>
+工资：<{$salary}><br>
+手机：<{$arr[0]}>或<{$arr.0}><br>
+座机：<{$arr[1]}>或<{$arr.1}><br>
+班级：<{$obj->title}><br>
+方法：<{$obj->showInfo()}>

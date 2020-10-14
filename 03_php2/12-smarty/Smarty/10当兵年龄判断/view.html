@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Smarty模板引擎</title>
+<style type="text/css">
+body{background-color: #99ff00;}
+</style>
+</head>
+<body>
+
+<h2>判断当兵的年龄</h2>
+<{if $smarty.get.age gte 18 and $smarty.get.age lte 23}>
+<font color='blue'>你符合当兵的年龄要求！</font>
+<{else}>
+<font color='red'>你干嘛干嘛去！</font>
+<{/if}>

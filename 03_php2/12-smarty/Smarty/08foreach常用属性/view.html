@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Smarty模板引擎</title>
+<style type="text/css">
+body{background-color: #99ff00;}
+</style>
+</head>
+<body>
+
+<table border="1">
+	<{foreach $arr as $value}>
+	<{if $value@first}>
+	<tr>
+		<th>值</th>
+		<th>索引</th>
+		<th>从0开始计数</th>
+		<th>从1开始计数</th>
+		<th>是否为第1次循环</th>
+		<th>是否为最后1次循环</th>
+		<th>循环总次数</th>
+	</tr>
+	<{/if}>
+	<tr>
+		<td><{$value}></td>
+		<td><{$value@key}></td>
+		<td><{$value@index}></td>
+		<td><{$value@iteration}></td>
+		<td><{$value@first}></td>
+		<td><{$value@last}></td>
+		<td><{if $value@last}><{$value@total}><{/if}></td>
+	</tr>
+	<{/foreach}>
+</table>

@@ -1,0 +1,14 @@
+[24-Jul-2018 17:49:58 PRC] PHP Notice:  Undefined variable: v1 in H:\itcast\class\bj-php-69\php_base\phpbase-day5\code\16error-log.php on line 10
+[24-Jul-2018 17:49:58 PRC] PHP Warning:  include(./no-this-file.php): failed to open stream: No such file or directory in H:\itcast\class\bj-php-69\php_base\phpbase-day5\code\16error-log.php on line 13
+[24-Jul-2018 17:49:58 PRC] PHP Warning:  include(): Failed opening './no-this-file.php' for inclusion (include_path='.;c:\php\includes; h:\itcast') in H:\itcast\class\bj-php-69\php_base\phpbase-day5\code\16error-log.php on line 13
+[24-Jul-2018 17:49:58 PRC] PHP Fatal error:  Uncaught Error: Call to undefined function raund() in H:\itcast\class\bj-php-69\php_base\phpbase-day5\code\16error-log.php:16
+Stack trace:
+#0 {main}
+  thrown in H:\itcast\class\bj-php-69\php_base\phpbase-day5\code\16error-log.php on line 16
+[24-Jul-2018 17:51:22 PRC] PHP Notice:  Undefined variable: v1 in H:\itcast\class\bj-php-69\php_base\phpbase-day5\code\16error-log.php on line 10
+[24-Jul-2018 17:51:22 PRC] PHP Warning:  include(./no-this-file.php): failed to open stream: No such file or directory in H:\itcast\class\bj-php-69\php_base\phpbase-day5\code\16error-log.php on line 13
+[24-Jul-2018 17:51:22 PRC] PHP Warning:  include(): Failed opening './no-this-file.php' for inclusion (include_path='.;c:\php\includes; h:\itcast') in H:\itcast\class\bj-php-69\php_base\phpbase-day5\code\16error-log.php on line 13
+[24-Jul-2018 17:51:22 PRC] PHP Fatal error:  Uncaught Error: Call to undefined function raund() in H:\itcast\class\bj-php-69\php_base\phpbase-day5\code\16error-log.php:16
+Stack trace:
+#0 {main}
+  thrown in H:\itcast\class\bj-php-69\php_base\phpbase-day5\code\16error-log.php on line 16
