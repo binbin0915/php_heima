@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- 设置网页的标题小图标 -->
+	<link rel="icon" href="favicon.ico">
+	<link rel="stylesheet" href="css/init.css">
+	<link rel="stylesheet" href="iconfont/iconfont.css">
+	<style>
+		body{
+			min-width: 1200px;
+		}
+		/*顶部广告条*/
+		.top_ad{
+			background:url(uploads/top_header.jpg) center center no-repeat black;
+			height: 80px;
+		}
+		.top_ad>.w{
+			text-align: right;
+			padding-top:5px;
+		}
+		.top_ad>.w>a{
+			margin-right:5px;
+		}
+		.top_ad>.w>a>img{
+			display: inline-block;
+		}
+		/*主导航条的实现*/
+		.top_nav{
+			line-height: 30px;
+			background: #e5e5e3;
+		}
+		.top_nav>.w{
+			height: 30px;
+			/*border:solid 1px red;*/
+		}
+		.top_nav>.w>.left{
+			float: left;
+		}
+		.top_nav>.w>.left>a.reg{
+			color:red;
+		}
+		.top_nav>.w>.right{
+			float: right;
+			color:#cccccc;
+		}
+		.top_nav>.w>.right>a{
+			padding:0 5px;
+		}
+		.top_nav>.w>.right>a:hover>i{
+			color:red;
+		}
+
+		/*logo区的实现*/
+		.logo_search{
+			height: 105px;
+			/*border:solid 1px red;*/
+		}
+		.logo_search .left{
+			width: 210px;
+			float:left;
+		}
+		.logo_search .left a{
+			display: block;
+			margin-top:22px;
+		}
+		.logo_search .center{
+			float: left;
+			width: 525px;
+			margin-top:22px;
+			margin-left:180px;
+		}
+		.logo_search .center input{
+			float: left;
+			border:solid 1px red;
+			height: 32px;
+		}
+		.logo_search .center input[type='text']{
+			padding-left:8px;
+			width: 437px;
+			height: 30px;
+		}
+		.logo_search .center input[type='submit']{
+			width: 60px;
+			background-color: red;
+			cursor:pointer;
+		}
+		.logo_search .center>.clear>i{
+			float: left;
+			position: relative;
+			left:-38px;
+			color:white;
+			line-height: 30px;
+			cursor:pointer;
+		}
+		.logo_search .center p a{
+			padding:0 5px;
+		}
+		.logo_search .right{
+			float: left;
+			width: 188px;
+			height: 30px;
+			margin-top:22px;
+			border:solid 1px #cccccc;
+			margin-left:35px;
+			line-height: 30px;
+			text-align: center;
+			position: relative;
+		}
+		.logo_search .right i.icon1{
+			color:red;
+		}
+		.logo_search .right i.icon2{
+			display: inline-block;
+			transform:rotate(-90deg);
+			font-size: 12px;
+		}
+		.logo_search .right>span{
+			position: absolute;
+			left:145px;
+			top:-5px;
+			background-color: red;
+			line-height: 15px;
+			padding:0 4px;
+			color:white;
+			border-radius: 10px 10px 10px 0;
+		}
+
+		/*商品分类区的实现*/
+		.nav2{
+			height: 45px;
+			border-bottom:solid 2px #ca0000;
+			/*overflow: hidden;*/
+		}
+		.nav2>.w{
+			height: 45px;
+			/*background-color: pink;*/
+			line-height: 45px;
+		}
+		.nav2>.w>.left{
+			float: left;
+			width: 210px;
+			background-color: #ca0000;
+			color:white;
+			font-size: 18px;
+			font-weight: bold;
+			text-align: center;
+		}
+		.nav2>.w>.right{
+			float: left;
+			padding-left:35px;
+		}
+		.nav2>.w>.right>li{
+			float: left;
+			padding-right:25px;
+		}
+		.nav2>.w>.right>li>a{
+			font-size: 18px;
+			font-weight: bold;
+		}
+		.nav2>a{
+			display: block;
+			text-align: center;
+			background: url(uploads/jd_bg.png) center center no-repeat;
+			height: 470px;
+			position: relative;
+		}
+		/*主体1区*/
+		.main1{
+			height: 465px;
+			position: relative;
+			overflow: hidden;
+		}
+		.main1>.left{
+			float: left;
+			width: 210px;
+			height: 467px;
+			background-color: #e20000;
+			position: relative;
+			top:-2px;
+		}
+		.main1>.right{
+			float: right;
+			width: 250px;
+			height: 453px;
+			border:solid 1px gray;
+			margin-top:10px;
+			background-color: white;
+		}
+		.main1>.right>.right1{
+			background:gray;
+			height: 160px;
+		}
+		.main1>.right>.right2{
+			margin:4px 0px;
+			height: 210px;
+		}
+		.main1>.right>.right2>li{
+			float: left;
+			width: 62px;
+			height: 69px;
+			border-right:1px solid gray;
+			border-bottom:1px solid gray;
+		}
+		.main1>.right>.right2>li:nth-child(4n){
+			width:61px;
+			border-right:0px;
+		}
+		.main1>.right>.right2>li>a{
+			display: block;
+			text-align: center;
+		}
+		.main1>.right>.right2>li>a>span{
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			margin:8px 0 5px;
+			background: url(images/icons.png) no-repeat;
+		}
+		.main1 .right2>li:nth-child(1)>a>span{
+			background-position: -16px -10px;
+		}
+		.main1 .right2>li:nth-child(2)>a>span{
+			background-position: -77px -10px;
+		}
+		.main1 .right2>li:nth-child(3)>a>span{
+			background-position: -139px -10px;
+		}
+		.main1 .right2>li:nth-child(4)>a>span{
+			background-position: -202px -10px;
+		}
+		.main1 .right2>li:nth-child(5)>a>span{
+			background-position: -16px -80px;
+		}
+		.main1>.right>.right2>li>a>p{
+		}
+
+		.main1>.right>.right3{
+			height: 75px;
+			background: pink;
+		}
+
+		.main1>.center{
+			float: left;
+			margin-top:10px;
+			margin-left:7px;
+		}
+		/*主体2区*/
+		.main2{
+			margin:15px 0px;
+		}
+		.main2>.left{
+			float: left;
+			width: 200px;
+			height: 163px;
+			background-color: #604f4d;
+		}
+		.main2>.left>img{
+			margin:20px auto 25px;
+		}
+		.main2>.left>p{
+			font-size: 18px;
+			font-weight: bold;
+			text-align: center;
+			color:white;
+		}
+
+		.main2>.right{
+			float: left;
+			width: 1000px;
+			height: 163px;
+			box-sizing: border-box;
+			padding:9px 0;
+			background-color: #ebebeb;
+			column-width: 248px;
+			column-gap: 2px;
+			column-rule: 1px solid gray;
+		}
+		/*一点扩展内容 begin*/
+		.main2 .main2-right{
+			background-color: #ebebeb;
+			height: 163px;
+			box-sizing: border-box;
+			padding:9px 0;
+		}
+		.main2 .main2-right img{
+			margin-left:1px;
+			display: inline-block;
+			border-right: solid 1px gray;
+		}
+		.main2 .main2-right img:last-child{
+			border-right:none;
+		}
+		/*一点扩展内容 end*/
+
+
+		/*主体3区*/
+		.main3{
+			line-height: 3em;
+		}
+		.main3>.main3a{
+			border-bottom:solid 2px red;
+		}
+		.main3>.main3a>a>b{
+			font-weight: bold;
+		}
+		.main3 .main3a .right{
+			float: right;
+		}
+		.main3 .main3a .right a{
+			padding: 0 6px;
+		}
+		.main3>.main3b{
+			height: 360px;
+			
+		}
+		.main3>.main3b>div{
+			height: 360px;
+			width: 221px;
+			float: left;
+			border-right:1px solid red;
+		}
+		.main3>.main3b>div:nth-child(1){
+			width: 187px;
+			border-right: none;
+		}
+		.main3>.main3b>div:nth-child(1)>ul{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			margin-bottom:22px;
+		}
+		.main3>.main3b>div:nth-child(1)>ul>li{
+			width: 90px;
+			border-bottom:solid 1px gray;
+			text-align: center;
+		}
+		.main3>.main3b>div:nth-child(2){
+			width: 329px;
+			margin-left:18px;
+			border-right: none;
+		}
+		.main3>.main3b>div .btmLine{
+			border-bottom:solid 1px red;
+		}
+		.main3>.main3b>div:nth-child(5){
+			border-right: none;
+		}
+		.main4{}
+		footer{
+			background-color: #e0dedb;
+		}
+		footer .foot1{
+			height: 70px;
+			padding-top:40px;
+			border-bottom: 1px solid #cccccc;
+			display: flex;
+		}
+		footer .foot1>div{
+			width: 198px;
+			height: 70px;
+			margin-left:40px;
+		}
+		footer .foot1>div>span{
+			display: inline-block;
+			width: 52px;
+			height: 52px;
+			float: left;
+			background: url(images/icons.png) no-repeat;
+		}
+		footer .foot1>div:nth-child(1)>span{
+			background-position: -253px -1px;
+		}
+		footer .foot1>div:nth-child(2)>span{
+			background-position: -253px -52px;
+		}
+		footer .foot1>div:nth-child(3)>span{
+			background-position: -255px -103px;
+		}
+		footer .foot1>div:nth-child(4)>span{
+			background-position: -256px -155px;
+		}
+		footer .foot1>div:nth-child(5)>span{
+			background-position: -256px -206px;
+		}
+		footer .foot1>div>h3{
+			float: left;
+			width: 145px;
+			margin:5px 0 8px;
+			font-size: 16px;
+			font-weight: bold;
+		}
+		footer .foot1>div>p{
+			float: left;
+		}
+
+		footer .foot2{}
+		footer .foot3{}
+	</style>
+</head>
+<body>
+	<div class="top_ad">
+		<div class="w">
+			<a href="" title="关闭广告">
+				<img src="uploads/矩形8.png" alt="">
+			</a>
+		</div>
+	</div>
+	<!-- 主导航的实现 -->
+	<nav class="top_nav">
+		<div class="w clear">
+			<div class="left">
+				欢迎来带拼邮购, 请
+				<a href="">登录</a>
+				<a href="" class="reg">免费注册</a>
+			</div>
+			<div class="right">
+				<a href="">我的订单</a> |
+				<a href="">我的订单<i class="iconfont icon-xiangxiajiantou"></i></a> |
+				<a href="">我的订单</a> |
+				<a href="">我的订单</a> |
+				<a href="">我的订单</a> |
+				<a href="">我的订单</a> |
+				<a href="">我的订单<i class="iconfont icon-xiangxiajiantou"></i></a> |
+				<a href="">我的订单<i class="iconfont icon-xiangxiajiantou"></i></a> |
+				<a href="">我的订单</a>
+			</div>
+		</div>
+	</nav>
+	<div class="logo_search w clear">
+		<div class="left">
+			<a href="">
+				<img src="images/logo.png">
+			</a>
+		</div>
+		<div class="center">
+			<div class="clear">
+				<input type="text" placeholder="黑鲨手机">
+
+				<input type="submit" value="">
+				<i class="iconfont icon-sousuo"></i>
+			</div>
+			<p>
+				<a href="">优惠券首发</a>
+				<a href="">优惠券首发</a>
+				<a href="">优惠券首发</a>
+				<a href="">优惠券首发</a>
+				<a href="">优惠券首发</a>
+			</p>
+		</div>
+		<div class="right">
+			<a href="">
+				<i class="iconfont icon-gouwuche icon1"></i>
+				我的购物车<i class="iconfont icon-xiangxiajiantou icon2"></i>
+			</a>
+			<span>8</span>
+		</div>
+	</div>
+	<div class="nav2">
+		<div class="w clear">
+			<div class="left">全部商品分类</div>
+			<ul class="right">
+				<li><a href="">服装城</a></li>
+				<li><a href="">家用电器</a></li>
+				<li><a href="">居家生活</a></li>
+				<li><a href="">汽车</a></li>
+				<li><a href="">运动户外</a></li>
+				<li><a href="">运动户外</a></li>
+				<li><a href="">运动户外</a></li>
+			</ul>
+		</div>
+		<!-- 这里的a用于放那张左右对联广告作为背景 -->
+		<a href=""></a>
+	</div>
+	<div class="main w">
+		<!-- 主体1区右侧 -->
+		<div class="main1 clear">
+			<aside class="left"></aside>
+			<aside class="right">
+				<div class="right1"></div>
+				<ul class="right2 clear">
+					<li><a href="">
+						<span></span>
+						<p>话费</p></a></li>
+					<li><a href="">
+						<span></span>
+						<p>话费</p></a></li>
+					<li><a href="">
+						<span></span>
+						<p>话费</p></a></li>
+					<li><a href="">
+						<span></span>
+						<p>话费</p></a></li>
+					<li><a href="">
+						<span></span>
+						<p>话费</p></a></li>
+					<li><a href="">话费</a></li>
+					<li><a href="">话费</a></li>
+					<li><a href="">话费</a></li>
+					<li><a href="">话费</a></li>
+					<li><a href="">话费</a></li>
+					<li><a href="">话费</a></li>
+					<li><a href="">话费</a></li>
+				</ul>
+				<div class="right3"></div>
+			</aside>
+			<div class="center">
+				<img src="uploads/banner.jpg">
+			</div>
+		</div>
+		<div class="main2 clear">
+			<div class="left">
+				<img src="images/clock.png" alt="">
+				<p>今日推荐</p>
+			</div>
+			<div class="right">
+				<img src="uploads/re-img1.jpg" alt="">
+				<img src="uploads/re-img1.jpg" alt="">
+				<img src="uploads/re-img1.jpg" alt="">
+				<img src="uploads/re-img1.jpg" alt="">
+			</div>
+		</div>
+
+
+		<!-- /*一点扩展内容 begin*/ -->
+		<div class="main2 clear">
+			<div class="left">
+				<img src="images/clock.png" alt="">
+				<p>今日推荐</p>
+			</div>
+			<div class="main2-right">
+				<img src="uploads/re-img1.jpg" alt=""><img src="uploads/re-img1.jpg" alt=""><img src="uploads/re-img1.jpg" alt=""><img src="uploads/re-img1.jpg" alt="">
+			</div>
+		</div>
+		<!-- /*一点扩展内容 end*/ -->
+
+
+		<div class="main3">
+			<div class="main3a clear">
+				<a href=""><b>家用电器</b></a>
+				<div class="right">
+					<a href="">大家电</a> | 
+					<a href="">大家电</a> | 
+					<a href="">大家电</a> | 
+					<a href="">大家电</a> | 
+					<a href="">大家电</a> | 
+					<a href="">大家电</a> | 
+					<a href="">大家电</a> | 
+					<a href="">大家电</a>
+				</div>
+			</div>
+			<div class="main3b clear">
+				<div>
+					<ul>
+						<li><a href="">节能补贴</a></li>
+						<li><a href="">节能补贴</a></li>
+						<li><a href="">节能补贴</a></li>
+						<li><a href="">节能补贴</a></li>
+						<li><a href="">节能补贴</a></li>
+						<li><a href="">节能补贴</a></li>
+					</ul>
+					<a href="">
+						<img src="uploads/floor-1-1.png" alt="">
+					</a>
+				</div>
+				<div>
+					<a href=""><img src="uploads/floor-1-b01.png" alt=""></a>
+				</div>
+				<div>
+					<a href="">
+						<img class="btmLine" src="uploads/floor-1-2.png" alt="">
+					</a>
+					<a href="">
+						<img src="uploads/floor-1-3.png" alt="">
+					</a>
+				</div>
+				<div>
+					<a href="">
+						<img src="uploads/floor-1-4.png" alt="">
+					</a>
+				</div>
+				<div>
+					<a href="">
+						<img class="btmLine" src="uploads/floor-1-6.png" alt="">
+					</a>
+					<a href="">
+						<img src="uploads/floor-1-6.png" alt="">
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="main4">主体4区</div>
+	</div>
+	<footer>
+		<div class="w">
+			<div class="foot1">
+				<div>
+					<span></span>
+					<h3>正品保障</h3>
+					<p>正品保障 提供发票。</p>
+				</div>
+				<div>
+					<span></span>
+					<h3>正品保障</h3>
+					<p>正品保障 提供发票。</p>
+				</div>
+				<div>
+					<span></span>
+					<h3>正品保障</h3>
+					<p>正品保障 提供发票。</p>
+				</div>
+				<div>
+					<span></span>
+					<h3>正品保障</h3>
+					<p>正品保障 提供发票。</p>
+				</div>
+				<div>
+					<span></span>
+					<h3>正品保障</h3>
+					<p>正品保障 提供发票。</p>
+				</div>
+			</div>
+			<div class="foot2">底部2</div>
+			<div class="foot3">底部3</div>
+		</div>
+	</footer>
+</body>
+</html>

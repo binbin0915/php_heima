@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			font-size:12px;
+		}
+		ul,ol,li{
+			list-style-type: none;
+		}
+		p{
+			margin-top: 20px;
+		}
+		img{
+			display: block;
+		}
+
+		/*方式1*/
+		.box1{
+			box-sizing: border-box;
+			width: 960px;
+			height: 126px;
+			padding-left:3px;
+			padding-top:20px;
+			/*border:1px solid red;*/
+			margin:0px auto;
+			background: url(images/05.gif);
+		}
+		.box1>li{
+			float:left;
+			padding-left:5px;
+		}
+		/*实现2：*/
+		.box2{
+			display: flex;
+			box-sizing: border-box;
+			width: 960px;
+			height: 126px;
+			padding-left:3px;
+			padding-top:20px;
+			/*border:1px solid red;*/
+			margin:0px auto;
+			background: url(images/05.gif);
+		}
+		.box2>li{
+			margin-left:5px;
+		}
+		/*实现3：*/
+		.box3{
+			margin: 0 auto;
+			background: url(images/05.gif);
+			width: 960px;
+			height: 126px;
+			border-collapse: collapse;
+			
+		}
+		.box3 td img{
+			margin-right:5px;
+		}
+		.box3 td:first-child img{
+			margin-left:8px;
+		}
+
+		/*实现4：*/
+		.box4{
+			display: flex;
+			width: 957px;
+			height: 106px;
+			padding-left:3px;
+			padding-top:20px;
+			margin:0px auto;
+			background: url(images/05.gif);
+		}
+		.box4>li{
+			margin-left:5px;
+			width: 131px;
+			height: 86px;
+		}
+		.box4>li:nth-child(1){background: url(images/foot_a.jpg) no-repeat}
+		.box4>li:nth-child(2){background: url(images/foot_b.jpg) no-repeat}
+		.box4>li:nth-child(3){background: url(images/foot_c.jpg) no-repeat}
+		.box4>li:nth-child(4){background: url(images/foot_d.jpg) no-repeat}
+		.box4>li:nth-child(5){background: url(images/foot_e.jpg) no-repeat}
+		.box4>li:nth-child(6){background: url(images/foot_f.jpg) no-repeat}
+		.box4>li:nth-child(7){background: url(images/foot_g.jpg) no-repeat}
+
+		.box4>li:nth-child(1):hover{background: url(images/foot_aa.jpg) no-repeat}
+		.box4>li:nth-child(2):hover{background: url(images/foot_bb.jpg) no-repeat}
+		.box4>li:nth-child(3):hover{background: url(images/foot_cc.jpg) no-repeat}
+		.box4>li:nth-child(4):hover{background: url(images/foot_dd.jpg) no-repeat}
+		.box4>li:nth-child(5):hover{background: url(images/foot_ee.jpg) no-repeat}
+		.box4>li:nth-child(6):hover{background: url(images/foot_ff.jpg) no-repeat}
+		.box4>li:nth-child(7):hover{background: url(images/foot_gg.jpg) no-repeat}
+	</style>
+</head>
+<body>
+	<p align="center">实现1:</p>
+	<ul class="box1">
+		<li><img src="images/foot_a.jpg" alt=""></li>
+		<li><img src="images/foot_b.jpg" alt=""></li>
+		<li><img src="images/foot_c.jpg" alt=""></li>
+		<li><img src="images/foot_d.jpg" alt=""></li>
+		<li><img src="images/foot_e.jpg" alt=""></li>
+		<li><img src="images/foot_f.jpg" alt=""></li>
+		<li><img src="images/foot_g.jpg" alt=""></li>
+	</ul>
+
+	<p align="center">实现2:</p>
+	<ul class="box2">
+		<li><img src="images/foot_a.jpg" alt=""></li>
+		<li><img src="images/foot_b.jpg" alt=""></li>
+		<li><img src="images/foot_c.jpg" alt=""></li>
+		<li><img src="images/foot_d.jpg" alt=""></li>
+		<li><img src="images/foot_e.jpg" alt=""></li>
+		<li><img src="images/foot_f.jpg" alt=""></li>
+		<li><img src="images/foot_g.jpg" alt=""></li>
+	</ul>
+
+	<p align="center">实现2:</p>
+	<table class="box3" >
+		<tr>
+			<td><img src="images/foot_a.jpg" alt=""></td>
+			<td><img src="images/foot_b.jpg" alt=""></td>
+			<td><img src="images/foot_c.jpg" alt=""></td>
+			<td><img src="images/foot_d.jpg" alt=""></td>
+			<td><img src="images/foot_e.jpg" alt=""></td>
+			<td><img src="images/foot_f.jpg" alt=""></td>
+			<td><img src="images/foot_g.jpg" alt=""></td>
+		</tr>
+	</table>
+
+	<p align="center">实现4:</p>
+	<ul class="box4">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+
+</body>
+</html>

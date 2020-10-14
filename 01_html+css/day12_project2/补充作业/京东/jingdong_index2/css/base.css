@@ -1,0 +1,19 @@
+*{
+	font-size:12px;
+	font-family: "微软雅黑",宋体,"times new roman",serial,sysfixed;
+	margin:0;
+	padding:0;
+	border:0;
+	list-style: none;
+	list-style-position: inside;
+	text-align:left;
+	text-decoration: none;
+}
+table{
+	border-collapse:collapse;
+	border-spacing: 0;
+}
+a:link{color:gray;}
+a:visited{color:gray;}
+a:hover{color:red;}
+a:active{color:red;}

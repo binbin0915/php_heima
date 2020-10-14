@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/init.css">
+	<link rel="stylesheet" href="iconfont/iconfont.css">
+	<style>
+		/*顶部广告条*/
+		.top_ad{
+			background:url(uploads/top_header.jpg) center center no-repeat black;
+			height: 80px;
+		}
+		.top_ad>.w{
+			text-align: right;
+			padding-top:5px;
+		}
+		.top_ad>.w>a{
+			margin-right:5px;
+		}
+		.top_ad>.w>a>img{
+			display: inline-block;
+		}
+		/*主导航条的实现*/
+		.top_nav{
+			line-height: 30px;
+			background: #e5e5e3;
+		}
+		.top_nav>.w{
+			height: 30px;
+			/*border:solid 1px red;*/
+		}
+		.top_nav>.w>.left{
+			float: left;
+		}
+		.top_nav>.w>.left>a.reg{
+			color:red;
+		}
+		.top_nav>.w>.right{
+			float: right;
+			color:#cccccc;
+		}
+		.top_nav>.w>.right>a{
+			padding:0 5px;
+		}
+		.top_nav>.w>.right>a:hover>i{
+			color:red;
+		}
+
+		/*logo区的实现*/
+
+		/*商品分类区的实现*/
+		.nav2{
+			height: 45px;
+			border-bottom:solid 2px #ca0000;
+			/*overflow: hidden;*/
+		}
+		.nav2>.w{
+			height: 45px;
+			/*background-color: pink;*/
+			line-height: 45px;
+		}
+		.nav2>.w>.left{
+			float: left;
+			width: 210px;
+			background-color: #ca0000;
+			color:white;
+			font-size: 18px;
+			font-weight: bold;
+			text-align: center;
+		}
+		.nav2>.w>.right{
+			float: left;
+			padding-left:35px;
+		}
+		.nav2>.w>.right>li{
+			float: left;
+			padding-right:25px;
+		}
+		.nav2>.w>.right>li>a{
+			font-size: 18px;
+			font-weight: bold;
+		}
+		.nav2>a{
+			display: block;
+			text-align: center;
+			background: url(uploads/jd_bg.png) center center no-repeat;
+			height: 470px;
+			position: relative;
+		}
+		/*主体1区*/
+		.main1{
+			height: 465px;
+			background-color: yellow;
+			position: relative;
+			overflow: hidden;
+		}
+		.main1>.left{
+			float: left;
+			width: 210px;
+			height: 467px;
+			background-color: #e20000;
+			position: relative;
+			top:-2px;
+		}
+		.main1>.right{
+			float: right;
+			width: 250px;
+			height: 453px;
+			border:solid 1px gray;
+			margin-top:10px;
+		}
+		.main1>.center{
+			float: left;
+			margin-top:10px;
+			margin-left:7px;
+		}
+		/*主体2区*/
+		.main2{
+			margin:15px 0px;
+		}
+		.main2>.left{
+			float: left;
+			width: 200px;
+			height: 163px;
+			background-color: #604f4d;
+		}
+		.main2>.right{
+			float: left;
+			width: 1000px;
+			height: 163px;
+			background-color: #ebebeb;
+		}
+		/*主体3区*/
+		.main3{
+			line-height: 3em;
+		}
+		.main3>.main3a{
+			border-bottom:solid 2px red;
+		}
+		.main3>.main3a>a>b{
+			font-weight: bold;
+		}
+		.main3 .main3a .right{
+			float: right;
+		}
+		.main3 .main3a .right a{
+			padding: 0 6px;
+		}
+		.main3>.main3b{
+			height: 360px;
+			background-color: pink;
+		}
+	</style>
+</head>
+<body>
+	<div class="top_ad">
+		<div class="w">
+			<a href="" title="关闭广告">
+				<img src="uploads/矩形8.png" alt="">
+			</a>
+		</div>
+	</div>
+	<!-- 主导航的实现 -->
+	<nav class="top_nav">
+		<div class="w clear">
+			<div class="left">
+				欢迎来带拼邮购, 请
+				<a href="">登录</a>
+				<a href="" class="reg">免费注册</a>
+			</div>
+			<div class="right">
+				<a href="">我的订单</a> |
+				<a href="">我的订单<i class="iconfont icon-xiangxiajiantou"></i></a> |
+				<a href="">我的订单</a> |
+				<a href="">我的订单</a> |
+				<a href="">我的订单</a> |
+				<a href="">我的订单</a> |
+				<a href="">我的订单<i class="iconfont icon-xiangxiajiantou"></i></a> |
+				<a href="">我的订单<i class="iconfont icon-xiangxiajiantou"></i></a> |
+				<a href="">我的订单</a>
+			</div>
+		</div>
+	</nav>
+	<div class="logo_search">333</div>
+	<div class="nav2">
+		<div class="w clear">
+			<div class="left">全部商品分类</div>
+			<ul class="right">
+				<li><a href="">服装城</a></li>
+				<li><a href="">家用电器</a></li>
+				<li><a href="">居家生活</a></li>
+				<li><a href="">汽车</a></li>
+				<li><a href="">运动户外</a></li>
+				<li><a href="">运动户外</a></li>
+				<li><a href="">运动户外</a></li>
+			</ul>
+		</div>
+		<!-- 这里的a用于放那张左右对联广告作为背景 -->
+		<a href=""></a>
+	</div>
+	<div class="main w">
+		<div class="main1 clear">
+			<aside class="left"></aside>
+			<aside class="right"></aside>
+			<div class="center">
+				<img src="uploads/banner.jpg">
+			</div>
+		</div>
+		<div class="main2">
+			<div class="left"></div>
+			<div class="right"></div>
+		</div>
+		<div class="main3">
+			<div class="main3a clear">
+				<a href=""><b>家用电器</b></a>
+				<div class="right">
+					<a href="">大家电</a> | 
+					<a href="">大家电</a> | 
+					<a href="">大家电</a> | 
+					<a href="">大家电</a> | 
+					<a href="">大家电</a> | 
+					<a href="">大家电</a> | 
+					<a href="">大家电</a> | 
+					<a href="">大家电</a>
+				</div>
+			</div>
+			<div class="main3b"></div>
+		</div>
+		<div class="main4">主体4区</div>
+	</div>
+	<footer>6666</footer>
+</body>
+</html>
