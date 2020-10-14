@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    //var xxx = "Array ( [0] => apple [1] => banana [2] => pear )";
+
+    /******************** 把JS数据转换成JSON格式 *************************/
+    /*var arr = ['apple', 'banana', 'pear'];
+    console.log(arr);
+    //把数组转成JSON
+    var json = JSON.stringify(arr);
+    console.log(json);*/
+
+    /******************** 把JSON数据转换成JS数据 *************************/
+    var arr = ['apple', 'banana', 'pear'];
+    var json = JSON.stringify(arr);
+    console.log(json);
+    //转成JS数据的方法一
+    //var result = JSON.parse(json);
+    //console.log(result);
+
+    //转成JS数据的方法二
+    //eval('alert(123);');
+    //alert(eval('1+2'));
+    eval('var res=' + json);
+    console.log(res);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(function(){
+            $('input').click(function(){
+                //单击button的时候，发送post请求到服务器
+                $.post('13post.php', {sex:'男', height:'183cm'}, function(e){
+                    //$('span').text(e);
+                    console.log(e); //post方法的第4个参数为json，e就是JS的数组或对象。不用在使用JSON.parse();转换了
+                }, 'json');
+            });
+        });
+    </script>
+</head>
+<body>
+
+<input type="button" value="发送请求">
+<span></span>
+
+</body>
+</html>

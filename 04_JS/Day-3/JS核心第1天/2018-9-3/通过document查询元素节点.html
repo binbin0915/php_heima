@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<ul>
+    <li class="a">你好啊</li>
+    <li id="tang">汤唯</li>
+    <li class="a">您好</li>
+    <li>laugh</li>
+</ul>
+<p class="a">哈哈哈哈哈哈</p><br>
+你开心吗<input type="text" name="yes"/>
+
+<script>
+    /************** script标签一定要放到 ul / p /input 标签的下面 ****************/
+    //************** 根据id查询
+    var tang = document.getElementById('tang');
+    console.log(tang);
+    //tang.style.样式名称 = 值； 给标签添加样式
+    tang.style.color = "red";
+
+    //************** 根据标签名查询
+    var lis = document.getElementsByTagName('li');
+    console.log(lis);
+    for(var i=0; i<lis.length; i++)
+    {
+        lis[i].style.backgroundColor = '#ccffcc';
+    }
+
+    //************** 根据元素的类名查询
+    var as = document.getElementsByClassName('a');  //返回数组，数组中包含类名为a的元素
+    console.log(as);
+    for (var i=0; i<as.length; i++)
+    {
+        as[i].style.fontSize = '25px';
+    }
+
+    //************** 根据元素的name属性查询
+    var input = document.getElementsByName('yes');  //返回数组，数组中包含属性name为yes的元素
+    input[0].style.backgroundColor = "#ccc";
+
+    //************** 根据css选择器选择元素
+    //document.querySeletor('css选择器')；
+    var nihao = document.querySelector('.a');   //返回一个dom对象，class为a的有很多，也只返回第一个
+    nihao.style.border = 'dashed 3px green';
+
+    var all = document.querySelectorAll('p, input');   //返回数组
+    for (var i in all){
+        all[i].style.border = 'solid 2px black';
+    }
+
+</script>
+</body>
+</html>

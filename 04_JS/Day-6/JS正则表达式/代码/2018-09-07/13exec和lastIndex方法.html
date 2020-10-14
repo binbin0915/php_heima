@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    /*var str = '1122 3434 5677';
+    var r = /\d\d\d\d/g;
+
+    var i = r.lastIndex; //表示下一次匹配的位置，默认从0的位置开始
+    var result = r.exec(str); //表示匹配的结果，[1122]
+    console.log(i, result);
+
+    var i = r.lastIndex; //表示下一次匹配的位置，默认从0的位置开始
+    var result = r.exec(str); //表示匹配的结果，[3434]
+    console.log(i, result);
+
+    var i = r.lastIndex; //表示下一次匹配的位置，默认从0的位置开始
+    var result = r.exec(str); //表示匹配的结果，[5677]
+    console.log(i, result);
+
+    var i = r.lastIndex; //表示下一次匹配的位置，默认从0的位置开始
+    var result = r.exec(str); //表示匹配的结果，null
+    console.log(i, result);*/
+
+    /************** 匹配带子表达式的例子，带子表达式并且依次调用的例子 ***************/
+    var str = '1122 3434 5677 8989 0000';
+    var r = /(\d)(?:\d)\1\d/g;
+
+    var i = r.lastIndex; //开始匹配的位置
+    var res = r.exec(str);//匹配的结果
+    console.log(i, res);
+
+    var i = r.lastIndex; //开始匹配的位置
+    var res = r.exec(str);//匹配的结果
+    console.log(i, res);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(function(){
+            $('input').click(function(){
+                //点击button的时候，发送Ajax请求
+                //$.get(url, 发送给服务器的数据, 函数, 服务器返回数据类型);
+                $.get('12get.php', {name:'zhangsan', age:20, t:Math.random()}, function (e) {
+                    //形参e表示服务器返回的数据
+                    $('span').text(e);
+                }, 'text');
+            });
+        });
+    </script>
+</head>
+<body>
+
+<input type="button" value="发送请求"><span></span>
+
+</body>
+</html>

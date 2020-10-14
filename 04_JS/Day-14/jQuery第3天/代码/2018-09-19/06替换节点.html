@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(function(){
+            //简单的替换--将选择的li全部替换
+            //$('li').replaceWith('<li>张飞</li>');
+
+            //高级的替换
+            $('ul').replaceWith(function(){
+                //console.log($(this)); //$(this)表示ul
+                //找到ul中的所有子元素（li），然后将所有的li放到新的ol中
+                return $('<ol></ol>').append($(this).children());
+            });
+        });
+    </script>
+</head>
+<body>
+
+<ul>
+    <li>曹浩</li>
+    <li>廉浩</li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<!--<img src="http://www.js.com/1.png" alt="">
+
+<script src="http://www.js.com/1.js"></script>-->
+
+<input type="button" value="请求" id="btn">
+
+<script>
+
+    //提前准备好fn函数
+    function fn(result){
+        console.log(result);
+    }
+
+    document.getElementById('btn').onclick = function(){
+        var s = document.createElement('script'); //创建一个script标签
+        s.src = 'http://www.js.com/jsonp.php?callback=fn'; //设置script的src属性为另外域的文件
+        document.body.appendChild(s); //把script标签放到body中
+    };
+</script>
+
+</body>
+</html>

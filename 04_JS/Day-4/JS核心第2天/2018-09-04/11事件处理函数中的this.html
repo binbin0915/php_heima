@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table,td{
+            border:2px dashed pink;
+            border-collapse: collapse;
+        }
+        td{
+            width: 100px;
+            height: 60px;
+        }
+        table{
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+<script>
+    //点击页面中的td，点击之后，让被点击的td背景颜色改变成红色
+    //先找到所有的td
+    var tds = document.getElementsByTagName('td');  //返回数组
+    //循环，为每个td都绑定一个单击事件
+    for (var i=0;i<tds.length;i++){
+        tds[i].onclick=function () {
+            //this表示绑定事件的那个td
+            var r = Math.floor(Math.random()*256);
+            var g = Math.floor(Math.random()*256);
+            var b = Math.floor(Math.random()*256);
+            this.style.backgroundColor = 'rgb('+r+', '+g+', '+b+')';
+        }
+    }
+</script>
+
+</body>
+</html>

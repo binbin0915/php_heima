@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<ul>
+    <li>hello</li>
+    <li>hello</li>
+    <li>hello</li>
+    <li>hello</li>
+</ul>
+
+<script>
+    //先找到li
+    var li = document.getElementsByTagName('li')[0];
+    console.log(li.childNodes[0].nodeValue);
+
+    //查看节点的类型 -- nodeType
+    console.log(li.nodeType); // 元素类型的，结果是 1
+    console.log(li.childNodes[0].nodeType); //文本类型的，结果是 3
+
+    //使用nodeType的例子
+    //先找到ul
+    var ul = document.getElementsByTagName('ul')[0];
+    //console.log(ul.children);  //children会忽略文本类型的子节点
+    //函数，参数是父元素，返回该父元素的所有元素类型的子节点。但是不能使用children，必须使用childNodes
+    function getChildren(ele){
+        var all = ele.childNodes; //找到所有子元素，包含文本和标签类型
+        var result = []; //用于保存元素类型的节点
+        for(var i=0; i<all.length; i++){
+            if(all[i].nodeType == 1){
+                //nodeType是1，说明是标签类型的
+                result.push(all[i]);
+            }
+        }
+        return result;
+    }
+
+    console.log(getChildren(ul));
+
+
+</script>
+
+</body>
+</html>

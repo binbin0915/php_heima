@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<students>
+    <stu>
+        <name>曹浩</name>
+        <age>20</age>
+        <sex>女</sex>
+        <height val="175cm" />
+    </stu>
+    <stu>
+        <name>连号</name>
+        <age>25</age>
+        <sex>女</sex>
+        <height val="168cm" />
+    </stu>
+</students>

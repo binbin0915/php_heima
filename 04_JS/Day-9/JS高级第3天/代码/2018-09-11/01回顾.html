@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    /*function A(){
+
+    }
+    var a = new A();
+    //给对象添加成员
+    a.age = 20;
+    a.say = function(){
+        console.log(this.age);
+    };
+    //修改成员属性
+    a.age = 30;
+    //删除成员属性
+    delete a.age;
+    //访问a 的成员
+    a.say();*/
+
+    /*
+    //原型链练习
+    Object.prototype.age = 50;
+    function A(){
+        //this.age = 40;
+    }
+    var a = new A();
+    //a.age = 30;
+
+    function B(){
+        //this.age = 20;
+    }
+    B.prototype = a; //指定B的原型对象为a
+    var b = new B();
+    //b.age = 10; // 相当于修改age为10
+    console.log(b.age);*/
+
+    //混合方式的定义对象
+    //原则是将非函数类型的成员，定义到构造函数内部
+    //将函数类型的成员定义到构造函数的原型对象上
+    /*function A(){
+        this.age = 20;
+        this.name = '李四';
+        this.sanwei = ['100cm', '80cm', '10cm'];
+    }
+    A.prototype.say = function () {
+        console.log(this.name);
+    };
+    A.prototype.cook = function () {
+        console.log(this.sanwei);
+    };
+
+    //实例化一个对象
+    var a = new A();
+    //a.sanwei.push('20cm');
+    //a.cook();
+    var a1 = new A();*/
+
+
+    //原型对象的另外一种写法
+    /*function A(){
+        this.age = 20;
+        this.name = '李四';
+        this.sanwei = ['100cm', '80cm', '10cm'];
+    }
+    //指定A的原型对象为直接量方式定义的对象
+    A.prototype = {
+        say:function(){
+            console.log(this.name);
+        },
+        cook:function(){
+            console.log(this.sanwei);
+        }
+    };
+    /!*A.prototype.say = function () {
+        console.log(this.name);
+    };
+    A.prototype.cook = function () {
+        console.log(this.sanwei);
+    };*!/
+    //实例化一个对象
+    var a = new A();
+    //a.sanwei.push('20cm');
+    a.cook();
+    var a1 = new A();*/
+
+    /*//spl_autoload_register(function(){});
+
+    setTimeout(function(){}, 1000);
+
+    function Abcdefg(callback){
+        callback();
+    }
+    //调用函数Abcdefg，传递函数类型的参数
+    Abcdefg(function(){
+        //我就是回调函数
+    });*/
+
+
+    var o1 = {
+        name:'111111111'
+    };
+    var o2 = {
+        name:'222222222',
+        fn:function(){
+            console.log(this.name);
+        }
+    };
+
+    //正常调用
+    o2.fn(); // 222222222
+    o2.fn.apply(o1); //意思是调用fn的对象修改为o1，另外的说法就是改变fn内部this的指向为o1
+</script>
+
+</body>
+</html>

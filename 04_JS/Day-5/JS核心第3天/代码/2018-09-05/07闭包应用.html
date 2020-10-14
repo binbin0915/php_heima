@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    //循环所用的时间，可以忽略不计。
+    /*for(var i=1; i<=5; i++){
+        //声明函数
+        function a(x){
+            setTimeout(function(){
+                console.log(x);
+            }, 1000*x);
+        }
+        //调用函数
+        a(i);
+    }*/
+
+    //console.log(i);
+
+    //调整后的代码
+    for(var i=1; i<=5; i++){
+        //声明函数
+        (function (x){
+            setTimeout(function(){
+                console.log(x);
+            }, 1000*x);
+        })(i);
+    }
+</script>
+
+</body>
+</html>

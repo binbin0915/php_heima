@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script src="box.js"></script>
+    <script>
+        $(function () {
+            //自己的JS，调用插件，显示窗口
+            $('div').box({zuo:'center', shang:'center'});
+        });
+    </script>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            border:0 none;
+        }
+        #left{
+            border:solid 1px black;
+            width:200px;
+            height:120px;
+            position: absolute;
+            display: none;
+        }
+        .title{
+            background-color: #92b8b1;
+            height:24px;
+            line-height: 24px;
+            padding:5px;
+            border-bottom: solid 1px black;
+        }
+        .content{
+            padding:5px;
+        }
+        .title span{
+            float: right;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body style="width:2000px; height:2000px;">
+
+<div id="left">
+    <div class="title">这是标题部分 <span>×</span></div>
+    <div class="content">这是内容区</div>
+</div>
+
+</body>
+</html>

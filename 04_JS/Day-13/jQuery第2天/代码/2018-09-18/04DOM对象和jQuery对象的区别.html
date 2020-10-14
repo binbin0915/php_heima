@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(function () {
+            //$('body').append('<input />');
+            //$('body').appendChild('<input />'); //报错，说明jQuery对象不能调用DOM方法
+
+            var input = document.createElement('input');
+            //document.body.appendChild(input);
+            //input.appendTo(document.body); //报错，说明DOM对象不能调用jQuery方法。
+
+            console.log($('li').length); //这是可以的，因为jQuery中也封装自己的length
+        });
+    </script>
+</head>
+<body>
+<ul>
+    <li>aa</li>
+    <li>aa</li>
+    <li>aa</li>
+</ul>
+</body>
+</html>

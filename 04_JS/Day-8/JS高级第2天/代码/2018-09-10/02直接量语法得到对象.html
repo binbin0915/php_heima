@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    var dog = {
+        name:'大黄',
+        age:3,
+        say:function(){
+            console.log('汪汪...');
+        }
+    };
+
+    var person = {
+        name:'小黄',   //值是字符串类型
+        age:20,   //值是整型
+        sanwei:['100cm', '90cm', '110cm'],  //值是数组型
+        xiaogou:dog,  // 值是另一个对象
+        say:function(){  // 值是函数
+            console.log('我叫'+this.name+'和大黄关系很好，形如兄弟');
+        }
+    };
+
+    console.log(person.name);
+    console.log(person.xiaogou.name);
+    person.say();
+
+
+
+</script>
+
+</body>
+</html>

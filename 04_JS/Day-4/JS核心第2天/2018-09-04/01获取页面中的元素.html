@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<ul>
+    <li>你好1</li>
+    <li>你好2</li>
+    <li>你好3</li>
+</ul>
+
+<script>
+    /************ 演示查找页面中的元素 ******************/
+    //var n1 = document.getElementsByTagName('li')[0];
+    //var n1 = document.querySelector('li');    //只查询符号条件的第一个元素
+    var ul = document.querySelector('ul');
+    var n1 = ul.firstElementChild;
+    n1.style.color = 'pink';
+
+    /****************** 创建并添加元素 *********************/
+    //创建一个<li>你好4</li>,并放到ul中
+    var li = document.createElement('li');  //创建li这个标签节点
+    var text = document.createTextNode('你好4');
+    li.appendChild(text);   //把文本节点放到li中
+    li.style.color = 'orange';
+    document.querySelector('ul').appendChild(li);
+</script>
+</body>
+</html>

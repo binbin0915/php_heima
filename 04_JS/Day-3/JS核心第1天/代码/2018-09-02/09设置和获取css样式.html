@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<p>nice to meet you!</p>
+
+<script>
+
+    //设置p元素的css样式，color是红色，背景颜色是金色。
+    var p = document.getElementsByTagName('p')[0];
+
+    p.style.color = 'red';
+    p.style.backgroundColor = 'gold';
+
+    /************ 获取元素的css样式 *************/
+    /*var c = p.style.color;
+    console.log(c);
+    var f = p.style.fontSize;
+    console.log(f);*/
+    //获取完整样式的写法（非IE）
+    //var f = getComputedStyle(p).fontSize;
+    //console.log(f);
+
+    //获取完整样式的写法（IE8）
+    //var f = p.currentStyle.fontSize;
+    //console.log(f);
+
+    //兼容各个浏览器的获取完整css样式的写法
+    function getStyle(node, styleName){
+        if(node.currentStyle){
+            //说明是IE
+            return node.currentStyle[styleName];
+        }else{
+            return getComputedStyle(node)[styleName];
+        }
+    }
+    console.log(getStyle(p, 'fontSize'));
+
+</script>
+
+</body>
+</html>

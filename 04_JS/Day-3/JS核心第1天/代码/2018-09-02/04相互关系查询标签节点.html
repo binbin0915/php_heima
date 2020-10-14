@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /*window.onload = function () {
+            document.getElementsByTagName('li')
+        };*/
+    </script>
+</head>
+<body>
+
+<ul id="u">
+    <li>泽拉斯</li>
+    <li>蚂蚱</li>
+    <li>拉克丝</li>
+    <li>安妮</li>
+    <li>维克托</li>
+</ul>
+
+<script>
+    /******************* 根据父节点查找子节点 ************************/
+    //先找到父节点
+    //var ul = document.getElementsByTagName('ul')[0];
+    //var ul = document.getElementById('u');
+    var ul = document.querySelector('#u');
+
+    // ------------- 查询所有ul的子节点 -- children
+    //var lis = ul.children; // 返回数组。 查询ul的所有子节点
+    //console.log(lis);
+
+    // ------------- 查询所有ul的子节点 -- childNodes
+    //var lis = ul.childNodes; //
+    //console.log(lis);
+
+    //---------------查询所有ul的子节点 ---
+    //var lis = ul.getElementsByTagName('li'); //在ul中查找所有ul后代中的li
+    //console.log(lis);
+
+    //---------------查询ul的第一个子节点 --- firstChild
+    //var li1 = ul.firstChild;
+    //console.log(li1); //不好用，会把第一个空白当做第一个子元素
+
+    //---------------查询ul的第一个子节点 --- firstElementChild
+    //var li1 = ul.firstElementChild;
+    //console.log(li1); //好用，但是IE8+才支持
+
+    //---------------查询ul的最后一个子节点 --- lastChild
+    //---------------查询ul的最后一个子节点 --- lastElementChild
+
+    /******************* 根据子点查找父节点 ************************/
+    //随便找一个子节点
+    //var mazha = document.getElementsByTagName('li')[1];
+    //var ul2 = mazha.parentNode;
+    //console.log(ul2);
+
+    /******************* 兄弟关系查询 ************************/
+    //随便找一个子节点
+    var mazha = document.getElementsByTagName('li')[1];
+    //查询上一个兄弟
+    var zelasi = mazha.previousSibling;
+    console.log(zelasi); //不好使，会认为空白是上一个兄弟
+
+    //var zelasi = mazha.previousElementSibling;
+    //console.log(zelasi); //好使，但是IE8+支持
+
+    //查询下一个兄弟  --  nextSibling
+    //查询下一个兄弟  --  nextElementSibling
+</script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<ul>
+    <li>林黛玉</li>
+    <li>贾宝玉</li>
+    <li>薛宝钗</li>
+    <li>刘姥姥</li>
+</ul>
+
+<script>
+    /********************** 替换节点 *************************/
+    // 父节点.replaceChild(新节点, 待替换的节点);
+
+    //找父节点
+    /*var ul = document.getElementsByTagName('ul')[0];
+
+    //新节点
+    var newLi = document.createElement('li');
+    var text = document.createTextNode('王熙凤');
+    newLi.appendChild(text);
+
+    //找到待替换的节点
+    var jiabaoyu = document.getElementsByTagName('li')[1];
+
+    //执行替换
+    ul.replaceChild(newLi, jiabaoyu);*/
+
+    /********************** 删除节点 *************************/
+    //父节点.removeChild(子节点);
+    /*var ul = document.querySelector('ul');
+    var xiaoLiu = document.getElementsByTagName('li')[3];
+    ul.removeChild(xiaoLiu);*/
+
+    /*********** 练习 **************/
+    //1、创建一个<li>王熙凤</li>，并且把它放到ul中
+    /*var li = document.createElement('li');
+    var text = document.createTextNode('王熙凤');
+    li.appendChild(text);
+    document.querySelector('ul').appendChild(li);*/
+
+    //2、替换刘姥姥为王奶奶
+    //父节点.replaceChild(新节点, 待替换的节点);
+    var li = document.createElement('li');
+    var text = document.createTextNode('王奶奶');
+    li.appendChild(text);
+    var liu = document.getElementsByTagName('li')[3];
+    document.querySelector('ul').replaceChild(li, liu);
+
+</script>
+
+</body>
+</html>

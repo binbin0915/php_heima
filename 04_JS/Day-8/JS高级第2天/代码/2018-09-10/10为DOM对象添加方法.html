@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<ul>
+    <li>刘备</li>
+</ul>
+
+<p>张飞</p>
+
+<script>
+    var p = document.getElementsByTagName('p')[0]; //dom对象
+    var li = document.getElementsByTagName('li')[0]; //dom对象
+
+    //p.style.color = 'red';
+    //为每个dom对象，添加一个设置样式的方法，比如叫做css
+    Object.prototype.css = function(styleName, v){
+        this.style[styleName] = v;
+        return this; //this表示调用css的对象，比如p调用的css，返回的还是p
+    };
+    p.css('color', 'red').css('fontSize', '30px').css('border', 'solid 1px red');
+    li.css('backgroundColor', '#ccc');
+
+</script>
+
+</body>
+</html>

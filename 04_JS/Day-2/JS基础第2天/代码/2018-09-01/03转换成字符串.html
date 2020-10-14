@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    var a=123, b=3.14, c, d=null, e=true, f=['手机', '电脑'], g={name:'刘备', job:'买草鞋', age:[35,36]};
+    //使用String转换上面的变量
+    /*console.log(String(a)); // 123
+    console.log(String(b)); // 3.14
+    console.log(String(c)); // undefined
+    console.log(String(d)); // null
+    console.log(String(e)); // true
+    console.log(String(f)); // 手机,电脑
+    console.log(String(g));// [object Object]*/
+
+    //console.log(String(Math)); //[object Math]
+    //console.log(String(document)); //[object HTMLDocument]
+
+    //使用toString转换上面的变量
+    /*console.log(a.toString()); // 123
+    console.log(b.toString()); // 3.14
+    //console.log(c.toString()); // 报错，无法转换
+    //console.log(d.toString()); // 报错，无法转换
+    console.log(e.toString()); // true
+    console.log(f.toString()); // 手机,电脑
+    console.log(g.toString()); // [object Object]*/
+
+    /************ 隐式转换 *************/
+    console.log(a + 'hello'); // 123hello
+    console.log(c + 'hello'); //undefinedhello
+    console.log(f + 'hello'); //手机,电脑hello
+    console.log(g + 'hello'); //[object Object]hello
+</script>
+
+</body>
+</html>

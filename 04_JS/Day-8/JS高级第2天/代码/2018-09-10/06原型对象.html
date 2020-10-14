@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    //构造函数
+    /*function Person(n, a) {
+        this.name = n;
+        this.age = a;
+        this.say = function () {
+            console.log(123456);
+        };
+        this.cook = function () {
+            console.log('我做得一手好饭');
+        };
+        //....
+    }
+
+    var p1 = new Person('张三', 20);
+    var p2 = new Person('李四', 25);
+    var p3 = new Person('王五', 28);*/
+
+    //使用原型对象的方式，来定义对象
+    //构造函数
+    function Person(n, a) {
+        this.name = n;
+        this.age = a;
+    }
+    /*console.log(Person.prototype); //Person的原型对象，原型对象也是对象
+     console.log(Person.prototype.constructor); //Person的原型对象的构造器
+    console.log(Person.prototype.constructor.prototype);
+    console.log(Person.prototype.constructor.prototype.constructor);*/
+    //把say和cook放到Person的原型对象上
+    Person.prototype.say = function(){
+        console.log(123456);
+    };
+    Person.prototype.cook = function(){
+        console.log('我做得一手好饭');
+    };
+    //实例化三个对象
+    var p1 = new Person('张三', 20);
+    var p2 = new Person('李四', 25);
+    var p3 = new Person('王五', 28);
+
+    //测试say和cook是否能正常使用
+    p1.say();  // 123456
+    p3.cook(); // 我做得一手好饭
+</script>
+
+
+
+</body>
+</html>

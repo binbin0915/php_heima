@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        //点击页面中的p，能够在body中再添加一个p
+        $(function(){
+            //普通的click事件，只能给页面中已经存在的元素绑定事件
+            /*$('p').click(function(){
+                $('body').append('<p>hello.....</p>');
+            });*/
+
+            //使用on，可以给未来的元素绑定事件
+            //语法：$(父级元素).on(事件类型, 子元素, 处理函数);
+            $(document).on('click', 'p', function () {
+                $('body').append('<p>后来的</p>');
+            });
+        });
+    </script>
+</head>
+<body>
+
+<p>hello</p>
+
+</body>
+</html>

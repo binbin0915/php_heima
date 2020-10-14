@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            border:0 none;
+        }
+        ul,li{
+            list-style: none;
+        }
+        /*找到较大的li，浮动，让他们显示在一行中*/
+        body>ul>li{
+            float: left;
+        }
+        /*下面设置顶级菜单*/
+        a{
+            display: block;
+            width:100px;
+            height:30px;
+            background-color: #232323;
+            color:#fff;
+            text-decoration: none;
+            line-height: 30px;
+        }
+        /*设置子菜单*/
+        ul ul li{
+            width:100px;
+            height:30px;
+            line-height: 30px;
+            background-color: #666;
+            color:#fff;
+        }
+        /*默认子菜单隐藏*/
+        ul ul{
+            display: none;
+            overflow: hidden; /*超出部分隐藏*/
+        }
+    </style>
+</head>
+<body>
+
+<ul>
+    <li>
+        <a href="#">顶级菜单一</a>
+        <ul>
+            <li>子菜单11</li>
+            <li>子菜单12</li>
+            <li>子菜单13</li>
+        </ul>
+    </li>
+    <li>
+        <a href="#">顶级菜单二</a>
+        <ul>
+            <li>子菜单21</li>
+            <li>子菜单22</li>
+            <li>子菜单23</li>
+        </ul>
+    </li>
+    <li>
+        <a href="#">顶级菜单三</a>
+        <ul>
+            <li>子菜单31</li>
+            <li>子菜单32</li>
+            <li>子菜单33</li>
+        </ul>
+    </li>
+</ul>
+
+<script>
+    //找到顶级菜单，绑定鼠标移入事件
+    var lis = document.querySelectorAll('body>ul>li');
+    for(var i=0; i<lis.length; i++){
+        lis[i].onmouseover = function () {
+            //鼠标移入，希望它对应的子菜单显示出来
+            //this表示鼠标移入的那个对象
+            this.children[1].style.display = 'block';
+            var inEle = this.children[1];
+            change(inEle);
+        };
+
+        //继续绑定鼠标离开事件
+        lis[i].onmouseout = function () {
+            this.children[1].style.display = 'none';
+        };
+    }
+
+    //写一个函数，让元素的高度经过0.9秒 从0 慢慢变化到90
+    function change(ele){
+        //先让元素的高度置为0
+        ele.style.height = 0;
+        //经过180次，每次变化0.5像素
+        for(var i=1; i<=180; i++){
+            (function(x){
+                setTimeout(function(){
+                    ele.style.height = x*0.5 + 'px';
+                }, x*5);
+            })(i);
+        }
+    }
+</script>
+
+</body>
+</html>

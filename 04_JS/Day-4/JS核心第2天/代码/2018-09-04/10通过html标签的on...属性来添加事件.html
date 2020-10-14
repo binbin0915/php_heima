@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function m(){
+            //此次省略100行代码
+            //alert(123);
+            console.log(this); //window对象
+        }
+    </script>
+</head>
+<body>
+
+<input type="button" value="点击测试" onclick="alert(1);" />
+<img src="1.jpg" onclick="this.src='2.jpg'" width="30" />
+
+<input type="button" value="点击测试2" onclick="m();">
+
+
+
+<input id="btn" type="button" value="测试3" onclick="alert(111);">
+
+<script>
+    //优先执行
+    document.getElementById('btn').onclick = function () {
+        alert(222);
+    };
+    //取消事件
+    document.getElementById('btn').onclick = null;
+</script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(function(){
+            $('button').click(function(){
+                //使用jsonp跨域请求之get方法
+                /*$.get('http://www.js.com/jquery_jsonp.php?callback=?', {}, function(e){
+                    //e就是另外域的PHP返回的数据
+                    console.log(e);
+                }, 'jsonp');*/
+
+                //使用jsonp跨域请求之ajax方法
+                /*$.ajax({
+                    type:'get',
+                    data:{},
+                    dataType:'jsonp',
+                    url:'http://www.js.com/jsonp.php?callback=?',
+                    success:function(e){
+                        //处理返回的数据
+                        console.log(e);
+                    }
+                });*/
+                //使用jsonp跨域请求之getJSON方法
+                $.getJSON(
+                        'http://www.js.com/jsonp.php?callback=?',
+                        function(e){
+                            console.log(e);
+                        }
+                );
+            });
+        })
+    </script>
+</head>
+<body>
+
+<button>请求</button>
+
+</body>
+</html>

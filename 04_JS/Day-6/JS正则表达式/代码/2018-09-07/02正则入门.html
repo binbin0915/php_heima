@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    //查询字符串str中是否含有h
+    var str = 'phphp';
+    //var result = str.match('h'); //说明match是一个字符串对象中的一个方法
+    var result = str.match(/h/g); //正则语法，要求用斜线当做正则表达式的起始和结尾的标识符
+    console.log(result); //查询到了，返回一个包含h的数组
+</script>
+
+</body>
+</html>

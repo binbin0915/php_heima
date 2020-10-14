@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    function A() {
+        this.age = 10;
+    }
+
+    function B(){
+        this.age = 20;
+    }
+    //指定B的原型对象为A的实例
+    B.prototype = new A();
+    //实例化B，得到对象
+    var b = new B();
+
+    console.log(b.age);
+</script>
+
+</body>
+</html>

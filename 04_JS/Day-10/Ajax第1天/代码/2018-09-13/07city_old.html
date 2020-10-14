@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<select id="p">
+    <option value="0">--请选择省--</option>
+</select>
+
+<select id="c">
+    <option value="">--请选择市--</option>
+</select>
+
+<select id="a">
+    <option value="">--请选择区县--</option>
+</select>
+
+<script>
+    /******************************************* 获取省的代码 ********************************************************/
+    //先获取所有的省
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if(xhr.readyState==4 && xhr.status==200){
+            //接收所有的省
+            var str = xhr.responseText;
+            //把str转换成js数组
+            var arr = JSON.parse(str);
+            //console.log(arr);
+            var res = '<option value="0">--请选择省--</option>';
+            for(var i=0; i<arr.length; i++){
+                res += '<option value="'+ arr[i].Pcode +'">'+ arr[i].Pname +'</option>';
+            }
+            document.getElementById('p').innerHTML = res;
+        }
+    };
+    xhr.open('get', '07city.php?type=p');
+    xhr.send(null);
+
+    /******************************************* 获取市的代码 ********************************************************/
+    //当省的内容改变的时候，获取对应的市
+    document.getElementById('p').onchange = function () {
+        //重置区县
+        document.getElementById('a').innerHTML = '<option value="">--请选择区县--</option>';
+        xhr.onreadystatechange = function () {
+            if(xhr.readyState==4 && xhr.status==200){
+                var str = xhr.responseText;
+                //把str转换成js数组
+                var arr = JSON.parse(str);
+                //console.log(arr);
+                var res = '<option value="0">--请选择市--</option>';
+                for(var i=0; i<arr.length; i++){
+                    res += '<option value="'+ arr[i].Ccode +'">'+ arr[i].Cname +'</option>';
+                }
+                document.getElementById('c').innerHTML = res;
+            }
+        };
+        var Pcode = this.value; //切换的省的Pcode值
+        xhr.open('get', '07city.php?type=c&Pcode='+Pcode);
+        xhr.send(null);
+    };
+
+    /******************************************* 获取区县的代码 ********************************************************/
+    //当省的内容改变的时候，获取对应的市
+    document.getElementById('c').onchange = function () {
+        xhr.onreadystatechange = function () {
+            if(xhr.readyState==4 && xhr.status==200){
+                var str = xhr.responseText;
+                //把str转换成js数组
+                var arr = JSON.parse(str);
+                //console.log(arr);
+                var res = '<option value="0">--请选择区县--</option>';
+                for(var i=0; i<arr.length; i++){
+                    res += '<option value="'+ arr[i].Acode +'">'+ arr[i].Aname +'</option>';
+                }
+                document.getElementById('a').innerHTML = res;
+            }
+        };
+        var Ccode = this.value; //切换的市的时候，获取Ccode值
+        xhr.open('get', '07city.php?type=a&Ccode='+Ccode);
+        xhr.send(null);
+    };
+</script>
+</body>
+</html>

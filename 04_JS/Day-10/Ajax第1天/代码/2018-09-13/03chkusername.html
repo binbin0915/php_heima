@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<input type="text" id="username" /> <span id="msg"></span>
+
+<script>
+    document.getElementById('username').onblur = function () {
+        var uname = encodeURIComponent(this.value);
+        console.log(uname);
+        //①、创建对象
+        var xhr = new XMLHttpRequest();
+        //②、绑定事件，检测Ajax执行的状态
+        xhr.onreadystatechange = function () {
+            //alert(xhr.readyState);
+            if(xhr.readyState == 4){
+                var result = xhr.responseText;
+                if(result == 1){
+                    document.getElementById('msg').innerHTML = '<font color="red">sorry，用户名已存在</font>';
+                }else if(result == 0){
+                    document.getElementById('msg').innerHTML = '<font color="green">恭喜，用户名可用</font>';
+                }
+            }
+        };
+        //③、准备发送
+        //xhr.open('get', '03chkusername.php?u='+uname+'&t='+Math.random(), true);
+        xhr.open('get', '03chkusername.php?u='+uname+'&t='+new Date().getTime(), true);
+        //xhr.setRequestHeader("If-Modified-Since","0");
+        //④、发送请求
+        xhr.send();
+    };
+
+
+
+
+
+
+
+
+    //0、创建Ajax（XMLHttpRequest）对象
+    //1、准备发送（发送的信息是什么，发送给谁，什么方式发送，同步或异步发送）
+    //2、发送请求到服务器
+    //        [php可能连接数据进行查询或逻辑判断]
+    //3、服务器返回数据给Ajax对象
+    //4、Ajax对象接收到服务器返回的数据，然后处理
+
+
+    /*//当input失去焦点的时候，发送请求
+    document.getElementById('username').onblur = function(){
+        //第一步：创建Ajax对象
+        var xhr = new XMLHttpRequest();
+        //第二步：准备工作
+        var uname = this.value; //要发送给服务器的用户名
+        //xhr.open(请求方式, 请求的地址, 同步或异步); //该方法用于发送请求前的准备工作
+        xhr.open('get', '03chkusername.php?u=' + uname, true); //true表示异步，默认也是true
+        //第三步：发送请求到服务器
+        xhr.send(); //send的参数表示post请求的参数，因为我们用的是get请求，所以参数不用填
+        //当xhr执行的时候，如果状态发生变化，就会触发事件
+        xhr.onreadystatechange = function(){
+            //readyState可能是变化有：0~1/1~2/2~3/3~4
+            if(xhr.readyState == 4){
+                //表示服务器完全返回了数据，这时才应该接收数据并处理
+                //第四步：接收服务器返回的数据，并处理
+                var result = xhr.responseText; //用responseText来接收服务器返回的文本类型的信息
+                console.log(result); //输出结果，什么都没有，即不是1，也不是0
+                if(result == 1){
+                    document.getElementById('msg').innerHTML = '<font color="red">sorry，用户名已存在</font>';
+                }else if(result == 0){
+                    document.getElementById('msg').innerHTML = '<font color="green">恭喜，用户名可用</font>';
+                }
+            }
+        };
+
+    };*/
+
+</script>
+
+</body>
+</html>

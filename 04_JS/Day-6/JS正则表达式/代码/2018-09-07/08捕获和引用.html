@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    var str = '1122 3434 5678 9090 1516';
+    //要求：匹配连续的4个数字
+    //var result = str.match(/\d{4}/g);
+    //var result = str.match(/[0-9]{4}/g);
+    //var result = str.match(/\d\d\d\d/g);
+
+    //要求：匹配连续的4个数字。要求第1个数字和第3个数字相同
+    //var result = str.match(/(\d)\d\1\d/g);
+    //要求：匹配连续的4个数字。要求第1个数字和第3个数字相同，并且第2个数字和第4个数字相同
+    //var result = str.match(/(\d)(\d)\1\2/g);
+    //要求：匹配连续的4个数字。要求第1个数字和第2个数字相同，第3个和第4个相同
+    //var result = str.match(/(\d)\1(\d)\2/g);
+
+    //禁止引用
+    var result = str.match(/(\d)(?:\d)\1\d/g);
+    console.log(result);
+</script>
+
+</body>
+</html>

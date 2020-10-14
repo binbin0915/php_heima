@@ -1,0 +1,8 @@
+Array
+(
+    [username] => 
+    [pwd] => 
+    [sex] => 男
+    [address] => 北京
+    [introduce] => 
+)

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(function(){
+            var lis = $('li'); //选择的三个li
+            //console.log(lis);
+            /*lis.each(function(i, val){
+                console.log(i, val);
+            });*/
+
+            /*$.each(lis, function (i, val) {
+                console.log(i, val);
+            });*/
+
+            //点击页面中的li，能够输出它的下标
+            /*for(var i=0; i<lis.length; i++){
+                lis[i].a = i;
+                lis[i].onclick = function () {
+                    console.log(this.a);
+                };
+            }*/
+
+            $.each(lis, function (i, val) {
+                /*lis.eq(i).click(function(){
+                    console.log(i);
+                });*/
+                $(val).click(function(){
+                    console.log(i); //单击li的时候，i表示li的下标
+                });
+            });
+
+        });
+    </script>
+</head>
+<body>
+<ul>
+    <li>123</li>
+    <li>456</li>
+    <li>789</li>
+</ul>
+</body>
+</html>

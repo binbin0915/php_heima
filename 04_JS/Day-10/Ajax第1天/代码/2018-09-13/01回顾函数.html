@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    /*function a(x, y){
+        console.log(arguments);
+        console.log(arguments.length);
+        console.log(arguments.callee.length);
+        console.log(arguments[1]);
+        console.log(arguments[2]);
+    }
+
+    a(2, 4, 5, 7);*/
+
+    function A(){
+        var x = 1;
+        function B(){
+            console.log(x);
+        }
+        return B;
+    }
+    var b = A(); //调用A函数之后，会得到返回值，返回值是B函数
+    b();
+    b();
+    //....
+    //var a = b;
+    //setTimeout(b, 1000);
+</script>
+
+</body>
+</html>

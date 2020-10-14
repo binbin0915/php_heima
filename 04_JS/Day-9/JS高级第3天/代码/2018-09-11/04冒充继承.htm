@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    /*function C(){
+        console.log(this);  //window
+    }
+    C();*/
+    /********************* 冒充方式实现继承 *************************/
+    //“父类”
+    /*function A(aa, cc){
+        this.age = aa;
+        this.say = function(){
+            console.log(cc);
+        }
+    }
+
+    //“子类”
+    function B(){
+        //让B的实例，继承A
+        A.call(this, 20, '1234');
+    }
+    //实例化“子类”
+    var b = new B();
+    //A.call(b);
+    console.log(b.age);
+    b.say();*/
+
+    /********************* 冒充方式实现继承，检测是否能够继承父类的原型对象的成员 *************************/
+    function A(){
+        this.age = 20;
+    }
+    A.prototype.say = function () {
+        console.log(this.age);
+    };
+
+    function B(){
+        A.call(this);
+    }
+    var b = new B();
+    console.log(b.age);
+    b.say();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img{
+            float: left;
+        }
+    </style>
+</head>
+<body>
+
+<img src="images/rank_3.gif" alt="">
+<img src="images/rank_4.gif" alt="">
+<img src="images/rank_3.gif" alt="">
+<img src="images/rank_4.gif" alt="">
+<img src="images/rank_3.gif" alt="">
+<img src="images/rank_4.gif" alt="">
+<img src="images/rank_3.gif" alt="">
+<img src="images/rank_4.gif" alt="">
+<img src="images/rank_3.gif" alt="">
+<img src="images/rank_4.gif" alt="">
+
+<script>
+    //找到每个img，然后绑定鼠标移入事件
+    var imgs = document.images; //找到所有的图片
+    //循环，为每个图片绑定鼠标移入事件
+    for(var i=0; i<imgs.length; i++){
+        //每一张图片都是一个dom对象
+        //imgs[i]; 分别表示每一张图片
+        imgs[i].a = i;  //给每一张图片都加入一个成员属性a，值是图片的下标
+        imgs[i].onmouseover = function(){
+            //找到当前鼠标移入的图片是哪一张，比如是第n 张
+            //从第0 张到第n 张，变为黄色
+            //从第n+1 张到最后，变为灰色
+            //alert(this.a);  // a 就是鼠标移入的图片的下标
+            for(var j=0; j<=this.a; j++){
+                imgs[j].src = imgs[j].src.replace('rank_3', 'rank_1');
+                imgs[j].src = imgs[j].src.replace('rank_4', 'rank_2');
+            }
+            for(var k=this.a+1; k<imgs.length; k++){
+                imgs[k].src = imgs[k].src.replace('rank_1', 'rank_3');
+                imgs[k].src = imgs[k].src.replace('rank_2', 'rank_4');
+            }
+        };
+    }
+</script>
+
+</body>
+</html>

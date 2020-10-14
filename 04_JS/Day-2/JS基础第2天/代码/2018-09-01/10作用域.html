@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    //一、函数可以使用函数以外的变量
+    /*var a = 10;
+    function m(){
+        //函数内部可以直接使用函数之外的定义的变量
+        console.log(a);
+    }
+    m();*/
+
+    //二、函数内部，优先使用函数内部的变量
+    /*var a = 10;
+    function m(){
+        var a = 20;
+        console.log(a); //优先使用函数内部的变量，所以输出 20
+    }
+    m();*/
+
+    /*var a = 10;
+    function m(){
+        console.log(a); // undefined
+        var a = 20;
+    }
+    m();*/
+
+    //三、函数内部没有用var声明的变量，也是全局变量
+    /*var a = 10;
+    function m(){
+        //var a = 20; //局部变量
+        a = 20; //全局变量
+    }
+    m(); //调用函数
+    console.log(a);*/
+
+
+    /**** 用var还是不用var声明变量的区别 *****/
+    var a = 1;
+    b = 2;
+    delete a; //用var声明的变量是不能用delete删除的
+    //delete b; //没有用var声明的变量是可以用delete删除掉的
+    console.log(a, b);
+</script>
+
+</body>
+</html>

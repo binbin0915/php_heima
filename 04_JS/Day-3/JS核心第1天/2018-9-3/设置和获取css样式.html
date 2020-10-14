@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<p>卢本伟牛逼！</p>
+
+<script>
+    //设置p的css样式
+    var p = document.getElementsByTagName('p')[0];
+    p.style.fontSize="25px";
+    p.style.color = 'red';
+    p.style.backgroundColor = 'pink';
+
+    /************* 获取元素的CSS样式 *************/
+    // var c = p.style.color;
+    // console.log(c);
+    // var f = p.style.fontSize;
+    // console.log(f);
+    // //获取完整演示的写法(非IE)
+    // var g = getComputedStyle(p).fontSize;
+    // console.log(g);
+    //获取完整样式的写法(IE8)
+    //var s = p.currentStyle.fontSize;
+    //console.log(s);
+    //兼容各个浏览器的获取完整css样式的写法
+    function getStyle(node, styleName){
+        if (node.currentStyle){
+            //说明是IE
+            return node.currentStyle[styleName];
+        }else{
+            return getComputedStyle(node)[styleName];
+        }
+    }
+    console.log(getStyle(p,'fontSize'));
+</script>
+</body>
+</html>

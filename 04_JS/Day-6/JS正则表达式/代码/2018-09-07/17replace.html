@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    /******************* 简单的替换 ***********************/
+    //var str = 'hello world';
+
+    //var result = str.replace('l', 'L'); // heLlo world
+    //var result = str.replace(/l/, 'L'); // heLlo world
+    //var result = str.replace(/l/g, 'L'); // heLLo worLd
+    //console.log(result);
+
+    /******************** 使用子表达式 **********************/
+    /*var str = 'abcd123';
+    //替换成aabbccdd123
+    var result = str.replace(/([a-z])/g, '$1$1');
+    console.log(result);*/
+
+    /******************** 借助子表达式 **********************/
+    //替换abc为a[a-b-c]c  ghk  g[g-h-k]k
+    /*var str = 'abc'; // a[a-b-c]c
+    var result = str.replace(/(b)/g, "[$`-$1-$']");
+    console.log(result);*/
+
+    /******************************************/
+    //替换aaa bbb ccc为Aaa Bbb Ccc
+    var str = 'aaa bbb ccc';
+    var result = str.replace(/[a-z]+/g, function(x){
+        //需要把替换后的结果返回即可
+        return x.substr(0,1).toUpperCase() + x.substr(1);
+    });
+    console.log(result);
+</script>
+
+</body>
+</html>

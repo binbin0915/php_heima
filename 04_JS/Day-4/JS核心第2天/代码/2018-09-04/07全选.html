@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<p align="center">
+    <a href="javascript:void(0);" id="quanxuan">全选</a>
+    <a href="javascript:void(0);" id="fanxuan">反选</a>
+    <a href="javascript:void(0);" id="quxiao">取消</a>
+</p>
+
+<table border="1" cellpadding="2" cellspacing="0" rules="all" align="center" width="500">
+    <tr>
+        <th>ID</th>
+        <th>标题</th>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" name="id[]" value="1">
+        </td>
+        <td>诸葛亮是一个医学家</td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" name="id[]" value="1">
+        </td>
+        <td>诸葛亮是一个医学家</td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" name="id[]" value="1">
+        </td>
+        <td>诸葛亮是一个医学家</td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" name="id[]" value="1">
+        </td>
+        <td>诸葛亮是一个医学家</td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" name="id[]" value="1">
+        </td>
+        <td>诸葛亮是一个医学家</td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" name="id[]" value="1">
+        </td>
+        <td>诸葛亮是一个医学家</td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" name="id[]" value="1">
+        </td>
+        <td>诸葛亮是一个医学家</td>
+    </tr>
+</table>
+
+<script>
+    //全选
+    //选择a标签，然后绑定单击事件
+    document.getElementById('quanxuan').onclick = function(){
+        //点击全选后，做的工作都写到这个函数中
+        //alert(123);
+        //找到所有的input标签
+        var inputs = document.getElementsByTagName('input'); //找到所有的input
+        //var inputs = document.querySelector('input[type="checkbox"]'); //找到所有的input
+        //console.log(inputs);
+        for(var i in inputs){
+            inputs[i].checked = true;
+        }
+    };
+
+    //取消
+    //选择a标签，然后绑定单击事件
+    document.getElementById('quxiao').onclick = function(){
+        //点击取消后，做的工作都写到这个函数中
+        //alert(123);
+        //找到所有的input标签
+        var inputs = document.getElementsByTagName('input'); //找到所有的input
+        //var inputs = document.querySelector('input[type="checkbox"]'); //找到所有的input
+        //console.log(inputs);
+        for(var i in inputs){
+            inputs[i].checked = false;
+        }
+    };
+
+    //反选
+    document.getElementById('fanxuan').onclick = function () {
+        //找到所有的input标签
+        var inputs = document.getElementsByTagName('input'); //找到所有的input
+        //遍历，设置input的check属性
+        for(var i in inputs){
+            /*if(inputs[i].checked == true){
+                inputs[i].checked = false;
+            }else{
+                inputs[i].checked = true;
+            }*/
+            inputs[i].checked = !inputs[i].checked;
+        }
+    };
+</script>
+
+</body>
+</html>

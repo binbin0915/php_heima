@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<input type="text" name="username" readonly />
+<script>
+    //获取所有的属性
+    //先找到标签（元素）
+    // var input = document.querySelector('input');
+    // //获取input标签的所有属性
+    // var attrs = input.attributes;   //返回值是数组
+    // console.log(attrs);
+    // console.log(attrs.length);
+
+    //获取input的一个属性
+    var input = document.getElementsByTagName('input')[0];
+    var t = input.getAttribute('type'); //获取type属性
+    console.log(t);
+    var r = input.getAttribute('readOnly');
+    console.log(r);
+
+    //获取一个属性
+    var t2 = input.type;    //获取type属性
+    console.log('t2'+t2);
+    var r2 = input.readOnly;
+    console.log('t2'+r2);
+</script>
+</body>
+</html>

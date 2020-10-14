@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if(xhr.readyState==4 && xhr.status==200){
+            //接收服务器返回的数据
+            //用于获取XML格式的返回值。返回值可以当做document对象来使用
+            var res = xhr.responseXML;
+            //console.log(res);
+            //输出第一本书的名字
+            //var name1 = res.getElementsByTagName('name')[0];
+            //console.log(name1.innerHTML);
+            //console.log(name1.childNodes[0].nodeValue);
+            //循环输出
+            //先找到所有的book
+            var books = res.getElementsByTagName('book');
+            document.write('<table border="1" width="300">');
+            for(var i=0; i<books.length; i++){
+                document.write('<tr>');
+                document.write('<td>'+books[i].children[0].innerHTML+'</td>');
+                document.write('<td>'+books[i].children[1].innerHTML+'</td>');
+                document.write('</tr>');
+            }
+            document.write('</table>');
+        }
+    };
+    xhr.open('get', '05xml.php');
+    xhr.send();
+</script>
+
+</body>
+</html>

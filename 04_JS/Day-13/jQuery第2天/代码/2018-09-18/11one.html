@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(function () {
+            //语法一：
+            /*$('p').one('click', function () {
+                console.log(1234);
+            });*/
+
+            //语法二：
+            /*$(document).one('click', 'p', function () {
+                console.log('abcd');
+            });*/
+
+            //语法三：
+            $('p').one({
+                click:function () {
+                    console.log('222');
+                },
+                mouseover:function () {
+                    console.log(333);
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+
+<p>123</p>
+
+</body>
+</html>

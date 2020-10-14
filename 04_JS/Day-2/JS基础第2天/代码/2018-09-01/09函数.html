@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    /**************** 使用function声明函数，并调用 *******************/
+    //定义函数，参数为一个大于0 的数字n，要求返回1+2+3+....+n 的和
+    /*function sum(n){
+        //定义一个和
+        var s = 0; //默认是0
+        for(var i=1; i<=n; i++){
+            s = s + i; // s += i;
+        }
+        //循环结束之后，就得到一个和
+        return s;
+    }
+    //调用函数
+    console.log(sum(100));*/
+
+
+    /******************** 函数表达式 ***************************/
+    //可以认为函数也是一个值
+    // 这里使用的sum不能加小括号，加小括号表示调用函数，调用函数得到函数的返回值。
+    /*var a = sum; //把sum看做一个变量，将其赋值给另外的变量a。
+    console.log(a(10));
+
+    //定义一个变量，值是一个函数类型。这种方式定义函数也是可以的
+    var b = function (x){
+        console.log('今天是周' + x);
+    };
+    b('三'); //调用函数*/
+
+    /******************** 函数预加载 ***************************/
+    /*a();
+    function a(){
+        console.log('aaaa');
+    }
+
+    b();
+    var b = function(){
+        console.log('bbb');
+    };*/
+
+    /********************** 立即调用模式 **********************/
+    /*var a = function (){
+        console.log(123);
+    };
+    a();*/
+
+    // 上面的代码，定义了函数a，调用函数用a(), 为了方便，直接用函数后面加小括号，表示创建并直接调用函数
+    // 但是由于一条语句，不能以function开头，所以需要在function之前加入 ~!-+ 符号中的一个，如下：
+    /*~function (){
+        console.log(123);
+    }();*/
+
+    // 不想在function之前加特殊符号，也可以用小括号将function整体扩起来。
+    /*(function (x, y){
+        console.log(x + y);
+    })(3, 5);*/
+
+    /********************** 参数 **********************/
+    /*function t(x, y){
+        console.log(123 + x + y);
+    }
+
+    t();
+    //t(1);
+    t(1,2,3,5,7);*/
+
+    function m(x, y){
+        if(y === undefined){
+            y = 3;
+        }
+        console.log(x + y);
+    }
+    m(1, 4); // 5
+    m(3); // 6
+</script>
+
+</body>
+</html>

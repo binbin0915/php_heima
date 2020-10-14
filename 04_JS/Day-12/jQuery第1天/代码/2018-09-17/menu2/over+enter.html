@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#over').mouseover(function(){
+                var old = $(this).children('span').text();
+                $(this).children('span').text(parseInt(old) + 1);
+            });
+
+            $('#enter').mouseenter(function(){
+                var old = $(this).children('span').text();
+                $(this).children('span').text(parseInt(old) + 1);
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="over" style="background-color: aqua; border: solid 1px red;">
+    <h1 style="background-color: chocolate;">over</h1>
+    <span>0</span>
+</div>
+<hr>
+<div id="enter" style="background-color: #ccc; border: solid 1px green;">
+    <h1 style="background-color: aquamarine">enter</h1>
+    <span>0</span>
+</div>
+</body>
+</html>

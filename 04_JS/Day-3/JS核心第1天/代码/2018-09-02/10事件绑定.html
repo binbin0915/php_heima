@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<input type="button" value="点我试试" id="btn" />
+<input type="text" id="username" value="请输入用户名" />
+
+<script>
+    //找到要绑定事件的元素节点
+    var btn = document.getElementById('btn');
+    //单击事件
+    btn.onclick = function(){
+        alert('你真敢点');
+    };
+
+    //找到username，绑定获取焦点事件
+    /*document.getElementById('username').onfocus = function () {
+        document.getElementById('username').value = '';
+    };*/
+
+    document.getElementById('username').onfocus = function () {
+        //函数中，让谁的value为空呢？
+        //还是让绑定事件的元素的value为空
+        //在事件处理函数中，this表示绑定事件的那个元素
+        this.value = '';
+    };
+</script>
+
+</body>
+</html>

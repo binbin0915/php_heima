@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(function(){
+            /*$('input[type="button"]').click(function(){
+                //点击button的时候，希望file被点击
+                $('input[type="file"]').click();
+                //昨天写的可编辑的表格中，用到input.focus(); ，仅仅是希望input获取焦点而已
+            });*/
+
+
+            $('input[type="button"]').click({name:'lisi', age:20}, function(evt){
+                console.log(evt.data); //{name: "lisi", age: 20}
+                console.log(evt.data.name); //lisi
+            });
+        });
+    </script>
+</head>
+<body>
+
+<form action="">
+    <input type="file" name="file" style="display: none;">
+    <input type="button" value="请选择文件">
+</form>
+
+</body>
+</html>

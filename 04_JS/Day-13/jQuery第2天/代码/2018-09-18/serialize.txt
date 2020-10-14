@@ -1,0 +1,17 @@
+Array
+(
+    [sheng] => 北京
+    [shi] => Array
+        (
+            [0] => 石家庄市
+            [1] => 美国市
+        )
+
+    [check] => Array
+        (
+            [0] => check2
+        )
+
+    [radio] => radio1
+    [username] => 123456
+)

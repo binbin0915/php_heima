@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+
+    /********************** 创建地图 *************************/
+    function Map(){
+        //地图特点
+        this.width = '600px';
+        this.height = '400px';
+        this.backgroundColor = '#dddddd';
+        this.position = 'relative';
+        this.ditu = null; //该属性用于保存地图那个div
+        //show方法用于显示地图
+        this.show = function(){
+            this.ditu = document.createElement('div');
+            this.ditu.style.width = this.width;
+            this.ditu.style.height = this.height;
+            this.ditu.style.backgroundColor = this.backgroundColor;
+            this.ditu.style.position = this.position;
+            //将div放到body中
+            document.body.appendChild(this.ditu);
+        }
+    }
+    //实例化地图，创建对象
+    var map = new Map();
+    //调用show，显示地图
+    map.show();
+
+    /********************** 创建食物 *************************/
+    function Food(){
+        this.width = 20;
+        this.height = 20;
+        this.backgroundColor = 'green';
+        this.position = 'absolute';
+        this.x = null;
+        this.y = null;
+        this.shiwu = null; //它表示食物那个div
+        //show方法，显示食物
+        this.show = function () {
+            if(this.shiwu == null){
+                this.shiwu = document.createElement('div');
+                this.shiwu.style.width = this.width + 'px';
+                this.shiwu.style.height = this.height + 'px';
+                this.shiwu.style.backgroundColor = this.backgroundColor;
+                this.shiwu.style.position = this.position;
+            }
+            this.x = Math.floor(Math.random()*30); // 0~29的随机数
+            this.y = Math.floor(Math.random()*20); // 0~19的随机数
+            this.shiwu.style.left = this.x * this.width + 'px';
+            this.shiwu.style.top = this.y * this.height + 'px';
+            map.ditu.appendChild(this.shiwu);
+        }
+    }
+    //实例化食物对象
+    var food = new Food();
+    food.show();
+
+    /********************** 创建蛇 *************************/
+    function Snake(){
+        this.body = [[3,2,'red', null], [2,2,'blue', null], [1,2,'blue', null]];
+        this.width = 20; //每一节的宽度
+        this.height = 20;//每一节的高度
+        this.position = 'absolute';
+        this.direction = 'right'; //表示蛇的移动方向，默认向右
+        //定义方法show，让蛇显示
+        this.show = function () {
+            for(var i=0; i<this.body.length; i++){
+                if(this.body[i][3] == null){
+                    this.body[i][3] = document.createElement('div');
+                    this.body[i][3].style.width = this.width + 'px';
+                    this.body[i][3].style.height = this.height + 'px';
+                    this.body[i][3].style.backgroundColor = this.body[i][2];
+                    this.body[i][3].style.position = this.position;
+                }
+                this.body[i][3].style.left = this.body[i][0] * this.width + 'px';
+                this.body[i][3].style.top = this.body[i][1] * this.height + 'px';
+                //把创建的每个div放到地图中
+                map.ditu.appendChild(this.body[i][3]);
+            }
+        };
+        //定义move方法，让蛇移动
+        this.move = function () {
+            //移动过程中，判断，如果蛇的坐标和食物的坐标完全一样，表示吃到食物
+            if(this.body[0][0] == food.x && this.body[0][1] == food.y){
+                //蛇变长
+                this.body.push([0,0,'blue',null]);
+                //从新让食物显示
+                food.show();
+                //让t变小，移动速度加快
+                if(t > 150){
+                    t -= 50;
+                    dingshi();
+                }
+            }
+            //除蛇头以外，其他节修改坐标等于它前一节的坐标即可。
+            for(var i=this.body.length-1; i>0; i--){
+                this.body[i][0] = this.body[i-1][0];
+                this.body[i][1] = this.body[i-1][1];
+            }
+            //蛇头单独设置
+            if(this.direction == 'right'){
+                this.body[0][0] += 1; //向右移动，修改横坐标
+            }else if(this.direction == 'left'){
+                this.body[0][0] -= 1; //向左移动，修改横坐标
+            }else if(this.direction == 'up'){
+                this.body[0][1] -= 1; //向上移动，修改纵坐标
+            }else if(this.direction == 'down'){
+                this.body[0][1] += 1; //向下移动，修改纵坐标
+            }
+
+            //修改完坐标，让蛇从新显示
+            this.show();
+        };
+    }
+    //如果把成员方法写到原型对象上也是可以的。
+    /*Snake.prototype = {
+        show:function(){
+
+        },
+        move:function(){
+
+        }
+    };*/
+    //实例化蛇
+    var snake = new Snake();
+    //让蛇显示
+    snake.show();
+
+    //定义一个时间，这个时间表示蛇移动的速度
+    var t = 500;
+    var timer; //它表示当前的定时器
+    //定时器，让蛇移动
+    function dingshi(){
+        clearInterval(timer);
+        timer = setInterval('snake.move()', t);
+    }
+    dingshi();
+
+    //给页面绑定键盘事件
+    document.onkeydown = function(evt){
+        var e = window.event||evt;
+        var keyCode = e.keyCode;
+        if(keyCode == 37 && snake.direction != 'right'){
+            snake.direction = 'left';
+        }else if(keyCode == 38 && snake.direction != 'down'){
+            snake.direction = 'up';
+        }else if(keyCode == 39 && snake.direction != 'left'){
+            snake.direction = 'right';
+        }else if(keyCode == 40 && snake.direction != 'up'){
+            snake.direction = 'down';
+        }
+    }
+</script>
+
+
+<!--<div id="map" style="position: relative;">
+    <div id="food" style="position: absolute;"></div>
+</div>-->
+
+</body>
+</html>

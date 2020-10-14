@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+
+    var obj1 = {}; //空对象
+    var obj2 = {name:'张三疯', age:99};
+    var obj3 = {
+        name:'张三疯',
+        age:99,
+        sex:'男',
+        zhiye:['打手', '武力值>90'],
+        wugong:function(){
+            console.log('太极八卦连环掌');
+        },
+        hunpei:function(){
+
+        }
+    };
+
+    //console.log(obj1);
+    //console.log(obj2);
+    //console.log(obj3);
+
+    //点语法用于对象调用里面的成员 obj1.name;
+    console.log(obj3.name);
+    console.log(obj3.age);
+    obj3.wugong(); //调用成员方法
+
+
+
+    var obj4 = {
+        name:123,
+        age:32,
+        a:function(){
+            console.log('这是我的第一个对象，她的年龄是' + this.age);
+        },
+        b:function(){
+
+        }
+    };
+    //console.log(obj4.age);
+    //obj4.a();
+    //console.log('name' in obj4); //true 表示判断name是否是对象的成员
+    //console.log(name in obj4); //false  表示找变量为name的值是否在对象中
+    //console.log('a' in obj4); //true
+
+    //给obj4 添加一个成员sex
+    obj4.sex = '男';
+    //给obj4 添加一个成员，值是一个函数
+    obj4.c = function(){
+        console.log(this.name);
+    };
+
+    console.log(obj4);
+    delete obj4.a; //删除成员方法，不要加小括号。
+    delete obj4.name;
+    console.log(obj4);
+
+</script>
+
+</body>
+</html>

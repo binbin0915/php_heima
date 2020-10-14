@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    /*********** (?=n) *************/
+    //var str = 'abacad';
+    //var result = str.match(/a(?=b)/g);
+
+    /*var str = 'php7 and ES5 hello中国';
+    //查询连续的字母，要求字母的后面必须是数字
+    //var result = str.match(/[a-zA-Z]+(?=\d)/g);
+    //查询连续的字母，要求字母的后面必须是数字或者是中文
+    var result = str.match(/[a-zA-Z]+(?=\d|[\u4e00-\u9fa5])/g);
+    console.log(result);*/
+
+
+    /*********** (?!n) *************/
+    /*var str = 'abacad';
+    var result = str.match(/a(?!b)/g);
+    console.log(result);*/
+
+    /*********** (?!B)[A-Z]  *************/
+
+    var str = 'ABCDEFG';  //
+    //var result = str.match(/(?!B)[A-Z]/g); //["A", "C", "D", "E", "F", "G"]
+    var result = str.match(/(?![C-E])[A-Z]/g); //["A", "B", "F", "G"]
+
+    //var str = '12421asdfASDF';
+    //下面的例子，表示整个字符串可以由数字、字母组合，但是不能是纯数字
+    //var result = str.match(/(?!^\d+$)^[0-9a-zA-Z]+$/g); //
+    console.log(result);
+</script>
+
+</body>
+</html>

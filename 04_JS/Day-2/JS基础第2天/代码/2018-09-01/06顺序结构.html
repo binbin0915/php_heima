@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+
+    console.log(a); // undefined
+    var a = 1;
+
+    /*
+    * 变量提升，上面的两行代码，在实际执行的时候，和下面三行代码执行结果和道理一样
+    * var a;
+    * console.log(a);
+    * a = 1;
+    * */
+
+    //函数可以先调用，再声明，这就是函数预加载
+    //预加载是有条件的，条件1 是函数声明方式必须是常规的方式；条件2 是函数的声明和调用在同一个script段中
+    b(); // 123
+    function b(){
+        console.log(123);
+    }
+
+</script>
+
+<script>
+    /*function b(){
+        console.log(123);
+    }*/
+</script>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    /************************* 比较运算符 *******************************/
+    /*var a = 1, b = 2, c = '1';
+    if(a = c){ // 一个等号，表示赋值，意思是将c的值赋值给a，然后判断a转换成布尔后的值是true还是false
+        console.log('相等');
+    }else{
+        console.log('不等');
+    }
+
+    if('false'){ // 这是字符串类型的，而且是非空字符串，所以转换为布尔是true。
+        console.log(123);
+    }*/
+
+    /**************************** 算数运算符 ******************************/
+    //var d = 2, e = 5;
+    //console.log(d % e); // 2/5 = 0......2，所以结果是 2
+    //console.log(e % d); // 5/2 = 2......1, 所以结果是 1
+
+    //d += e; // d = d + e; // d=7,e=5
+    //d -= e; // d = d - e; // d=2,e=5
+    //console.log(d, e);
+
+    /*** 小例子，不使用第3个变量，交换两个变量的值 ***/
+    /*var x = 10;
+    var y = 20;
+    x = x + y; // x 是 30
+    y = x - y; // y 是 10
+    x = x - y; // x 是 20
+    console.log(x, y);*/
+
+    /********************* 逻辑运算符 *************************/
+    /*if(0 && false){
+        console.log(123);
+    }else{
+        console.log(456);
+    }*/
+    //var a = 1, b = 2, c = 0, d = false;
+    //var e = a||b; // e = a;
+    //console.log(a||b); // 1
+    //console.log(a||c); // 1
+    //console.log(c||a); // 1
+    //console.log(c||d); // false
+    // || 关系，先看左边，左边为true，则直接等于左边；左边为false，直接等于右边
+
+    //console.log(a&&b); // 2
+    //console.log(a&&c); // 0
+    //console.log(c&&a); // 0
+    //console.log(c&&d); // 0
+    // && 关系，先看左边，左边为true，直接等于右边；左边为false，直接等于左边。
+    //console.log(10||20); // 10
+    /*var x = 10&&20;
+    console.log(x||30); // 20*/
+    //console.log(0&&5); // 0
+
+    //要求函数fn存在就调用它，不存在就不调用
+    /*if(fn){
+        fn();
+    }*/
+    //var e = window.event||evt;
+    //fn&&fn();
+
+    /********************* 字符串连接符 ******************************/
+    //console.log(2+3); // 5，表示加法运算，因为参与运算的两个值都是数值型
+    //console.log(2+'hello'); // 2hello，表示字符串相连
+    //console.log('hello ' + 'world'); //hello world
+    //var x = 35;
+    //console.log('hahaha' + x); // hahaha35
+    //console.log('35' + x); // 3535
+    //console.log('hello' + ['a', 'b']); // helloa,b
+
+    /***************** 三元运算符 ********************/
+    //var b = 3, c = 2;
+    //var a = (b>c) ? 5 : 6;
+    //console.log(a); // 5
+    //console.log('false'==false ? 1 : 2);
+
+    /******************** 一元运算符 ****************************/
+
+    /*var a = 2, b = 3;
+    var c = a++; // var c = a; a = a+1
+    var d = ++b; // b = b+1; var d=b;
+    console.log(a, b , c, d); // a=3, b=4, c=2, d=4*/
+
+    /*************** 其他 ******************/
+    /*console.log(void 123); //undefined
+    console.log(void(123)); //undefined*/
+
+    console.log(typeof(123)); // number
+    console.log(typeof 3.14); // number
+    console.log(typeof 'hello world');// string
+    console.log(typeof true); // boolean
+</script>
+
+<a href="javascript:void(0);">全选</a>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    /*
+     新浪邮箱要求：
+        4~16个字符，
+        使用小写字母、数字、下划线组成
+        下划线不能在首尾
+     */
+    //var email = 'as_d222222222222';
+    //var r = /^[a-z0-9][a-z0-9_]{2,14}[a-z0-9]$/g;
+    //console.log(r.test(email));
+
+    /*
+     * 如果说要验证一个通用的邮箱格式：不但要验证用户名，还要验证@后面的部分。
+     比如：214asdf2A_ASd@qq.com   214asdf2A_ASd@qq.com.cn
+     @前面的部分：数字、大小写字母、下划线、点、中横线，长度至少1位
+     @和点之间的部分（域名部分）:大小写字母、数字，长度至少1位
+     点后面的部分：小写字母、长度至少1位。但是点后面的部分可以写多个，如.com.cn
+     */
+    var email = 'asdf.-a22DA@qq.com.cn';
+    var r = /^[\w.-]+@[A-Za-z0-9]+(\.[a-z]+)+$/g;
+
+    //var r = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;  //tp中内置的通用邮箱验证格式
+    console.log(r.test(email));
+
+</script>
+
+</body>
+</html>

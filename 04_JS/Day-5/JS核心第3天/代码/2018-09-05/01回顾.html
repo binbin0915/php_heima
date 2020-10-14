@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul ul li{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+
+<ul>
+    <li>
+        <a href="#">顶级菜单</a>
+        <ul>
+            <li>子菜单11</li>
+            <li>子菜单12</li>
+            <li>子菜单13</li>
+        </ul>
+    </li>
+    <li>
+        <a href="#">顶级菜单</a>
+        <ul>
+            <li>子菜单11</li>
+            <li>子菜单12</li>
+            <li>子菜单13</li>
+        </ul>
+    </li>
+    <li>
+        <a href="#">顶级菜单</a>
+        <ul id="u3">
+            <li>子菜单11</li>
+            <li>子菜单12</li>
+            <li>子菜单13</li>
+        </ul>
+    </li>
+</ul>
+
+<input type="text" value="123" onblur="m();" />
+
+<script>
+
+    var a = 1;
+    function m(){
+        //alert(123);
+        console.log(this); //window
+    }
+
+    console.log(window.a);
+    window.m();
+
+    /*
+     param @ele 需要绑定事件的元素节点
+     param @type 事件类型或事件名称，不要带on，如单击事件写成click即可
+     param @fn 事件处理函数，要求是一个函数类型
+     */
+    function addEvent(ele, type, fn){
+        if(window.addEventListener){
+            //说明是非IE浏览器，或IE高版本浏览器
+            ele.addEventListener(type, fn);
+        }else{
+            //IE低版本浏览器
+            ele.attachEvent('on'+type, fn);
+        }
+    }
+    //使用自定义函数为input绑定事件
+    var input = document.getElementsByTagName('input')[0];
+    addEvent(input, 'focus', function(){
+        alert(123);
+    });
+
+    /*var input = document.querySelector('input');
+    input.onfocus = function () {
+        //函数在用户将光标定位到input中时执行
+        //或者说
+        //函数在input获得焦点时执行
+    };*/
+
+    //
+    /*var input = document.querySelector('input');
+    input.name = 'username';
+    input.value = 456;
+    input.removeAttribute('name');
+    input.removeAttribute('value');*/
+
+    //insertBefore()
+    /*var u3 = document.getElementById('u3');
+    //下面查找参照的节点
+    var li12 = u3.children[1];
+    //创建新节点
+    var newLi = document.createElement('li');
+    var text = document.createTextNode('子菜单11-12');
+    newLi.appendChild(text);
+    //调用insertBefore
+    u3.insertBefore(newLi, li12);*/
+
+
+    /*var li_child = document.querySelectorAll('ul ul li');
+    for(var i=0; i<li_child.length; i++){
+        /!*li_child[i].onclick = function () {
+            alert(1);
+        }*!/
+        li_child[i].style.backgroundColor = '#ccc';
+    }*/
+
+    //
+    /*var a = document.getElementsByTagName('a')[0];
+    //console.log(a.innerHTML);
+    //console.log(a.innerText);
+    //console.log(a.children[0].nodeValue);  //报错，因为children会忽略文本类型的节点
+    console.log(a.childNodes[0].nodeValue);*/
+</script>
+
+
+</body>
+</html>

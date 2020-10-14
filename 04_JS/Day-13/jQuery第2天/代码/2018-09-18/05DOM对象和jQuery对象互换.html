@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(function(){
+            var input = document.createElement('input');
+
+            //加下标的方式，将jQuery对象转换成DOM对象
+            //$('body')[0].appendChild(input);
+            //调用get方法，将jQuery对象转换成DOM对象
+            //$('body').get(0).appendChild(input);
+
+            //用$() 函数处理dom对象，就可以得到jQuery对象
+            $(input).appendTo(document.body);
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

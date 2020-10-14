@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="clock"></div>
+<input type="button" value="停止" id="qiehuan" />
+
+<script>
+    //写一个函数，检测数字是否小于10，如果小于10，则前面加一个0
+    function check(n){
+        if(n < 10){
+            n = '0'+ n; //字符串和数字相连，会将数字转换为字符串，然后相连
+        }
+        return n;
+    }
+
+    //定义制作时间的函数
+    function t(){
+        //制作时间
+        var d = new Date();
+        var year = d.getFullYear();
+        var month = check(d.getMonth()+1);
+        var day = check(d.getDate());
+        var hour = check(d.getHours());
+        var minute = check(d.getMinutes());
+        var second = check(d.getSeconds());
+        //组合
+        var s = year+'年'+month+'月'+day+'日 '+hour+':'+minute+':'+second;
+        document.getElementById('clock').innerText = s;
+    }
+    t(); //上来先运行一次函数，显示一次时间
+
+    var flag = true;
+    var x = setInterval(t, 1000); //每隔1秒执行一次函数
+
+    document.getElementById('qiehuan').onclick = function () {
+        if(flag){
+            this.value = '继续';
+            clearInterval(x);
+            flag = false;
+        }else{
+            this.value = '停止';
+            x = setInterval(t, 1000);
+            flag = true;
+        }
+    }
+</script>
+
+</body>
+</html>

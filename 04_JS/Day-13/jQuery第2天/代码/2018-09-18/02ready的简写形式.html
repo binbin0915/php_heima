@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        //原来的形式
+        /*$(document).ready(function(){
+            alert(123);
+        });*/
+
+        //省略document的写法
+        /*$().ready(function(){
+            alert(456);
+        });*/
+
+        //最简形式，一个$()函数调用，参数为页面加载完毕要执行的函数
+        $(function(){
+            alert(789);
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    /************* 调用函数，执行完毕，函数会被释放 *************/
+    var x = 2;
+    function a(){
+        var i = 1;
+        console.log(i++);
+    }
+    a(); // 1
+    a(); // 1
+    a(); // 1
+    a(); // 1
+
+    /************* 闭包 ****************/
+    function a(){
+        var i = 1;
+        function b(){
+            console.log(i++);
+        }
+        return b;
+    }
+
+    var bb = a(); //调用函数，得到函数的返回值，返回值是b 函数
+    bb();
+    bb();
+    bb();
+    bb();
+
+</script>
+
+<script>
+    //console.log(x);
+    //a();
+</script>
+
+
+</body>
+</html>

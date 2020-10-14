@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(function(){
+            /*$('div').animate({
+                width:'400px',
+                height:'300px',
+                left:'200px',
+                top:'100px',
+                background:'green' //颜色没法变
+            }, 5000, function(){
+                alert('变身完毕');
+            });*/
+
+            $('div').animate({
+                width:'400px',
+                height:'300px',
+                left:'200px',
+                top:'100px'
+            }, 5000).fadeOut(1000).delay(2000).fadeIn(1000).delay(3000).fadeTo(1000, 0.5);
+
+            $('input').click(function(){
+                //stop参数如果不填，表示停止当前的动画，还可以继续执行后面的动画
+                //stop参数为true表示停止当前元素上所有的动画
+                //$('div').stop(true);
+                $('div').finish(); //直接将队列上的动画全部取消，并且将元素直接变化到css的最终值
+            });
+        });
+    </script>
+</head>
+<body>
+<input type="button" value="停">
+
+<div style="position: absolute; width:100px; height:100px; background-color: brown;"></div>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+*{
+    margin:0;
+    padding:0;
+    border:0 none;
+}
+ul,li{
+    list-style: none;
+}
+/*菜单横向显示*/
+body>ul>li{
+    float: left;
+}
+/*顶级菜单*/
+a{
+    display: block;
+    width:120px;
+    height:30px;
+    line-height: 30px;
+    text-decoration: none;
+    background-color: black;
+    color:white;
+}
+
+/*子菜单*/
+ul ul>li{
+    width:120px;
+    height:30px;
+    line-height: 30px;
+    background-color: darkslategrey;
+    color:yellow;
+}
+/*默认子菜单隐藏*/
+ul ul{
+    display: none;
+}

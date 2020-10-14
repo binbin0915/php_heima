@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<select id="sheng">
+    <option value="0">--请选择省--</option>
+</select>
+
+<select id="shi">
+    <option value="0">--请选择市--</option>
+</select>
+
+<select id="xian">
+    <option value="0">--请选择县--</option>
+</select>
+
+
+<script>
+    /****************************** 页面加载，加载所有的省 **********************************/
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if(xhr.readyState == 4 && xhr.status == 200){
+            //获取服务器返回的完整数据
+            var result = xhr.responseText; //拿到的数据是JSON
+            var res = JSON.parse(result);
+            //console.log(res);
+            var s = document.getElementById('sheng');
+            for(var i=0; i<res.length; i++){
+                var option = document.createElement('option');
+                option.setAttribute('value', res[i].Pcode);
+                option.innerText = res[i].Pname;
+                s.appendChild(option);
+            }
+        }
+    };
+    xhr.open('get', '08city.php?type=sheng', true);
+    xhr.send();
+
+    /****************************** 省切换的时候，加载对应的市 **********************************/
+</script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    //定义构造函数
+    function Person(n, a) {
+        this.name = n;
+        this.age = a;
+        this.say = function () {
+            console.log(123456);
+        }
+    }
+    //实例化，得到对象
+    var p1 = new Person('张三', 20);
+    var p2 = new Person('李四', 25);
+
+    /*var p3 = p1;
+    p3.name = '王五';
+    console.log(p1.name, p3.name);*/
+
+    /*var p3 = p1;
+    p3 = null;  //实际上是将p3指向堆区的引用切断，而不会影响到p1
+    console.log(p1);*/
+
+    function change(o){
+        o.name = '王五';
+    }
+    change(p1);
+    console.log(p1.name);
+</script>
+
+</body>
+</html>

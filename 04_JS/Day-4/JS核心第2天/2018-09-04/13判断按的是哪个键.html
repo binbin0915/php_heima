@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //在页面中任何位置，按键，当键盘弹起的时候，执行函数
+    document.onkeyup = function (evt) {
+        //先获取事件对象
+        var e = window.event||evt;  //兼容各个浏览器的获取事件的方式
+        //获取键盘对应的数字
+        var keyCode = e.keyCode;
+        if (keyCode == 13){
+            alert('你刚才按了回车键');
+        }
+    }
+</script>
+
+
+</body>
+</html>

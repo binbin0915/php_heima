@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    //直接量语法定义对象
+    var obj = {
+        name:'张三',
+        age:20,
+        say:function(){
+            console.log('我是张三,今年20岁');
+        }
+    };
+    //构造函数方式定义对象
+    function Person(){
+        this.name = '李四';
+        this.age = 25;
+        this.say = function () {
+            console.log('我是李四，今年25岁');
+        }
+    }
+    var p = new Person(); //new构造函数得到对象
+
+    /********************* 给对象添加一些成员 ***********************/
+    /*obj.sex = '男';
+    p.sex = '女';
+    p.cook = function(){
+        console.log('我做得一手好饭');
+    };
+    console.log(obj);
+    console.log(p);*/
+
+    /*************** 删除对象的成员 *****************/
+    delete p.name; //删除属性
+    delete p.say; //删除属性（方法）
+    delete obj.name;
+    console.log(p);
+    console.log(obj);
+    //另外delete还可以删除没有用var声明变量
+    abc = 123;
+    var bcd = 456;
+    delete abc;
+    delete bcd;
+    console.log(bcd);
+    console.log(abc);
+</script>
+
+</body>
+</html>

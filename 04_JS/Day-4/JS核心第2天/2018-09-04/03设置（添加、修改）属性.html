@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<input type="text" name="tel" />
+<script>
+    //setAttribute方法
+    var input = document.querySelector('input');
+    input.setAttribute('name','mail');  //修改，修改input的name的tel值为mail
+    input.setAttribute('value','你好');   //修改，添加value属性，值为你好
+
+    //元素，属性名 = 值；
+    input.size = 5;
+    input.value = 'hello';
+    input.disabled = true;  //true表示禁用，false表示非禁用状态
+</script>
+</body>
+</html>

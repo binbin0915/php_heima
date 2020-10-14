@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //JS写到页面上面，必须加入onload事件
+        window.onload = function(){
+            var f = document.f; //找到表单
+            //如果给表单绑定事件，则需要绑定提交事件
+            f.onsubmit = function(){
+                //对用户名进行验证（不能为空、长度必须大于4位、必须以字母开头）
+                if(!/^[a-zA-Z]\w{3,}$/g.test(f.username.value)){
+                    alert('用户名不符合条件');
+                    f.username.focus(); //光标定位到输入框内
+                    return false; //阻止表单提交
+                }
+                //验证密码（要求长度至少6位、不允许有特殊符号。带密码强度判断：数字、小写字母、大写字母，有一者，弱，有两者中，三者都有，强）
+                /*
+                下面的判断，要求密码是数字字母组合，并且长度大于等于6位
+                */
+                if(/^[0-9a-zA-Z]{6,}$/g.test(f.pwd.value)){
+                    //长度可以，并且也没有特殊符号，然后判断强弱
+                    //首先判断，是否是纯数字或纯小写字母或纯大写字母
+                    if(/(^\d+$)|(^[a-z]+$)|(^[A-Z]+$)/g.test(f.pwd.value)){
+                        alert('可以用，但是强度弱');
+                        return false;
+                        //下面的判断，判断是否是两者组合。
+                    }else if(/(^[0-9a-z]+$)|(^[0-9A-Z]+$)|(^[A-Za-z]+$)/g.test(f.pwd.value)){
+                        alert('可以用，但是强度中');
+                        return false;
+                        //下面的else就表示三者都存在的情况
+                    }else{
+                        alert('可以用，但是强度强');
+                        return false;
+                    }
+                }else{
+                    alert('请使用大于6位的数字字母组合');
+                    return false;
+                }
+            };
+            //如果是给提交按钮绑定事件，则需要绑定单击事件
+            /*document.querySelector('input[type="submit"]').onclick = function () {
+                alert(123);
+                return false; //阻止表单提交
+            };*/
+        };
+    </script>
+</head>
+<body>
+
+<form name="f" action="07tanlan.php" method="post">
+    用户名：<input type="text" name="username"><br>
+    密　码：<input type="text" name="pwd"><br>
+    手机号：<input type="text" name="tel" ><br>
+    邮　箱：<input type="text" name="email"><br>
+    <input type="submit" value="提交">
+</form>
+
+</body>
+</html>

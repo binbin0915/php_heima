@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            border:0 none;
+        }
+        div{
+            width:600px;
+            height:400px;
+            margin:10px auto;
+            position: relative;
+        }
+        img{
+            position: absolute;
+            left:0;
+            top:0;
+            z-index: 1;
+        }
+        img:first-child{
+            z-index: 3;
+            /*opacity: 0.5;*/
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <img src="images/1.jpg" alt="">
+    <img src="images/2.jpg" alt="">
+    <img src="images/3.jpg" alt="">
+    <img src="images/4.jpg" alt="">
+    <img src="images/5.jpg" alt="">
+    <img src="images/6.jpg" alt="">
+</div>
+
+<script>
+    var imgs = document.getElementsByTagName('img'); //返回数组
+    var outIndex = 0; //默认第一张图片先应该隐藏
+    var inIndex = 1; //默认第二张图片先显示
+    //先完成生硬的变化
+    setInterval(function(){
+        //判断outIndex和inIndex不要超出范围
+        if(outIndex >= 6){
+            outIndex = 0;
+        }
+        if(inIndex >= 6){
+            inIndex = 0;
+        }
+        imgs[outIndex].style.zIndex = 2;
+        imgs[inIndex].style.zIndex = 3;
+        change(imgs[inIndex]); //调用下面的函数，传递进去要显示的图片
+        outIndex++;
+        inIndex++;
+    }, 4000);
+
+    //自定义函数，完成透明度慢慢变化的过程
+    function change(ele){
+        //先让图片的透明度置为0
+        ele.style.opacity = 0;
+        //让图片的透明度慢慢变化到1
+        //希望通过1秒钟将透明度从0变化到1
+        //0~0.05~0.1~0.15~0.2.......~1 共变化了20次
+        for(var i=1; i<=20; i++){ //每次循环表示透明度变化一次，共变化20次，每次增加0.05
+            (function(x){
+                setTimeout(function(){
+                    ele.style.opacity = 0.05*x;
+                    if(x == 20){
+                        //设置原来的图片zIndex为1
+                        //这行代码是延迟1秒才执行的，此时outIndex已经变大了，所以此处需要-
+                        imgs[outIndex-1].style.zIndex = 1;
+                    }
+                }, 50*x); //每隔50毫秒变化一次，共变化20次，用时1000毫秒（1秒）
+            })(i);
+        }
+    }
+</script>
+
+</body>
+</html>

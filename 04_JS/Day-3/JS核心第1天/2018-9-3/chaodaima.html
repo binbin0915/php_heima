@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*************** 变量的提升 ****************/
+
+    //给变量赋一个数值
+    //console.log(a);
+    //var a = 111;          //输出的结果就是undefined
+
+    //给变量赋值一个数组
+    //console.log(b);
+    //var b = ['apple','watermelon'];       //输出的结果就是undefined
+
+    //给变量赋一个空值
+    //console.log(c);
+    //c();        //调用c 函数，失败，因为c 是undefined。  报错 c is not a function
+
+    // var c = function(){
+    //     console.log(13);
+    // }
+    //c();    //输出的结果为13
+
+    //函数预加载     预加载之时在方法前面调用了函数，具体功能和上面的后面调用的结果是一样的
+    // c();    //输出的结果为123
+    // function c() {
+    //     console.log(123);
+    // }
+</script>
+</body>
+</html>

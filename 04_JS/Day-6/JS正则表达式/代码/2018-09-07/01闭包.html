@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    function outFun(){
+        function inFun(){
+
+        }
+        return inFun; //把内层函数返回
+    }
+
+    //调用外层函数，会得到内层函数
+    var a = outFun();  //可以认为a 就是 inFun。
+
+    a(); //调用的a 函数就相当于调用的 inFun
+
+
+    for(var i=1; i<=5; i++){
+        (function(x){
+            setTimeout(function(){
+                console.log(x);
+            }, x*1000);
+        })(i);
+    }
+</script>
+
+</body>
+</html>

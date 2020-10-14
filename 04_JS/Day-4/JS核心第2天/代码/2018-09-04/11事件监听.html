@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<button id="btn">点击测试</button>
+
+<script>
+    var btn = document.getElementById('btn');
+    /*********** 自定义事件监听函数 ***********/
+    function addEvent(ele, type, fn){
+        if(window.addEventListener){
+            ele.addEventListener(type, fn);
+        }else{
+            ele.attachEvent('on' + type, fn);
+        }
+    }
+    //测试自定义函数是否可用
+    function m(){
+        alert(111);
+    }
+    addEvent(btn, 'click', m);
+    function n(){
+        alert(222);
+    }
+    addEvent(btn, 'click', n);
+
+    /*********** 自定义事件监听移除函数 ***********/
+    function removeEvent(ele, type, fn){
+        if(window.removeEventListener){
+            ele.removeEventListener(type, fn);
+        }else{
+            ele.detachEvent('on' + type, fn);
+        }
+    }
+    //调用移除方法，测试
+    //removeEvent(btn, 'click', n);
+    removeEvent(btn, 'click', m);
+</script>
+
+</body>
+</html>

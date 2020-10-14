@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    //var str = 'phppHpphp';
+    //var result = str.match(/h/g);
+    //var result = str.match(/h/ig); // 表示不区分大小写的查找所有的h
+
+    var str = 'this is a php\nthat is a JS';
+    //alert(str);
+    var result = str.match(/php$/gm); //m 表示执行多行识别匹配
+
+    console.log(result);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<ul>
+    <li class="a">李清照</li>
+    <li id="tangwei">汤唯</li>
+    <li class="a">唐婉</li>
+    <li>王昭君</li>
+</ul>
+<p class="a">上述内容是美女型诗人。</p>
+<br>
+请输入更多诗人： <input type="text" name="shiren" />
+
+
+<script>
+    /****************** script标签一定要放到ul/p/input标签下面 *******************/
+    //------------------------根据id查询
+    var tangwei = document.getElementById('tangwei');
+    //console.log(tangwei);
+    //tangwei.style.样式名称 = 值;  给标签添加样式
+    tangwei.style.color = 'red';
+
+    //-----------------------根据标签名查询
+    var lis = document.getElementsByTagName('li'); // 返回数组，数组中包含满足条件的4个li
+    //console.log(lis);
+    for(var i=0; i<lis.length; i++){
+        lis[i].style.backgroundColor = '#ccffcc';
+    }
+
+
+    //---------------------根据元素的类名查询
+    var as = document.getElementsByClassName('a'); // 返回数组，数组中包含类名为a的元素
+    for(var i=0; i<as.length; i++){
+        as[i].style.fontSize = '30px';
+    }
+
+    //---------------------根据元素的name属性查询
+    var input = document.getElementsByName('shiren'); // 返回数组，数组中包含属性name为shiren的元素
+    input[0].style.backgroundColor = '#ccc';
+
+    //--------------------根据css选择器选择元素
+    //document.querySelector('css选择器');
+    var liqingzhao = document.querySelector('.a'); // 返回一个dom对象，class为a的有很多，也只返回第一个
+    liqingzhao.style.border = 'solid 1px pink';
+
+    var all = document.querySelectorAll('p, input'); //返回数组
+    for(var i in all){
+        all[i].style.border = 'dashed 1px blue';
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        //页面加载完毕，设置页面中的li标签的样式，要求字体颜色为red，背景颜色为#ccffcc。
+        /******************** 用之前学习过的DOM方法 **********************/
+        /*window.onload = function () {
+            var lis = document.getElementsByTagName('li'); //返回数组
+            for(var i=0; i<lis.length; i++){
+                lis[i].style.color = 'red';
+                lis[i].style.backgroundColor = '#ccffcc';
+            }
+        };*/
+
+        /******************** 用jQuery **********************/
+        //$(); //$(); 是jQuery的一个函数，参数可以是一个dom对象，可以是选择器，也可以是标签。返回jQuery对象
+        //$(document); 返回一个jQuery对象，表示整个文档
+        //$(document).ready(); //ready() 是jQuery封装好的一个事件，表示页面加载完毕会触发的一个事件，它是参数是一个函数，表示事件处理函数
+        $(document).ready(function(){
+            //这里写你的代码
+            //console.log($('li')); // $('li'); 返回jquery对象，类数组的对象,当做数组用即可
+            //$('li').css('color', 'red'); //css是jQuery封装的一个方法，填一个参数，表示获取元素的css；填两个参数表示设置元素的css
+            //$('li').css('background-color', '#ccffcc'); //样式名称和css样式名称完全一致，不用去掉下划线和字母变大写
+            //jQuery可以进行链式操作，对同一元素的设置可以写一行代码，如下：
+            $('li').css('color', 'red').css('background-color', '#ccffcc');
+        });
+    </script>
+</head>
+<body>
+
+<ul>
+    <li>刘备</li>
+    <li>关羽</li>
+    <li>张飞</li>
+</ul>
+
+</body>
+</html>

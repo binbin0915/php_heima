@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    //var o = Object.create(原型对象);
+    //var 子对象 = Object.create(父对象);
+
+    var o = Object.create({
+        age:20,
+        say:function () {
+            console.log(this.age);
+        }
+    })
+
+    //
+    o.say();
+</script>
+
+</body>
+</html>

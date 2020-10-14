@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<ul>
+    <li>刘备</li>
+    <li>关羽</li>
+    <li>张飞</li>
+</ul>
+
+
+
+<script>
+    /***************** 演示查找页面中的元素 **********************/
+    //var liu = document.getElementsByTagName('li')[0];
+    //var liu = document.querySelector('li'); //只查找符号条件的第一个元素
+    var ul = document.querySelector('ul');
+    var liu = ul.firstElementChild;
+    liu.style.color = 'red';
+
+    /***************** 创建并添加元素 **********************/
+    //创建一个<li>曹操</li>，并放到ul中
+    var li = document.createElement('li'); //创建li这个标签节点
+    var text = document.createTextNode('曹操');
+    li.appendChild(text); //把文本节点放到li中
+
+    document.querySelector('ul').appendChild(li);
+</script>
+
+</body>
+</html>

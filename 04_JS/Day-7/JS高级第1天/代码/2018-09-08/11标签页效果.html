@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            border:0 none;
+        }
+        ul,li{
+            list-style: none; /*去掉ul li前面的小点点*/
+        }
+        li{
+            display: inline-block; /*横向显示，并为块级元素*/
+            width:80px;
+            height:30px;
+            background-color: burlywood;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer; /*鼠标放上去，显示小手*/
+        }
+        div{
+            width:400px;
+            height:250px;
+            background-color:#bc9665;
+            display: none; /*默认内容区隐藏*/
+        }
+        /*让第一个内容区显示*/
+        .content{
+            display: block;
+        }
+        .tab{
+            background-color:#bc9665;
+        }
+    </style>
+</head>
+<body>
+
+<ul>
+    <li class="tab">体育</li>
+    <li>娱乐</li>
+    <li>PHP</li>
+</ul>
+
+<div class="content">这里是体育版块</div>
+<div>娱乐八卦</div>
+<div>PHP是世界上最好的语言</div>
+
+<script>
+    //给每个li绑定单击事件，单击的时候，修改li和div的class值
+    var lis = document.getElementsByTagName('li'); //找到一个数组
+    var divs = document.getElementsByTagName('div'); //找到所有的内容区，是数组
+    //循环，为每个li绑定单击事件
+    for(var i=0; i<lis.length; i++){
+        //为每个li添加一个属性，这个属性表示li的下标
+        lis[i].a = i;
+        lis[i].onclick = function(){
+            //当前点击的li的下标是this.a
+            //alert(this.a);
+            for(var j=0; j<lis.length; j++){
+                if(j == this.a){
+                    lis[j].className = 'tab';
+                    divs[j].className = 'content';
+                }else{
+                    lis[j].className = '';
+                    divs[j].className = '';
+                }
+            }
+        };
+    }
+
+
+    //
+    //var obj = {};
+    //obj.a = 2;
+
+    /*var a = {};
+    var b = {};
+    var c = {};
+    var arr = [a, b, c];
+    for(var i=0; i<arr.length; i++){
+        arr[i].hh = i;
+    }
+
+    console.log(a.hh);
+    console.log(b.hh);
+    console.log(c.hh);*/
+</script>
+</body>
+</html>

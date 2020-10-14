@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        //编写自己的插件
+        $(function(){
+            //extend方法，需要传递对象形式的参数，对象的每个成员都是一个插件
+            $.fn.extend({
+                a:function(){
+                    //插件内部，$(this) 仍然表示调用插件的对象
+                    $(this).css('color', 'red').css('background-color', 'green');
+                    return $(this);
+                },
+                b:function(){
+                    //插件内部，$(this) 仍然表示调用插件的对象
+
+                }
+            });
+
+            //测试插件是否好用
+            $('div').a();
+            $('p').a();
+            $('ul').a().css('font-size', '30px');
+        });
+    </script>
+</head>
+<body>
+
+<div>hello</div>
+<p>adfasdfasdf</p>
+<ul>
+    <li>asdf</li>
+</ul>
+
+</body>
+</html>

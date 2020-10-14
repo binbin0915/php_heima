@@ -1,0 +1,12 @@
+Array
+(
+    [pic] => Array
+        (
+            [name] => 03三级联动--获取省.avi
+            [type] => video/avi
+            [tmp_name] => E:\wamp64\tmp\phpF52B.tmp
+            [error] => 0
+            [size] => 158770376
+        )
+
+)

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<a href="13冒泡事件.html">跳转</a>
+
+<form name="f1" action="07全选.html" method="post">
+    用户名：<input type="text" name="username"><br>
+    密 码：<input type="password" name="pwd"><br>
+    <input type="submit" id="sub" value="提交">
+</form>
+
+<script>
+    /********* 阻止标签的默认行为 *********/
+    //形参evt标签标准浏览器的事件对象
+    function zuzhi(evt){
+        if(window.event){
+            //IE浏览器
+            window.event.returnValue = false;
+        }else{
+            //非IE浏览器
+            evt.preventDefault();
+        }
+    }
+
+    //测试
+    document.getElementById('sub').onclick = function (evt) {
+        //检测用户名是否为空
+        if(document.f1.username.value == ''){
+            alert('用户名不能为空');
+            //阻止表单提交
+            zuzhi(evt);
+            //return false; //return false也可以阻止表单提交
+        }
+    };
+</script>
+</body>
+</html>

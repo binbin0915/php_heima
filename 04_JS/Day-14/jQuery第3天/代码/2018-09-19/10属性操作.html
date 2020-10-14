@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(function(){
+            console.log($('input').attr('type'));
+            console.log($('input').attr('value'));
+            console.log($('input').attr('checked'));
+
+            console.log($('input').prop('type'));
+            console.log($('input').prop('value'));
+            console.log($('input').prop('checked'));
+
+            /*$('input').attr('type', 'password');
+            $('input').attr('name', 'username');
+            $('input').attr('readonly', true);*/
+
+            $('input').prop('type', 'password');
+            $('input').prop('name', 'username');
+            $('input').prop('readonly', true);
+        });
+    </script>
+</head>
+<body>
+
+<input type="text" value="123">
+
+</body>
+</html>

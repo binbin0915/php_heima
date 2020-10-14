@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<p align="center">
+    <a href="javascript:void(0)" id="quanxuan">全选</a>
+    <a href="javascript:void(0)" id="quanbuxuan">全部选</a>
+    <a href="javascript:void(0)" id="quxiao">取消</a>
+</p>
+<table border="1" align="center" rules="all" cellpadding="2" cellspacing="0" width="250">
+    <tr>
+        <th>ID</th>
+        <th>标题</th>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" name="id[]" value="1">
+        </td>
+        <td>这是一个标题</td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" name="id[]" value="1">
+        </td>
+        <td>这是一个标题</td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" name="id[]" value="1">
+        </td>
+        <td>这是一个标题</td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" name="id[]" value="1">
+        </td>
+        <td>这是一个标题</td>
+    </tr>
+</table>
+<script>
+    //全选
+    //选择a标签，然后绑定单击事件
+    document.getElementById('quanxuan').onclick = function () {
+        //alert(123);
+        var inputs = document.getElementsByTagName('input');
+        //console.log(inputs);
+        for (var i in inputs){
+            inputs[i].checked= true;
+        }
+    }
+    //取消
+    //选择a标签，然后绑定单击事件
+    document.getElementById('quxiao').onclick = function () {
+        //alert(123);
+        var inputs = document.getElementsByTagName('input');
+        //console.log(inputs);
+        for (var i in inputs){
+            inputs[i].checked= false;
+        }
+    }
+    //全不选
+    //选择a标签，然后绑定单击事件
+    document.getElementById('quanbuxuan').onclick= function () {
+        var inputs = document.getElementsByTagName('input');
+        for (var i in inputs){
+            // if (inputs[i].checked == true){
+            //     inputs[i].checked == false;
+            // }else{
+            //     inputs[i].checked == true;
+            // }
+            inputs[i].checked = !inputs[i].checked;
+        }
+    }
+</script>
+</body>
+</html>

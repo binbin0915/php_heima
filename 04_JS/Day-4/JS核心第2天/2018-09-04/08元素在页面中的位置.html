@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body style="width: 2000px; height: 2000px;">
+<div></div>
+<script>
+    var div = document.querySelector('div');
+    console.log('div距离页面左边的距离是：'+div.offsetLeft);
+    console.log('div距离页面上边的距离是：'+div.offsetTop);
+    console.log('div占据的实际宽度是：'+div.offsetWidth);
+    console.log('div占据的实际高度是：'+div.offsetHeight);
+
+    //获取浏览器滚动条滚动的距离
+    //console.log(document.documentElement.scrollTop);  //右侧滚动条滚动距离
+    //console.log(document.documentElement.scrollLeft); //下边的滚动条滚动距离
+    //滚动事件中，查看滚动条滚动距离
+    window.onscroll = function(){
+        console.log(document.documentElement.scrollTop);    //右侧滚动条滚动的距离
+        console.log(document.documentElement.scrollLeft);    //下边滚动条滚动的距离
+    }
+</script>
+
+</body>
+</html>

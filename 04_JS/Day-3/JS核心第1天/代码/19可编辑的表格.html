@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            border:0 none;
+        }
+        table,td{
+            border:solid 1px #ccc;
+            border-collapse: collapse; /*合并边框*/
+        }
+        table{
+            width:400px;
+            margin:10px auto;
+        }
+        td{
+            line-height: 26px;
+            width:50%;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td>1</td>
+        <td>赖志丽</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>罗凯峰</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>小陈</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>小马</td>
+    </tr>
+</table>
+
+<script>
+
+
+    /************* 设置一个兼容各个浏览器的获取css样式的方法 **************/
+    function getStyle(node, styleName){
+        if(node.currentStyle){
+            //说明是IE浏览器
+            return node.currentStyle[styleName];
+        }else{
+            //IE以外的浏览器
+            return getComputedStyle(node)[styleName];
+        }
+    }
+
+
+    var tds = []; //用于存放姓名那个td
+    //隔行换色
+    var trs = document.getElementsByTagName('tr');
+    for(var i=0; i<trs.length; i++){
+        //console.log(trs[i].children[1]);
+        tds.push(trs[i].children[1]); //将找到的td放到tds数组中
+        if(i%2 == 1){
+            trs[i].style.backgroundColor = '#d8dee7';
+        }
+    }
+    //console.log(tds); //包含姓名的4个td
+
+    //循环，给每个姓名td 绑定单击事件
+    for(var i=0; i<tds.length; i++){
+        //绑定单击事件
+        tds[i].onclick = function () {
+            //alert(123);
+            var td = this; // this表示单击的td
+            //判断，如果td 中有一个input了，就不要在向下执行了
+            if(td.children.length >= 1){
+                return;
+            }
+            //创建input
+            var input = document.createElement('input');
+            //获取td中的值
+            var text = td.innerText;
+            //设置input的value
+            input.value = text;
+            //清空td
+            td.innerHTML = "";
+            //把input放到td 中
+            //this.innerHTML = "<input value='"+text+"' />";
+            td.appendChild(input);
+
+            //设置input 的样式和td 的样式一样
+            input.style.width = getStyle(td, 'width');
+            input.style.height = getStyle(td, 'height');
+            input.style.fontSize = getStyle(td, 'fontSize');
+            input.style.backgroundColor = getStyle(td, 'backgroundColor');
+            input.style.border = '0 none';
+
+            //让input获取焦点
+            input.focus();
+            //input.select();
+
+            //设置inupt失去焦点事件
+            input.onblur = function () {
+                //表示取消
+                td.innerHTML = text;
+            };
+            //按回车表示确定修改
+            input.onkeyup = function (evt) {
+                var e = window.event||evt; //兼容的事件对象
+                var keyCode = e.keyCode; //键盘keyCode值
+                if(keyCode == 13){
+                    //按了回车
+                    //清空td
+                    td.innerHTML = ""; //解决谷歌浏览器bug。谷歌认为按回车的时候，同时触发了失去焦点事件
+                    td.innerHTML = this.value;
+                }
+            };
+        };
+    }
+
+</script>
+
+</body>
+</html>

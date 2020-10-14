@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<table border="1" width="200" >
+    <tr>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+
+<script>
+    //点击td，创建input放到td中
+    //在input中输入内容，当按回车的时候，将输入的内容放到td中
+    document.getElementsByTagName('td')[0].onclick = function () {
+        //console.log(this); // this就是绑定事件的那个对象，本例中就是td
+        var td = this; //先保存this为变量，这里的this还表示td
+        var input = document.createElement('input');
+        td.innerHTML = '';
+        td.appendChild(input);
+        input.focus();
+
+        input.onkeyup = function (evt) {
+            //console.log(this); // this 表示input
+            var e = window.event||evt;
+            var keyCode = e.keyCode;
+            if(keyCode == 13){
+                td.innerHTML = this.value;
+            }
+        }
+    };
+
+    /*var o = {};
+    o.sex = '男';
+    o.say = function () {
+        console.log(this);
+    };*/
+</script>
+
+</body>
+</html>

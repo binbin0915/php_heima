@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    //用法一
+    var s = new String('hello world');
+
+    console.log(s.length); //表示字符串长度
+    console.log(s.indexOf('a')); // 没有查到，返回-1
+    console.log(s.indexOf('l')); //查到了，返回位置 2
+
+    //用法二:直接把字符串当做字符串对象来使用
+    console.log('hello world'.indexOf('e')); // 1
+    console.log('abcdefg'.substr(2, 3)); // cde
+
+</script>
+
+</body>
+</html>

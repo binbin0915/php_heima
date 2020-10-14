@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    //setTimeout();   //一段时间后，执行一次
+    //setInterval();  //间隔一段时间，执行一次
+
+    //setTimeout('console.log(123);', 1000);
+    //setTimeout('alert(123);', 1000);
+    /*function a(){
+        console.log(456);
+    }
+    //第一个参数是字符串，代码运行到这行是不会解析这个字符串的，在1秒后，要执行的时候才会解析前面的字符串
+    setTimeout('a()', 1000); */
+
+    /*function a(){
+        console.log(789);
+    }
+    //第一个参数是变量的表示，代码运行到这行就会解析变量的意思。当然执行还是在1秒后
+    setTimeout(a, 1000);*/
+
+    var x = 1;
+    var o = {
+        x:2,
+        say:function () {
+            console.log(this.x);
+        }
+    };
+
+    /*function m(){
+        console.log(this.x);
+    }*/
+    setTimeout(o.say, 1000); // 1
+    /*setTimeout(function(){
+        console.log(this.x);
+    }, 1000);*/
+    //setTimeout('o.say()', 1000); // 2 ,这种方式，say内部的this没有发生改变
+    //....
+    //....
+    //....
+    //o.say();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<p><span>你好</span><b>hello</b></p>
+
+<script>
+    //获取p元素里面的html内容 -- innerHTML
+    //找到p元素
+    var p = document.querySelector('p');
+    console.log(p.innerHTML);
+
+    //获取p元素里面的文本内容 -- innerText
+    console.log(p.innerText);
+
+    /*************** 设置p元素里面的内容 *****************/
+    p.innerHTML = "<a href='#'>跳转</a>";  //设置p的内容之后，会覆盖掉原来的内容
+    p.innerText = '最终文本'; //设置p的内容之后，会覆盖掉原来的内容
+</script>
+
+</body>
+</html>

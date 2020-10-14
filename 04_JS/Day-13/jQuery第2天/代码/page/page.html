@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(function(){
+            //页面加载完毕，发送ajax请求到page.php。获取第1页的数据和分页标签
+            $.get('page.php', {p:1}, function(e){
+                //e 就是服务器返回的数据
+                //console.log(e);
+                var data = e[0]; //每页数据
+                var page = e[1]; //分页页码
+                //处理数据
+                //console.log(data);
+                var str = '';
+                $.each(data, function(i, val){
+                    str += '<tr>';
+                    str += '<td>'+val.PID+'</td>';
+                    str += '<td>'+val.Pcode+'</td>';
+                    str += '<td>'+val.Pname+'</td>';
+                    str += '</tr>';
+                });
+                $('tbody').html(str);
+                //处理分页页码
+                //console.log(page);
+                $('p').html(page);
+            }, 'json');
+
+
+            //点击a 标签，获取对应的页的数据。因为a标签是后加载过来的，所以必须使用on事件
+            $(document).on('click', 'a', function () {
+                //alert(344);
+                var pp = $(this).attr('pp'); //attr用于获取一个标签的属性值
+                $.get('page.php', {p:pp}, function(e){
+                    //e 就是服务器返回的数据
+                    //console.log(e);
+                    var data = e[0]; //每页数据
+                    var page = e[1]; //分页页码
+                    //处理数据
+                    //console.log(data);
+                    var str = '';
+                    $.each(data, function(i, val){
+                        str += '<tr>';
+                        str += '<td>'+val.PID+'</td>';
+                        str += '<td>'+val.Pcode+'</td>';
+                        str += '<td>'+val.Pname+'</td>';
+                        str += '</tr>';
+                    });
+                    $('tbody').html(str);
+                    //处理分页页码
+                    //console.log(page);
+                    $('p').html(page);
+                }, 'json');
+            });
+        });
+    </script>
+</head>
+<body>
+<h2 align="center">无刷新分页</h2>
+<table border="1" cellspacing="0" cellpadding="2" width="600" align="center" rules="all">
+    <thead>
+    <tr>
+        <th>PID</th>
+        <th>Pcode</th>
+        <th>Pname</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+
+<p align="center">
+
+</p>
+
+</body>
+</html>

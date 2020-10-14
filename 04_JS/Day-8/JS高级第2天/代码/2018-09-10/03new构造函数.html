@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    //ES5中，没有类的概念。只有函数
+    //ES5中，可以把一个函数当做“类”来使用
+    function Person(n, a){
+        //成员属性，直接把成员属性放到对象上即可
+        this.name = n;
+        this.age = a;
+        //成员方法，直接把成员方法放到对象上即可
+        this.say = function(){
+            console.log('我叫'+this.name+'，我今年'+this.age+'岁。');
+        }
+    }
+    //ES5中，new一个函数，可以得到对象
+    //如果一个函数被new，那么这个函数叫做构造函数或构造器，为了好理解，也可以叫做“类”
+    var p1 = new Person('张三', 20);
+    var p2 = new Person('李四', 25);
+    console.log(typeof p1);  // object
+    console.log(typeof p2);  // object
+    p1.say();
+    p2.say();
+
+
+    /*function m(){
+        console.log(123);
+    }
+    var xx = new m();
+    console.log(typeof xx);*/
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    //var str = 'php';
+    //var result = str.match(/p.p/g); // . 表示任意字符，一个点只表示一个字符
+
+    //var str = 'phahsp';
+    //var result = str.match(/p.*p/g); // .* 表示任意字符串
+
+    //var str = 'pha_Asp';
+    //var result = str.match(/p\w*p/g); // \w 表示一个数字、字母、下划线
+
+    //var str = 'p -*#.p';
+    //var result = str.match(/p\W*p/g); // \W 表示一个非数字、非字母、非下划线
+
+    //var str = 'hello123456abc789';
+    //var result = str.match(/\d/g); // \d 表示一个数字
+    //var result = str.match(/\d+/g); // \d 表示一个数字
+    //var result = str.match(/\D/g); // \D 表示一个非数字
+
+    //var str = 'how are   you';
+    //var result = str.match(/\s/g); // \s 表示一个空格
+    //var result = str.match(/\s+/g); // \s 表示一个空格
+
+    //var str = 'abcd nihao how ar you';
+    //var result = str.match(/\bh/g); // \b 表示匹配单词的边界,\b放到前面表示-匹配前面的边界，\b放到后面表示匹配后面的边界
+    //var result = str.match(/\ba/g);
+    //var result = str.match(/\babc/g);
+    //var result = str.match(/o\b/g); // \b 判断o是不是单词的结尾
+    //var result = str.match(/\byou\b/g); // \byou\b 只匹配单词you
+
+    var str = 'this is a php.\nthat is a javascript';
+    var result = str.match(/\n/g);
+    //alert(str);
+
+    console.log(result);
+</script>
+
+</body>
+</html>

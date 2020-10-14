@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    //var str = 'hello world';
+    // 一个方括号表示一个字符 [wxd]意思是在字符串中查找w或x或d
+    //var result = str.match(/[woxd]/g); //["o", "w", "o", "d"]
+    //var result = str.match(/[^woxd]/g); //表示排除woxd，查询其他字符,结果：["h", "e", "l", "l", " ", "r", "l"]
+
+    //var str = 'php7 and ES6_';
+    //var result = str.match(/[a-z]/g); //只查找小写字母
+    //var result = str.match(/[c-m]/g); //只查找c~m范围内的小写字母 结果： ["h", "d"]
+
+    //var result = str.match(/[A-Z]/g); //查找大写字母
+    //var result = str.match(/[0-9]/g); //查找数字
+    //var result = str.match(/[A-z]/g); //查找大小写字母和下划线
+    //var result = str.match(/[a-z0-9A-Z]/g); //查询所有的字母和数字
+
+    //var result = str.match(/[0-9]|[a-z]/g); //查询所有的字母和数字
+
+    var str = '    hello world  ';
+    var result = str.match(/(^\s+)|(\s+$)/g); //匹配字符串前后的空格
+    console.log(result);
+
+
+</script>
+
+</body>
+</html>

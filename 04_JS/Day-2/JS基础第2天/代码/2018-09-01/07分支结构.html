@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+
+    //new Date()  得到了时间日期对象
+    //对象调用里面的成员使用点语法。  new Date().getDay();
+    var week = new Date().getDay(); //获取一个数字格式的星期
+    //console.log(week);
+    var week_zh_cn; //中文格式的星期
+    switch (week) {
+        case 2:
+            week_zh_cn = '二';
+            break;
+        case 3:
+            week_zh_cn = '三';
+            break;
+        case 1:
+            week_zh_cn = '一';
+            break;
+        case 4:
+            week_zh_cn = '四';
+            break;
+        case 5:
+            week_zh_cn = '五';
+            break;
+        case 6:
+        case 7:
+            week_zh_cn = '末';
+            break;
+        default:
+            console.log('格式错误');
+            break;
+    }
+
+    console.log('今天是星期' + week_zh_cn);
+
+</script>
+
+</body>
+</html>

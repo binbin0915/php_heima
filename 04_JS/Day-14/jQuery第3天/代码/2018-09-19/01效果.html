@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(function(){
+            //演示效果方法的三个参数
+            $('input').click(function(){
+                $('ul').show(1000, 'linear', function(){
+                    //效果结束后，要执行什么的事
+                    alert('你已经完全看到我了');
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<input type="button" value="测试">
+
+<ul style="display: none; background-color: brown;">
+    <li>adsf</li>
+    <li>adsf</li>
+    <li>adsf</li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    /*function a(x, y){
+        console.log(a.length); //a.length表示形参的个数
+        console.log(a.name);
+    }
+    a(1, 2, 3, 4, 5);*/
+
+
+    /*function a(x, y){
+        //console.log(arguments);
+        //console.log(arguments.callee); //表示当前的函数
+        console.log(arguments.callee.length); //表示形参的个数
+        console.log(arguments.length); //表示实参的个数
+        if(arguments.callee.length != arguments.length){
+            console.log('希望2个参数，但是给了5个');
+        }
+    }
+    a(1,2,3,4,5);*/
+
+    function a(){
+        //console.log(arguments);
+        var sum = 0;
+        for(var i=0; i<arguments.length; i++){
+            sum += arguments[i];
+        }
+        console.log(sum);
+    }
+    a(1,2,3); //6
+    a(10,20,30);//60
+</script>
+
+</body>
+</html>

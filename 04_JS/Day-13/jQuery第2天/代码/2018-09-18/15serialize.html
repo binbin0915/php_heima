@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(function(){
+            $('input[type="button"]').click(function(){
+                //收集表单的信息
+                //var d = $('form').serialize();
+                //console.log(d); //返回字符串
+                var d = $('form').serializeArray();
+                //console.log(d);  //返回数组
+                //发现ajax请求
+                $.ajax({
+                    type:'post',
+                    url:'15serialize.php',
+                    data: d,//发送给服务器的数据
+                    dataType:'text',
+                    success:function(e){
+                        console.log(e);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+
+<form>
+    <select name="sheng">
+        <option>北京</option>
+        <option>天津</option>
+    </select><br>
+    <select name="shi[]" multiple="multiple">
+        <option selected="selected">石家庄市</option>
+        <option>日本市</option>
+        <option selected="selected">美国市</option>
+    </select><br/>
+    <input type="checkbox" name="check[]" value="check1"/> check1
+    <input type="checkbox" name="check[]" value="check2" checked="checked"/> check2<br>
+    <input type="radio" name="radio" value="radio1" checked="checked"/> radio1
+    <input type="radio" name="radio" value="radio2"/> radio2<br>
+    <input type="text" name="username"><br>
+    <input type="button" value="提交表单">
+</form>
+
+</body>
+</html>

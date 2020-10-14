@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    //var str = '1122 3344 5566';
+    //var r = /\d\d\d\d/g;
+
+    //var str = 'AbcdE';
+    //var r = /[A-Z]/gi;
+
+    //var str = '1122 3344 5566 7878';
+    //var r = /(\d)\1\d\d/g;  //
+
+    //var str = 'asdfasdfasdf';
+    //var r = /[^abcdefg]/g;
+
+    //console.log(str.match(r));
+
+    //var tel = '13688998899';
+    //var r = /^1\d{10}$/g;
+    //console.log(r.test(tel));
+
+
+    var str = 'Hello, Nice to meet you.';
+    //var r = /[a-z]/g;  //直接量的方式
+    //var r = new RegExp(正则表达式, 修饰符); //第一个参数可以用//当做定界符，也可以使用字符串形式
+    //var r = new RegExp(/[a-z]/); //默认只匹配一次
+    //var r = new RegExp(/[a-z]/, 'gi'); //加入修饰符
+    //var r = new RegExp('[a-z]', 'gi'); //第一个参数可以使用字符串
+    var end = 'h';
+    var r = new RegExp('[a-'+end+']', 'gi'); //第一个参数既然可以是字符串，那么就可以执行字符串拼接操作
+    console.log(str.match(r));
+</script>
+
+</body>
+</html>

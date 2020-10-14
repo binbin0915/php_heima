@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    //var o = Object.create(null); //参数1 必须是一个null或对象
+    //var o = Object.create(指定的原型对象);
+    //参数1 是一个对象，这个对象就是o 的原型对象
+    //var o = Object.create({name:'lisi', age:20});
+    //console.log(o);
+
+    function A(){
+        this.sex = '男';
+    }
+    var a = new A();
+    //希望创建一个新的对象，这个新的对象的原型对象希望是a
+    var o = Object.create(a);
+
+</script>
+
+</body>
+</html>

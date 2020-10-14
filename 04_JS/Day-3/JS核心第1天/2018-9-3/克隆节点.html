@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<ul>
+    <li>你好1</li>
+    <li>你好2</li>
+    <li>你好3</li>
+    <li>你好4</li>
+</ul>
+<script>
+    //克隆一份ul，然后放到页面中
+    //先找到要克隆的ul
+    var oldUL = document.querySelector('ul');
+    //克隆一个新的ul
+    //var newUL = oldUL.cloneNode();    //只克隆ul标签本身，不包含里面的内容
+    var newUL = oldUL.cloneNode(1);     //克隆ul标签并包含里面的内容，另外，里面随便写内容都可以克隆到想要的结果
+    //把新的ul放到body中
+    document.body.appendChild(newUL);
+</script>
+</body>
+</html>

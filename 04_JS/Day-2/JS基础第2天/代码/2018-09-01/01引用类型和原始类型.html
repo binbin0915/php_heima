@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    //声明一个对象
+    var obj = {
+        name:'李四',
+        age:20
+    };
+
+    /*var a = obj; //赋值给其他变量，赋的值是对象的地址（指向堆区的地址）
+    a.name = '张三';
+    console.log(obj.name);  //由于前面的a.name=张三，所以会影响到obj的name，所以输出张三*/
+
+    /*function m(o){
+        o.age = 30;
+    }
+    m(obj);
+    console.log(obj.age); // 30*/
+
+    var arr = ['apple', 'banana'];
+    var b = arr;
+    b[0] = 'pear';
+    console.log(arr);
+
+</script>
+
+</body>
+</html>

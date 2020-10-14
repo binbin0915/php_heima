@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<button>点击测试</button>
+
+<script>
+    //先获取button按钮
+    var btn = document.getElementsByTagName('button')[0];
+    //给btn绑定事件
+    btn.onclick = function () {
+        //alert(111);
+        console.log(this);
+    };
+
+    /************* 先定义函数，在绑定事件 **************/
+    /*function m(){
+        //alert('我是事件处理函数');
+        console.log(this);
+    }
+    //先定义函数，然后在绑定事件
+    btn.onclick = m;
+    // m()  表示调用函数，调用函数会得到函数的返回值。m函数的返回值是undefined或null*/
+
+
+    /************** 扩展 ***************/
+    /*function m(){
+        function n(){
+            alert(111);
+        }
+        return n;
+    }
+    btn.onclick = m();*/
+
+</script>
+
+</body>
+</html>

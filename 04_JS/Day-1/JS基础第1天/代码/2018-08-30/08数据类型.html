@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var a = 123;
+    var b = 3.14;
+    var c = 'hello';
+    var d = true;
+    var e;
+    var f = null;
+    var g = ['apple', 'banana'];
+    var h = {name:'李四', age:30};
+    function m(){
+
+    }
+
+    /*console.log(typeof a);
+    console.log(typeof b);
+    console.log(typeof c);
+    console.log(typeof d);
+    console.log(typeof e);
+    console.log(typeof f);
+    console.log(typeof g);
+    console.log(typeof h);
+    console.log(typeof m);*/
+    //彻底区分null、数组、对象
+    //console.log(g instanceof Array); // true
+    //console.log(f instanceof Array); // false
+    //console.log(h instanceof Array); // false
+    //封装一个函数，判断数据类型
+    function myTypeOf(x){
+        var leixing = typeof x;
+        var result; //result用于保存最终的结果
+        switch (leixing) {
+            case 'number':
+                result = 'number';
+                break;
+            case 'string':
+                result = 'string';
+                break;
+            case 'boolean':
+                result = 'boolean';
+                break;
+            case 'undefined':
+                result = 'undefined';
+                break;
+            case 'function':
+                result = 'function';
+                break;
+            case 'object':
+                result = 'object';
+                break;
+        }
+        //switch结束，判断，如果得到的result是object，还需要进一步判断
+        if(result == 'object'){
+            if(x instanceof Array){
+                result = 'array';
+            }else if(x instanceof Object){
+                result = 'object';
+            }else{
+                result = 'null';
+            }
+        }
+        return result;
+    }
+
+    console.log(myTypeOf(m));
+
+    //
+    function panduan(x){
+        if(typeof(x) != 'object')
+        {
+            return typeof(x);
+        }
+        else
+        {
+            if(x instanceof Array)
+            {
+                return 'array';
+            }else if(x instanceof Object){
+                return 'object';
+            }else{
+                return 'null';
+            }
+        }
+    }
+    console.log(panduan(h));
+</script>
+
+</body>
+</html>

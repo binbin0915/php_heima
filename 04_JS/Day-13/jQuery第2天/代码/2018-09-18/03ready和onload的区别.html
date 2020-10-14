@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+
+    <script>
+        //直接用onload事件，只会执行一个
+       /* window.onload = function () {
+            alert(123);
+        };
+        window.onload = function () {
+            alert(456);
+        };*/
+
+       //使用事件监听的方式，会执行多个onload事件
+        /*window.addEventListener('load', function () {
+            alert(123);
+        });
+        window.addEventListener('load', function () {
+            alert(456);
+        });*/
+
+        //jQuery中的ready事件，写几个能够执行几个
+        $(function(){
+            alert('abc');
+        });
+
+        $(function () {
+            alert('bcd');
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

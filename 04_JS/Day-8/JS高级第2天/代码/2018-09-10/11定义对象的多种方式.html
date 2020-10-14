@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    /************** 构造函数方式 ****************/
+    /*function Person(){
+        this.name = '李四';
+        this.age = 20;
+        this.say = function () {
+            console.log('1234');
+        };
+    }
+    var p1 = new Person();
+    var p2 = new Person();*/
+    //这种方式的弊端是，会为每个对象开辟一个内存，比较占用内存，好的办法是将p1和p2相同的部分放到原型对象上
+
+    /************** 原型对象方式 ****************/
+    /*function Person(){
+
+    }
+    Person.prototype.name = '李四';
+    Person.prototype.age = 20;
+    Person.prototype.sanwei = ['100cm', '90cm'];
+    Person.prototype.say = function () {
+        console.log(1234);
+    };
+    var p1 = new Person();
+    var p2 = new Person();
+    p1.name = '张三';
+    p1.sanwei.push('110cm');
+    console.log(p1.sanwei);
+    console.log(p2.sanwei);*/
+
+    /**************** 混合方式 ****************/
+    //将非函数类型的成员放到构造函数内部
+    /*function Person(n, a){
+        this.name = n;
+        this.age = a;
+        this.sanwei = ['100cm', '90cm', '110cm'];
+    }
+    //将函数类型的成员放到原型对象上
+    Person.prototype.say = function () {
+        console.log(1234);
+    };
+
+    var p1 = new Person('张三', 20);
+    var p2 = new Person('李四', 22);*/
+
+    /************ 动态混合方式 ************/
+    function Person(n, a){
+        this.name = n;
+        this.age = a;
+        this.sanwei = ['100cm', '90cm', '110cm'];
+
+        //判断，如果Person的原型对象上有了say方法，就不需要再次绑定了
+        if(!Person.prototype.say){
+            //console.log(1111);
+            //将函数类型的成员放到原型对象上
+            Person.prototype.say = function () {
+                console.log(1234);
+            };
+        }
+    }
+
+    var p1 = new Person('张三', 20);
+    var p2 = new Person('李四', 22);
+    //p1.say();
+</script>
+
+</body>
+</html>

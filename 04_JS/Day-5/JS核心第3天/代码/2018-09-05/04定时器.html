@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    /************** 用法一：直接写一行js ****************/
+    //setTimeout('alert(123)', 2000); //表示2 秒后，弹出窗口
+
+    /************** 用法二：执行函数 ****************/
+    /*setTimeout(function(){
+        console.log(123);
+        console.log(456);
+    }, 2000);//表示2 秒后执行一次函数*/
+
+    /************** 用法三：先定义好函数，然后在执行定时器 ****************/
+    //先定义函数，然后在调用定时器
+    /*function m(){
+        console.log(789);
+        console.log('10LQ');
+    }
+    setTimeout(m, 2000); //表示2 秒后执行m函数*/
+
+    /************** 用法四：先定义好函数，然后在执行定时器 ****************/
+    //先定义函数，然后在调用定时器
+    function m() {
+        console.log(789);
+        console.log('10LQ');
+    }
+    setTimeout('m()', 2000);
+</script>
+
+</body>
+</html>

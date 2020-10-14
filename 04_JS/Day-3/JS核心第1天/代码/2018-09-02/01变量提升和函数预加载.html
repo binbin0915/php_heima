@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    //变量提升
+    //console.log(a);
+    //var a = 111;
+
+    //console.log(b);
+    //var b = ['apple', 'orange'];
+
+    //console.log(c); // undefined
+    //c(); //调用c 函数，失败，因为c 是undefined。  报错 c is not a function
+
+    /*var c = function(){
+        console.log(123);
+    };*/
+
+    //函数预加载
+    c(); // 123
+    function c(){
+        console.log(123);
+    }
+</script>
+
+
+</body>
+</html>

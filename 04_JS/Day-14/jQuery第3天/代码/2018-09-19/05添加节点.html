@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(function(){
+            /************ 内部添加 *************/
+            //append  --  在ul中追加一个子元素
+            //$('ul').append('<li>刘备</li>');
+            $('ul').append($('<li>刘备</li>'));
+            //appendTo -- 把li追加到ul中
+            //$('<li>赵云</li>').appendTo('ul');
+            $('<li>赵云</li>').appendTo($('ul'));
+            //prepend() -- 在ul内部，前面的位置添加一个li
+            $('ul').prepend('<li>马超</li>');
+
+            /************ 外部添加 *************/
+            $('ul').before('<div>我是前面的div</div>');
+            $('ul').after('<p>我是后面的p</p>');
+        });
+    </script>
+</head>
+<body>
+
+<ul>
+    <li>张飞</li>
+    <li>关羽</li>
+</ul>
+
+</body>
+</html>

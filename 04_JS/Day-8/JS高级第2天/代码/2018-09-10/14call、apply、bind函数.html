@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    var o1 = {
+        name:'张三'
+    };
+    var o2 = {
+        name:'李四',
+        say:function(x, y){
+            console.log(this.name, x+y);
+        }
+    };
+
+    //o2.say(); // 李四
+//    o2.say.call(o1); //改变say函数中的this指向，修改为指向o1对象
+//    o2.say.call(o1, 10, 20);
+    //o2.say.apply(o1, [10, 200]);
+    o2.say.bind(o1, 30, 50)(); //加入后面的小阔，就表示调用函数了
+    o2.say.bind(o1)(30, 40); //加入后面的小阔，就表示调用函数了
+
+    //找数组中的最大值
+    var arr = [3, 7, 10, 2, 4, 9, 1];
+    console.log(Math.max.apply(null, arr));
+
+    /*Math.random();
+    new String();
+    new Date();
+    new Array();*/
+</script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<input type="text" id="btn" />
+
+<script>
+    document.getElementById('btn').onkeyup = function (evt) {
+        //IE获取事件对象的方法：window.event;
+        //非IE浏览器获取事件对象的方式：处理函数是形参
+        var e = window.event||evt; //兼容各个浏览器的获取事件对象的方式
+        //console.log(e);
+        //通过事件对象可以获取键盘的keyCode值
+        var keyCode = e.keyCode; //获得的keyCode可以用于判断用户按的是哪个键
+        console.log(keyCode);
+    };
+</script>
+
+</body>
+</html>

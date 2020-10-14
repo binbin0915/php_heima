@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    /*var a = 10;
+    function fn1(){
+        var a = 20;
+        function fn2(){
+            var a = 30;
+            console.log(a);
+        }
+        fn2();
+    }
+
+    fn1();*/ //
+
+    /*var a = 10;
+    function f1(){
+        a = 20;
+        function f2(x) {
+            var a = 30;
+            console.log(x);
+        }
+        f2(a);
+    }
+    f1();
+    console.log(a);*/
+
+    var a = 10;
+    function f1(x) {
+        //形参x，也算是f1 函数内部的局部变量
+        function f2() {
+            console.log(x); // 10
+        }
+        f2();
+    }
+    f1(a);
+
+</script>
+
+</body>
+</html>

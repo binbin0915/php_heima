@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<ul>
+    <li>超级1</li>
+    <li>超级2</li>
+    <li>超级3</li>
+    <li>超级4</li>
+</ul>
+<script>
+    /************* createElement/createTextNode/appendChild ************/
+    //创建一个<li>你好5</li>
+    //创建元素类型的节点
+    // var li = document.createElement('li');
+    // //创建文本类型的节点
+    // var text = document.createTextNode('你好5');
+    // //添加节点，将文章节点添加到元素节点中
+    // li.appendChild(text);   //得到 <li>你好5</li>
+    // //添加节点，将组合好的li，添加到Li中
+    // document.querySelector('ul').appendChild(li);
+
+    /************* insertBefore ************/
+    //创建一个<li>高兴6</li>
+    var newLi = document.createElement('li');
+    var newText = document.createTextNode('高兴6');
+    newLi.appendChild(newText);     //得到 <li>高兴6</li>
+    //找到参照的名字所在的li
+    var chaoji3 = document.getElementsByTagName('li')[2];
+    //找到li的父节点
+    var ul = document.querySelector('ul');
+    //父节点：insertBefore(新节点，参照的节点)；
+    ul.insertBefore(newLi, chaoji3);
+
+</script>
+</body>
+</html>

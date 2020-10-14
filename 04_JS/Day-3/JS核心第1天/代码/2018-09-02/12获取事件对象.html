@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<input type="text">
+
+<script>
+    document.getElementsByTagName('input')[0].onclick = function(a){
+        //console.log(a);  // IE8+ 支持，获取事件对象的方法
+        //console.log(window.event); // IE8浏览器
+        //兼容各个浏览器的获取事件对象的方法
+        /*var e;
+        if(window.event){
+            e = window.event; //IE8
+        }else{
+            e = a; // IE8+
+        }*/
+        var e = window.event||a;
+    };
+</script>
+
+</body>
+</html>

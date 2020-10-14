@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<select id="sheng">
+    <option value="0">--请选择省--</option>
+</select>
+
+<select id="shi">
+    <option value="0">--请选择市--</option>
+</select>
+
+<select id="xian">
+    <option value="0">--请选择县--</option>
+</select>
+
+<script>
+    /************************ 页面加载完毕，获取省 *********************************/
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if(xhr.readyState==4 && xhr.status==200){
+            //接收服务器返回的数据
+            var result = xhr.responseText;
+            var res = JSON.parse(result);
+            //console.log(res); //JS数组
+            var sheng = document.getElementById('sheng');
+            for(var i in res){
+                var option = document.createElement('option');
+                option.setAttribute('value', res[i].Pcode);
+                option.innerText = res[i].Pname;
+                sheng.appendChild(option);
+            }
+        }
+    };
+    xhr.open('get', '02city.php?type=sheng', true);
+    xhr.send();
+
+    /************************ 省切换的时候，获取市 *********************************/
+    document.getElementById('sheng').onchange = function () {
+        //省切换的时候，要获取Pcode值，即option的value值
+        var pcode = this.value; //类似于 130000
+        xhr.onreadystatechange = function () {
+            if(xhr.readyState==4 && xhr.status==200){
+                //接收服务器返回的数据
+                var result = xhr.responseText;
+                var res = JSON.parse(result);
+                //console.log(res); //JS数组
+
+                var shi = document.getElementById('shi');
+                //把市的option放到select中之前，先重置select里面的内容
+                shi.innerHTML = '<option value="0">--请选择市--</option>';
+                document.getElementById('xian').innerHTML = '<option value="0">--请选择县--</option>';
+                for(var i in res){
+                    var option = document.createElement('option');
+                    option.setAttribute('value', res[i].Ccode);
+                    option.innerText = res[i].Cname;
+                    shi.appendChild(option);
+                }
+            }
+        };
+        xhr.open('get', '02city.php?type=shi&Pcode='+pcode, true);
+        xhr.send();
+    };
+
+    /************************ 切换市，获取县 *********************************/
+    document.getElementById('shi').onchange = function () {
+        //市切换的时候，要获取Ccode值，即option的value值
+        var ccode = this.value; //类似于 130000
+        xhr.onreadystatechange = function () {
+            if(xhr.readyState==4 && xhr.status==200){
+                //接收服务器返回的数据
+                var result = xhr.responseText;
+                var res = JSON.parse(result);
+                //console.log(res); //JS数组
+
+                var xian = document.getElementById('xian');
+                //把县的option放到select中之前，先重置select里面的内容
+                xian.innerHTML = '<option value="0">--请选择县--</option>';
+                for(var i in res){
+                    var option = document.createElement('option');
+                    option.setAttribute('value', res[i].Acode);
+                    option.innerText = res[i].Aname;
+                    xian.appendChild(option);
+                }
+            }
+        };
+        xhr.open('get', '02city.php?type=xian&Ccode='+ccode, true);
+        xhr.send();
+    };
+</script>
+
+</body>
+</html>

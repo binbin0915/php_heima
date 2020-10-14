@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(function(){
+            //给p添加一个mouseover事件和一个click事件
+            /*$('p').mouseover(function(){
+                console.log(111);
+            });
+            $('p').click(function () {
+                console.log(222);
+            });*/
+            //链式的写法
+            /*$('p').mouseover(function(){
+                console.log(111);
+            }).click(function () {
+                console.log(222);
+            });*/
+
+            //给p添加两个click事件
+            //正常绑定，可以
+            /*$('p').click(function () {
+                console.log(111);
+            });
+            $('p').click(function () {
+                console.log(222);
+            });*/
+            //使用on来绑定，也可以
+            /*$(document).on('click', 'p', function () {
+                console.log(111);
+            });
+            $(document).on('click', 'p', function () {
+                console.log(222);
+            });*/
+
+            $(document).on('click.zhangsan', 'p', function () {
+                console.log(111);
+            });
+            $(document).on('click.lisi', 'p', function () {
+                console.log(222);
+            });
+
+            /*$('p').on({
+                //对象的每个成员，都是一个事件
+                click:function(){
+                    console.log(333);
+                },
+                mouseover:function () {
+                    console.log(444);
+                }
+            });*/
+        });
+    </script>
+</head>
+<body>
+
+<p>hello</p>
+
+</body>
+</html>

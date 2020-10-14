@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    //声明变量
+    /*var a = 1; //声明变量，赋初值为1
+    var b; //声明变量，但是没有给初始值
+    b = 2; //给变量赋值
+    var c=3, d=4, e, f=5; //一行代码声明多个变量
+    c=4; //改变c的值
+
+    console.log(a, b, c, d, e, f);*/
+
+    //var x; //只声明变量，但是没有赋值
+    //console.log(x); //undefined
+
+    /*var x = 1;
+    var x = 2;
+    console.log(x); // 2
+
+    var y = 3;
+    var y; //只声明变量，没有给值，不会改变原来的值
+    console.log(y); // 3*/
+
+    /************ 变量提升 ************/
+    //console.log(h);
+    //var h = 3; //结果是 undefined
+
+    /*var h; //上面代码在执行的时候，会把变量的声明提升到使用之前，所以输出结果是undefined
+    console.log(h);
+    h = 3;*/
+
+    function t(){
+        console.log(m);
+        var m = 3;
+    }
+    t(); //调用函数t。 //函数内部会发生变量提升，所以结果是undefined
+</script>
+
+</body>
+</html>

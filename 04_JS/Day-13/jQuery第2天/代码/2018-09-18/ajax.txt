@@ -1,0 +1,5 @@
+Array
+(
+    [name] => zhangsan
+    [age] => 20
+)

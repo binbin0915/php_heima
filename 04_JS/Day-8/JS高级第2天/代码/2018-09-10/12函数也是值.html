@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    /*function a(){
+        console.log(123);
+    }
+    var b = a; //这把函数当做值，赋值给另外一个变量
+    b();
+
+    //把函数当做值，赋值给变量c
+    var c = function(){
+        console.log(456);
+    };
+    c();
+
+    //把函数当做对象成员的值
+    var obj = {
+        say:function(){
+            console.log(789);
+        }
+    };
+    obj.say();*/
+
+    /*********** 闭包中，将函数当做返回值 ***********/
+    /*function outFun(){
+        var i = 1;
+        function inFun(){
+            console.log(i++);
+        }
+        return inFun;
+    }
+    var fn = outFun();
+    fn();
+    fn();*/
+
+    /*********** 把函数当做另一个函数的参数，回调函数 ***********/
+    function a(b){
+        b();
+    }
+    //调用a函数，并传入实参
+    //可以先定义实参，然后在调用a 函数
+    /*function x(){
+        console.log(123456);
+    }
+    a(x);*/
+
+    //直接调用a 函数，并传入实参
+    a(function(){
+        console.log('abcd');
+    });
+</script>
+
+</body>
+</html>

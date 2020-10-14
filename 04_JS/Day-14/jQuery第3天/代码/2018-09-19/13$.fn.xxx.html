@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(function(){
+            //定义插件
+            $.fn.hello = function(color){
+                //$(this) 表示调用插件的对象
+                $(this).css('color', color.x).css('background-color', color.y);
+                return $(this);
+            };
+            //使用插件
+            $('div').hello({x:'orange', y:'pink'}).wrap($('<div></div>'));
+        })
+    </script>
+</head>
+<body>
+
+<div>hello</div>
+
+</body>
+</html>

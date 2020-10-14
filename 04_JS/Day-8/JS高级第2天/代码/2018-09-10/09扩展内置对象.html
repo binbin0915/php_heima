@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    /*//内置的String构造函数写法类似于下面的写法
+    function String(x){
+
+    }
+    //将String中的成员方法都绑定到他的原型对象上
+    String.prototype.substr = function (start) {
+        console.log(start);
+    };
+    String.prototype.indexOf = function () {
+        //
+    };
+    String.prototype.slice = function () {
+        //
+    };
+    var s = new String('hello');
+    console.log(s.substr(1));*/
+
+    //扩展内置对象，在String中加入ucfirst函数。
+    //转换为小写：
+        //JS  : toLowerCase();
+        //PHP : strtolower();
+    String.prototype.ucfirst = function(){
+        //this表示字符串对象
+        return this.substr(0,1).toUpperCase() + this.substr(1);
+    };
+
+    console.log('hello'.ucfirst());
+    console.log('nihao'.ucfirst());
+</script>
+
+</body>
+</html>
