@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+	#开启重写引擎
+	RewriteEngine on
+	#定义重写条件
+	#RewriteCond %{REQUEST_FILENAME}  !-f [NC]
+	#定义重写规则
+	#RewriteRule index.html  index.php
+	#RewriteRule news-info-id(\d).html      newsinfo.php?id=$1
+	RewriteCond %{HTTP_REFERER}  !www.demo.com [NC]
+	#RewriteRule \.(jpg|jpeg|gif|bmp)$ - [F]   
+	RewriteRule \.(jpg|jpeg|gif|bmp)$  110.gif 
+</IfModule>

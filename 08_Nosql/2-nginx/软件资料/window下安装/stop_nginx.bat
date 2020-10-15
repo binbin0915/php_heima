@@ -1,0 +1,6 @@
+@echooff
+echo Stoppingnginx...  
+taskkill /F /IM nginx.exe > nul
+echo Stopping PHPFastCGI...
+taskkill /F /IM php-cgi.exe > nul
+exit

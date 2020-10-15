@@ -1,0 +1,34 @@
+#下载libevent
+http://libevent.org/
+#下载memcahced
+http://memcached.org/downloads
+
+
+#安装libevent
+shell>tar -zxvf libevent-2.0.21-stable.tar.gz
+shell>cd libevent-2.0.21-stable
+shell>./configure --prefix=/usr/local/libevent
+shell>make && make install
+#安装memcached
+shell>tar -zxvf memcached-1.4.24.tar.gz
+shell>cd memcached-1.4.24
+shell>./configure --prefix=/usr/local/memcached \
+	--with-libevent=/usr/local/libevent
+shell>make && make install
+#启动
+shell>/usr/local/memcached/bin/memcached -p 11211 -m 64 -u nobody -d
+
+
+
+#安装memcache 对php的扩展
+#下载地址：http://pecl.php.net
+shell>tar -zxvf memcache-2.2.7.tgz
+shell>cd memcache-2.2.7
+#根据当前的php版本动态的创建扩展的configure文件。
+shell>/usr/local/php/bin/phpize --with-php-config=/usr/local/php/bin/php-config
+shell>./configure --with-php-config=/usr/local/php/bin/php-config
+shell>make && make install
+
+#复制生成库的路径：/usr/local/php/lib/php/extensions/no-debug-non-zts-20090626/
+#打开php.ini，添加如下代码：
+extension=/usr/local/php/lib/php/extensions/no-debug-non-zts-20090626/memcache.so
