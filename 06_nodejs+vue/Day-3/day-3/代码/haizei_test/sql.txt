@@ -1,0 +1,8 @@
+select * from xx where id=1
+
+update xx set name='lisi',age=23 where id=2;
+
+insert into xx(name,age) values('lisi',23);
+
+delete from xx where id=2;
+

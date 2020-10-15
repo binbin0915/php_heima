@@ -1,0 +1,15 @@
+{
+  "name": "apache_com",
+  "version": "1.0.0",
+  "description": "",
+  "main": "http.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "art-template": "^4.13.1",
+    "moment": "^2.22.2"
+  }
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- <input type="text" v-bind:value="input_val"> -->
+        <input type="text" v-model="input_val">
+    </div>
+</body>
+<script>
+    // vue 实例中的数据改变,会影响到DOM中的数据
+    // 但是 dom 中的数据改变不会影响到vue实例中的数据
+    // 这就是 单项数据绑定
+
+    // v-model 绑定就是双向数据绑定
+    // vue实例对象中的数据改变 会影响dom中的数据
+    // dom中数据改变,同时会影响vue实例中的数据,
+    // 这就是 双向数据绑定
+
+    var app = new Vue({
+        el:'#app',
+        data:{
+            input_val:'hello vue',
+        }
+    })
+</script>
+</html>

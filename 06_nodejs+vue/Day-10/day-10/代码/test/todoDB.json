@@ -1,0 +1,19 @@
+{
+  "list_data": [
+    {
+      "title": "电影",
+      "stat": false,
+      "id": 2
+    },
+    {
+      "title": "吃饭",
+      "stat": true,
+      "id": 3
+    },
+    {
+      "title": "看电影",
+      "stat": false,
+      "id": 4
+    }
+  ]
+}

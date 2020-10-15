@@ -1,0 +1,14 @@
+{
+  "name": "npm",
+  "version": "0.0.1",
+  "description": "这是一个世界上最帅的西岭老湿创建的垃圾项目",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "大帅哥春晖",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.22.2"
+  }
+}

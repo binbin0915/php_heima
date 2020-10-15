@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<!-- <script src="./jquery-3.2.1.js"></script>
+ -->
+ <!-- 浏览器中使用axios引入 -->
+ <script src="./axios.js"></script>
+<script>
+    // 使用promis封装的一个异步ajax请求工具
+    // axios.method(地址).then((data)=>{异步执行成后的回调函数})
+    axios.get('http://127.0.0.1:3000/list_data/2')
+    .then((data)=>{
+        // console.log(data);
+        // return this;
+        
+        if(data.status == 200){
+            axios.delete('http://127.0.0.1:3000/list_data/2')
+            .then((data)=>{})
+        }
+
+    })
+
+    // axios.put('http://127.0.0.1:3000/list_data/2',{title:'jhhhhhh'})
+    // .then((data)=>{
+    //     console.log(data);
+    // })
+
+    // 使用jq 请求数据
+    // $.get('http://127.0.0.1:3000/list_data',(data)=>{
+    //     console.log(data);
+    // })
+
+
+        // 下面是原生JS代码请求数据
+    // var xhr = new XMLHttpRequest();
+
+    // xhr.onreadystatechange = ()=>{
+    //     if(xhr.readyState == 4){
+    //         console.log(xhr.responseText);
+    //     }
+    // }
+    // xhr.open('get','http://127.0.0.1:3000/list_data')
+    // xhr.send();
+</script>
+</html>

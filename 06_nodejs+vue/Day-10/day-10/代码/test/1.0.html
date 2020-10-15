@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+    <script src="./vue-router.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li><a href="#/login">登录</a></li>
+            <li><a href="#/register">注册</a></li>
+        </ul>
+        <router-view></router-view>
+    </div>
+
+</body>
+<script>
+    // Vue.component('mytemp',{
+    //     template:""
+    // })
+    var reg = {template:'<h1>注册</h1>'};
+
+    // 创建路由对象
+    var re = new VueRouter({
+        // 声明路由
+        routes:[
+            // 设置路由
+            {path:'/login',component:{template:'<h1>sdkj</h1>'}},
+            {path:'/register',component:reg},
+        ]
+    });
+
+    var app = new Vue({
+        el: '#app',
+        // components:{
+        //     mytemp:{
+        //         template:''
+        //     }
+        // }
+        // 将路由对象传入vue实例
+        router:re
+    })
+</script>
+
+</html>

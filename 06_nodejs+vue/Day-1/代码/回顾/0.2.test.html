@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div">哈哈,西岭最帅</div>
+</body>
+<script>
+    // var obj1 = {name:'刘能',age:56,fun:function(){
+    //     alert(222);
+    // }};
+
+    // console.log(obj1.name)
+    // console.log(obj1.fun);
+    // console.log(obj1.fun());
+
+    // f1();
+
+    // f2();
+
+    // // 直接量(字面量)
+    // // 声明前后都可以调用
+    // function f1(){
+    //     console.log(1);
+    // }
+
+    // // 表达式声明
+    // // 只能在声明后调用
+    // var f2 = function(a,b){
+    //     console.log(2);
+    //     return ;
+    // }
+
+    // f2(1,2)
+
+
+
+
+    // 内置构造函数
+    // var f3 = new Function();
+
+
+
+
+    // 在JS中函数被称为第一等公民
+    // 在JS中函数是一个特殊的数据类型
+
+    // var a = 1;
+    // function f1(f2){
+    //     // console.log(v);
+    //     var a = 2;
+    //     f2();
+    // }
+
+    // // 在 JS 中函数自身的作用域在声明的地方,而不是调用的地方
+    // function f2(){
+    //     console.log(a);
+    // }
+
+    // f1(f2);
+
+
+    // var a = 2;
+    // function f1(f2) {
+    //     var a = 1;
+    //     function f2() {
+    //         console.log(++a);
+    //     }
+    //     // 由于f1的运行结果是返回f2
+    //     // 那么又 由于 作用域链及函数自身作用域的问题,
+    //     // 导致f1运行结束后,不能销毁变量
+    //     // 因此形成了闭包;
+    //     return f2;
+    // }
+
+
+    // // 两链一包  作用域链   原型链   闭包
+
+    // // 在 JS 中函数自身的作用域在声明的地方,而不是调用的地方
+
+    // var f = f1();
+    // f();
+    // f();
+    // f();
+    // f();
+
+    function f(a){
+        // console.log(arguments);
+    }
+
+    f(1,2,3,4,5,67);
+</script>
+
+</html>

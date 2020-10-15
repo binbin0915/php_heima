@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <a v-bind:href="'del?id='+id">删除</a>
+       <div v-bind:class="dd"></div>
+       <img v-bind:src="src_img" alt="">
+       <div v-bind:class="{active:isActive}"></div>
+       <div v-bind:class="[ac,del]"></div>
+    </div>
+</body>
+<script src="./vue.js"></script>
+<script>
+    var app = new Vue({
+        el:'#app',
+        data:{
+            dd:'3333',
+            src_img:'../../img/c1-s.png',
+            id:3,
+            isActive:false,
+            ac:'accc',
+            del:''
+        }
+    })
+</script>
+</html>

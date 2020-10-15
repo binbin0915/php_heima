@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <my-zhujian></my-zhujian>
+    </div>
+</body>
+<script>
+    // 全局组件
+    // Vue.component('myzujian',{
+    //     template:'<h2>我是最帅的</h2>'
+    // });
+
+    var app = new Vue({
+        el: '#app',
+        // 定义私有(局部组件)
+        components: {
+            // 组件的名字
+            // 使用时直接在 html 中将组件的名字当做标签使用即可
+            myZhujian: {
+                // 组件的内容
+                // template 中的标签内容必须有且只有一个根节点
+                template: '<div><i>卫星是最帅的</i><s>我不承认</s></div>'
+            }
+        }
+    })
+</script>
+
+</html>

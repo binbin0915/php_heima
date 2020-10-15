@@ -1,0 +1,12 @@
+HTTP协议-数据传输方式 get post  put  push  options  
+
+get 和post 传输方式的区别 
+get 是地址栏传输数据  post是表单传输数据
+get 传输数据量小  post 传输数据量大
+get 不安全   post是相对安全
+get 传输文本数据  post 还可以传输二进制数据
+
+都不准确   
+
+浏览器这个工具仅仅是 HTTP 协议 的一个具体实现
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script src="./vue.js"></script>
+<body>
+    <div id="app">
+        <!-- 数据只绑定一次,单次绑定,后面数据发生变化, msg 不会受到影响-->
+        <p v-once>{{msg}}</p>
+    </div>
+</body>
+<script>
+    var app = new Vue({
+        el:'#app',
+        data:{
+            msg:'sadlkfjsaldkf'
+        },
+        methods:{}
+    })
+</script>
+</html>

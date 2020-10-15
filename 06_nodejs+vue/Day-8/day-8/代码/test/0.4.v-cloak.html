@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        [v-cloak]{
+            /* color: red */
+            display: none;
+        }
+    </style>
+</head>
+<script src="./vue.js"></script>
+
+<body>
+    <div id="app">
+       <p v-cloak>jjjjj{{msg}}</p> 
+       <div v-cloak>asdfgsadf</div>
+    </div>
+</body>
+<script>
+    setTimeout(() => {
+        var app = new Vue({
+            el: '#app',
+            data: {
+                msg: "我是一个Vue的数据"
+            },
+            methods: {}
+        })
+    }, 3000)
+
+</script>
+
+</html>

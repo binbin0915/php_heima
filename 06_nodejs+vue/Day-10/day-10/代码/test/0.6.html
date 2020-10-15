@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        
+    </div>
+</body>
+<script>
+    
+  var app = new Vue({
+        el:'#app',
+        data:{
+            msg:'助教最帅'
+        },
+        
+        // 孕育生命
+        beforeCreate:function(){
+            console.log('长身体')
+        },
+        
+        // 生灵的诞生
+        created:function(){
+            console.log('出生');
+        },
+        
+        // 融入社会
+        // 设置绑定DOM对象
+        beforeMount:function(){
+            console.log('编译(组件)HTML完成')
+        },
+
+        mounted:function(){
+            console.log('页面挂载完毕,替换el为vm.$el')
+        }
+    })
+
+
+    console.log(app)
+</script>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="xing">
+        <input type="text" v-model="ming">
+        {{fullName}}
+
+    </div>
+</body>
+<script src="./vue.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            xing: '',
+            ming: '',
+            fullName:''
+        },
+        watch:{
+            xing:function(newVal,oldVal){
+
+                // 发送异步服务器数据请求
+                if(如果后台正确的返回了数据){
+                    拿到new_val进行替换
+                }else{
+                    保持数据与页面的同步展示
+                    将替换之前的数据重新再页面加载
+                }
+
+
+               this.fullName = newVal+this.ming;
+            },
+            ming:function(new_val){
+                this.fullName = this.xing+new_val;
+            }
+        }
+
+
+    })
+</script>
+
+</html>

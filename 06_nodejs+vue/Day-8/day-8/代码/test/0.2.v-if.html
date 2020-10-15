@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script src="./vue.js"></script>
+<body>
+    <div id="app">
+        <!-- vue 指令中的if  esle 判断的基本逻辑和普通的 if else 逻辑一致 -->
+        <div v-if="da==7">
+        </div>
+        
+        <div v-else-if="da>5">BBBBBB</div>
+        <div v-else>CCCCCCCc</div>
+
+    </div>
+</body>
+<script>
+    var app = new Vue({
+        el:'#app',
+        data:{
+            da:2
+        },
+        methods:{}
+    })
+</script>
+</html>

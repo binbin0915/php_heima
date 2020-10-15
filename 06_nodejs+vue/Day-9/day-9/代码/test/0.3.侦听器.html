@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="xing">
+        <input type="text" v-model="ming">
+        {{fullName}}
+
+    </div>
+</body>
+<script src="./vue.js"></script>
+<script src="./jquery-3.2.1.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            xing: '李',
+            ming: '四',
+            fullName:''
+        },
+        watch:{
+            xing:function(newVal,oldVal){
+                $.get('./0.3.php?id=an',(data)=>{
+                    if(data == 1){
+                        this.fullName = newVal+this.ming;
+                    }else{
+                        this.fullName = oldVal+this.ming;
+                    }
+                })
+                // 
+            },
+        }
+
+    })
+</script>
+
+</html>

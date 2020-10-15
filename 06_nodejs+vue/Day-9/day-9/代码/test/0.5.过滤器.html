@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="inp_val">
+        {{inp_val|setNumber}}
+        <!-- {{msg|myFilter}} -->
+    </div>
+    
+</body>
+<script src="./vue.js"></script>
+<script>
+    var app = new Vue({
+        el:'#app',
+        data:{
+            msg:'UPload',
+            inp_val:''
+        },
+        filters:{
+            myFilter(val){
+                return val.toLowerCase();
+            },
+            setNumber(val){
+                // var reg = /[0-5]/g;
+                // return val.replace(reg,'6');
+
+                return val.replace('你麻痹','你**');
+            }
+        }
+    })
+</script>
+</html>

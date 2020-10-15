@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+</body>
+
+<script>
+
+    
+
+    // 作为老师 无愧于道德与良心
+    // 作为学生 无愧于时间与金钱
+
+    function fun() {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function(){
+            console.log(xhr.readyState);
+        }
+        xhr.open('post','./1.php');
+        xhr.setRequestHeader('Content-type',"application/x-www-from-urlencoded");
+        xhr.send("user='lisi'&age=23");// 三次握手
+        console.log('aaa');
+    }
+    
+    fun();
+
+    console.log('ccc');
+
+</script>
+
+</html>

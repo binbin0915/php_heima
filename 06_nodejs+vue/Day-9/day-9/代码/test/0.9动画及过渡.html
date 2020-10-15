@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 从有到无 */
+        /* 开始 */
+        .fade-leave{
+            opacity: 1;
+        }
+        /* 过程 */
+        .fade-leave-active
+        {
+            transition: opacity 1s;
+        }
+        /* 结束 */
+        .fade-leave-to        
+        {
+            opacity: 0;
+        }
+
+        .fade-enter{
+            opacity: 0;
+        }
+
+        .fade-enter-active{
+            transition: opacity 3s;
+        }
+        .fade-enter-to{
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <input type="button" @click="go" value="按钮">
+        <transition name="fade">
+            <p v-show="is">我是内容</p>
+        </transition>
+
+    </div>
+</body>
+<script src="./vue.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            is: true
+        },
+        methods: {
+            go() {
+                this.is = !this.is;
+            }
+        }
+    })
+</script>
+
+</html>

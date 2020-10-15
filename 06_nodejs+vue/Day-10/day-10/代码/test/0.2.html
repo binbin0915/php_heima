@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .top {
+            width: 100%;
+            height: 80px;
+            background-color: #ccc;
+        }
+
+        .left {
+            margin-top: 20px;
+            width: 600px;
+            height: 600px;
+            background-color: #ccc;
+            float: left;
+        }
+
+        .right {
+            margin-top: 20px;
+            width: 200px;
+            height: 600px;
+            background-color: #ccc;
+            float: right;
+        }
+    </style>
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <tops/>
+    </div>
+</body>
+<script>
+
+    var app = new Vue({
+        el: '#app',
+        components: {
+            tops: { template: '<div class="top"></div>' },
+            lefts: { template: '<div class="left"></div>' },
+            rights: { template: '<div class="right"></div>' },
+        }
+    })
+</script>
+
+</html>

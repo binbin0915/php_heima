@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="div">
+        {{shuju+2}}
+        {{fun()}}
+    </div>
+</body>
+<script>
+    var app = new Vue({
+        el:'#div',
+        data:{
+            shuju:1,
+            fun:()=>{
+                 2+3;
+            }
+        }
+    });
+
+   
+</script>
+</html>

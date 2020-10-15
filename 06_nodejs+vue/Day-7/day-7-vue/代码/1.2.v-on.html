@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- <a href="http://www.qq.com" id="a" v-on:click.prevent="di">腾百万</a> -->
+        <!-- <input type="button" v-on:click.middle="zhong" value="按钮"> -->
+        <input type="button" v-on:click.once="zhong" value="按钮">
+    </div>
+</body>
+<script src="./vue.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {},
+        methods: {
+        //    di:()=>{
+        //        alert(2);
+        //    }
+
+            zhong:()=>{
+                alert(123);
+            }
+        }
+    })
+</script>
+
+<script>
+        // document.getElementById('a').onclick = (ev)=>{
+        //     alert('123');
+        //     // 阻止浏览器的默认事件
+        //     // ev.preventDefault();
+
+        //     // 阻止事件传播
+        //     ev.stopPropagation();
+        // }
+    </script>
+
+</html>

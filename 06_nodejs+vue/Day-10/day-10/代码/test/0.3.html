@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <mytmp></mytmp>
+    </div>
+</body>
+<script>
+    var app = new Vue({
+        el:'#app',
+        data:{
+            msg:'快吃饭'
+        },
+        // 示例证明,VUE 实例对象也是一个组件,这个组件是一个特殊的组件
+        // template:'<h1>咖啡就立刻送大奖是打发</h1>',
+
+
+        // Vue 实例对象本事也是一个组件(大组件)
+        // 我们自己定义的 mytmp 这个组件就相当于是 vue 父级组件的子组件
+        // 组件与组件之间都拥有自己独立的作用域
+        components:{
+            mytmp:{
+                // 组件中 data 的使用方式与vue 实例对象这个大组件不一样 
+                // 子组件中 data 必须是一个方法
+                data:function(){
+                    return {msg:'卫星是超级大帅哥'}
+                },
+                template:"<h1>{{msg}}</h1>"
+            }
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <p v-bind:class="msg"></p>
+        <p v-haha>123hahahahaha</p>
+        <div v-haha>asldf</div>
+    </div>
+</body>
+<script src="./vue.js"></script>
+<script>
+
+    // 定义一个全局指令
+    // Vue.directive('haha',{
+    //     inserted:function(elment){
+    //         elment.style.color = 'red';
+    //     }
+    // })
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            msg: 'hello'
+        },
+        methods: {
+
+        },
+
+        // 局部(私有) 指令
+        directives: {
+            haha: {
+                inserted: function (elment) {
+                    elment.style.color = 'red';
+                }
+            }
+
+        }
+
+
+    })
+</script>
+
+</html>

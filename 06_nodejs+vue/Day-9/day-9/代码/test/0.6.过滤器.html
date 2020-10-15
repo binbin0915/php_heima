@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="inp_val">
+        {{inp_val|setNumber}}
+        <!-- {{msg|myFilter}} -->
+    </div>
+
+    <div id="app2">
+        <input type="text" v-model="inp_val">
+        <!-- 过滤器的连用 -->
+        {{inp_val|setNumber|Number}}
+       
+    </div>
+
+</body>
+<script src="./vue.js"></script>
+<script>
+
+    // 全局过滤器
+    Vue.filter('setNumber', function (val) {
+        var reg = /[0-5]/g;
+        return val.replace(reg, '6');
+    })
+    // 多个过滤器每个必须单独声明
+    Vue.filter('Number', function (val) {
+        var reg = /[8-9]/g;
+        return val.replace(reg, '0');
+    });
+
+    // Vue.filter({
+    //     setNumber: function (val) {
+    //         var reg = /[0-5]/g;
+    //         return val.replace(reg, '6');
+    //     }
+    // })
+
+
+    var app2 = new Vue({
+        el: '#app2',
+        data: {
+            msg: 'UPload',
+            inp_val: ''
+        },
+        // // 私有(局部) 过滤器
+        // filters: {
+        //     myFilter(val) {
+        //         return val.toLowerCase();
+        //     },
+        //     setNumber(val) {
+        //         var reg = /[0-5]/g;
+        //         return val.replace(reg, '6');
+
+        //         // return val.replace('你麻痹', '你**');
+        //     }
+        // }
+    })
+    var app = new Vue({
+        el: '#app',
+        data: {
+            msg: 'UPload',
+            inp_val: ''
+        },
+        // filters: {
+        //     myFilter(val) {
+        //         return val.toLowerCase();
+        //     },
+        //     setNumber(val) {
+        //         var reg = /[0-5]/g;
+        //         return val.replace(reg, '6');
+
+        //         // return val.replace('你麻痹', '你**');
+        //     }
+        // }
+    })
+</script>
+
+</html>

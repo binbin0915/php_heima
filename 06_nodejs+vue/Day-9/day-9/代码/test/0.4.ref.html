@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="button" @click="cli" value="按钮"> <br>
+        <p ref="pv">123</p>
+        
+    </div>
+</body>
+<script src="./vue.js"></script>
+<script>
+    var app = new Vue({
+        el:'#app',
+        data:{},
+        methods:{
+            cli(){
+                // 需要在事件处理器中获取 P 元素节点对象
+                // vue 提供$refs的属性,让我们可以获取到 节点对象
+                this.$refs.pv.innerHTML = 1;
+              
+            }
+        }
+    })
+</script>
+</html>

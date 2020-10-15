@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script src="./vue.js"></script>
+<body>
+    <div id="app">
+        <input type="button" value="按钮" @click="toggles">
+        <!-- v-show 实际是使用css display控制显示和隐藏 -->
+        <p v-show="isshow">Vue</p>
+    </div>
+</body>
+<script>
+    var app = new Vue({
+        el:'#app',
+        data:{
+            isshow:true,
+            hh:'sdf'
+        },
+        methods:{
+            // toggles:function(){}
+            // 简写
+            toggles(){
+                // this 指向 vue 实例对象
+                // data 中的数据可以直接使用 对象. 的形式访问 
+                this.isshow = !this.isshow
+            }
+        }
+    })
+
+    console.log(app);
+</script>
+</html>

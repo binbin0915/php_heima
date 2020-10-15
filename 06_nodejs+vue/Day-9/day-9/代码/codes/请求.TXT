@@ -1,0 +1,8 @@
+127.0.0.1:3000/list_data/  获取全部数据
+127.0.0.1:3000/list_data/2 获取id为2的数据
+127.0.0.1:3000/list_data POST  添加数据
+127.0.0.1:3000/list_data/1 put  修改数据必须有条件
+127.0.0.1:3000/list_data/1 delete  删除数据必须有条件
+127.0.0.1:3000/list_data?title_like=1 模糊查询
+
+
